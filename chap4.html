@@ -1,0 +1,1282 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="Chapter%204:%20'Processing%20SGML%20or%20XML'_elemei/analytics.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app39.us.archive.org';v.server_ms=322;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="Chapter%204:%20'Processing%20SGML%20or%20XML'_elemei/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20110706111856", "www.serverside.com.au");
+</script>
+<script type="text/javascript" src="Chapter%204:%20'Processing%20SGML%20or%20XML'_elemei/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="Chapter%204:%20'Processing%20SGML%20or%20XML'_elemei/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="Chapter%204:%20'Processing%20SGML%20or%20XML'_elemei/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Chapter 4: 'Processing SGML or XML'</title>
+<meta name="Book" content="OmniMark Programming Principles">
+<meta name="Author" content="Errol Chopping">
+<meta name="Email" content="echopping@csu.edu.au">
+<meta name="Copyright" content="2000">
+</head>
+<body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="Chapter%204:%20'Processing%20SGML%20or%20XML'_elemei/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="Chapter%204:%20'Processing%20SGML%20or%20XML'_elemei/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="Chapter%204:%20'Processing%20SGML%20or%20XML'_elemei/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="Chapter%204:%20'Processing%20SGML%20or%20XML'_elemei/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" style="display: block; direction: ltr;" lang="en">
+</div><script type="text/javascript">
+__wm.bt(600,27,25,2,"web","http://www.serverside.com.au/reference/omnimark/html/chap04.html","2011-07-06",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+</script><div class="wb-autocomplete-suggestions "></div>
+<!-- END WAYBACK TOOLBAR INSERT -->
+<center>
+<h2>OmniMark Programming Principles</h2>
+<h4>www.serverside.com.au</h4>
+<h2><font color="green">Chapter 4<br>Processing SGML or XML</font></h2>
+</center>
+<hr>
+[<a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/index.html">Back to the General Index</a>]
+[<a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/html/summary.html">Back to the Chapter Summary</a>]
+<hr>
+<dl>
+
+<dt><h3>This chapter covers:</h3>
+<ul>
+<li>A review of SGML basics
+</li><li>Some principles of SGML processing with OmniMark
+</li><li>How to process SGML attributes and content
+
+
+</li></ul><p>
+</p></dt><dt></dt><dd><a name="top"><h3>Topic Index</h3></a>
+<ul>
+<li><a href="#T01">SGML basics</a>
+</li><li><a href="#T02">Processing SGML documents</a>
+</li><li><a href="#T03">Element rules and the document tree</a>
+</li><li><a href="#T04">Processing attributes</a>
+</li><li><a href="#T05">Processing content</a>
+</li><li><a href="#T06">Strategies for processing SGML</a>
+</li></ul>
+
+
+
+</dd><dt><a name="T01"><h3>4.1: SGML basics</h3></a>
+</dt><dd>
+<p></p></dd><dt><em><strong>4.1.1 General Issues
+</strong></em><br>
+</dt><dd>
+<p>SGML (Standard Generalised Markup Language) is a meta language. That is,
+it is used to define other languages. A language defined with SGML
+is then used to <em>mark up</em> files which are instances of a particular
+document type. Work usually starts with a need to define
+the structure of a set of similar documents or a set of data records. Sample
+data or documents are analysed to determine their common structural components (elements),
+to define the order these elements can appear, which ones are compulsory, the nesting
+of elements within elements, and which elements are qualified with attributes.
+</p><p>
+</p><p>After the analysis, a Document Type Definition (DTD) is designed. The DTD
+is written in the SGML (meta) language and exactly defines the structure of
+any instance document according to the decisions above. Then
+instances of the document type are created using SGML markup. These instances
+can be checked for validity (<em>parsed</em>) to make sure they conform to the
+specifications in the DTD. Once any conforming instance is available it can
+be stored, translated, searched, merged or rendered into virtually any other
+required format. Importantly, the SGML instance is completely owned by the
+author or organisation who designed and created it. SGML is a non-proprietary
+standard so no particular commercial product need be used to save or read the instance and
+the data is not locked up behind any commercially secret file format. It is
+for this reason that SGML (and latterly XML) is considered most favourably
+when there is a need to share or transmit data between organisations, for storing
+data which needs regular updating, to produce documents or records in other
+formats in real time or to support information systems and web sites.
+</p><p>
+</p><p>Many commercial products can be used to read and process SGML, but this
+does not mean that a particular commercial product has any copyright over
+it. Locally produced or in-house software can be developed reasonably easily
+to read and process SGML data and many free software products are available
+to parse and/or process it. OmniMark is one of these. It provides a built-in parser
+for both SGML and XML and a programming language which can accurately process
+SGML and XML instances.
+
+
+
+
+</p><p>
+</p><p></p></dd><dt><em><strong>4.1.2 SGML markup syntax
+</strong></em><br>
+</dt><dd>
+<p>At the markup level, an SGML instance is just an ASCII text file. It can
+be created or edited with any text editor or word processor and is equally
+useable by any current operating system or hardware platform. It is often
+said that the programming language Java produces 'platform independent software'. In
+a similar way, SGML (or XML) can be considered to produce 'software independent data'.
+</p><p>
+</p><p>The basic structural component of any SGML instance is an <em>element</em> which
+is marked up with a <em>starttag</em>, an <em>endtag</em> between which is <em>content</em>. A
+sample is shown here and would be called a 'NAME' element:</p><p>
+</p><pre>&lt;NAME&gt;Wally Walpaper&lt;/NAME&gt;
+</pre><p>
+</p><p>The content of the element as shown is <em>data content</em> because it
+contains just raw text. An equally valid way to structure a person's name might
+be as follows:</p><p>
+</p><pre>&lt;NAME&gt;
+ &lt;FIRST&gt;Wally&lt;/FIRST&gt;
+ &lt;LAST&gt;Wallpaper&lt;/LAST&gt;
+&lt;/NAME&gt;
+</pre><p>
+</p><p>In which case the NAME element contains <em>element content</em> and we say that
+the elements FIRST and LAST are <em>nested</em> inside the NAME element.
+</p><p>
+</p><p>Any element can be qualified with the addition of <em>attributes</em>. Attributes
+appear in the starttag only and take the form of an <em>attribute name</em>, an equal
+symbol ('<kbd>=</kbd>'), and an <em>attribute value</em>. Below the NAME element contains
+a single attribute called TITLE:</p><p>
+</p><pre>&lt;NAME TITLE="Mr"&gt;
+ &lt;FIRST&gt;Wally&lt;/FIRST&gt;
+ &lt;LAST&gt;Wallpaper&lt;/LAST&gt;
+&lt;/NAME&gt;
+</pre><p>
+</p><p>Elements can be repeated an arbitrary number or a fixed number of times, and
+elements can be completely optional. Attributes can be optional too.
+The DTD specifies these structural
+rules precisely. The following fragment contains multiple NAMEs and shows
+slight variations  of structure. Without access to the DTD it is impossible to say 
+which parts are valid and which are not.</p><p>
+</p><pre>&lt;PEOPLE DATE="15 6 2000"&gt;
+ &lt;NAME TITLE="Mr"&gt;
+  &lt;FIRST&gt;Wally&lt;/FIRST&gt;
+  &lt;LAST&gt;Wallpaper&lt;/LAST&gt;
+ &lt;/NAME&gt;
+ &lt;NAME&gt;
+  &lt;LAST&gt;Jackson&lt;/LAST&gt;
+ &lt;/NAME&gt;
+ &lt;NAME TITLE="Dr"&gt;
+  &lt;FIRST&gt;Susan&lt;/FIRST&gt;
+  &lt;MIDDLE&gt;Ramsay&lt;/MIDDLE&gt;
+  &lt;LAST&gt;Sukie&lt;/LAST&gt;
+ &lt;/NAME&gt;
+&lt;/PEOPLE&gt;
+</pre><p>
+</p><p></p></dd><dt><em><strong>4.1.3 The role of the DTD
+</strong></em><br>
+</dt><dd>
+<p>To resolve these differences, an SGML processing tool needs to know exactly what is allowed and what is
+not and so needs access to the DTD. A reference to the DTD is normally provided
+as the first piece of markup in the instance with a <em>doctype declaration</em> which
+indicates the location of the file containing
+the DTD. With the doctype declaration included, the previous instance would
+become:
+</p><p>
+</p><pre>&lt;!DOCTYPE PEOPLE SYSTEM "people.dtd"&gt;
+&lt;PEOPLE DATE="15 6 2000"&gt;
+ &lt;NAME TITLE="Mr"&gt;
+  &lt;FIRST&gt;Wally&lt;/FIRST&gt;
+  &lt;LAST&gt;Wallpaper&lt;/LAST&gt;
+ &lt;/NAME&gt;
+ &lt;NAME&gt;
+  &lt;LAST&gt;Jackson&lt;/LAST&gt;
+ &lt;/NAME&gt;
+ &lt;NAME TITLE="Dr"&gt;
+  &lt;FIRST&gt;Susan&lt;/FIRST&gt;
+  &lt;MIDDLE&gt;Ramsay&lt;/MIDDLE&gt;
+  &lt;LAST&gt;Sukie&lt;/LAST&gt;
+ &lt;/NAME&gt;
+&lt;/PEOPLE&gt;
+</pre><p>
+</p><p>As well as the location of the DTD, the doctype declaration also declares
+the name of the topmost element (the <em>root element</em>) of the instance. Once
+the root element and the DTD are available, an SGML processor can
+establish an <em>element tree</em> for the
+document type. An element tree for the above instance can be considered as:</p><p>
+</p><pre>PEOPLE
+     |
+     NAME
+        |
+        FIRST
+        MIDDLE
+        LAST
+</pre><p>
+</p><p></p></dd><dt><em><strong>4.1.4 The Document Type Definition
+</strong></em><br>
+</dt><dd>
+<p>In the context of this booklet it is not crucial to completely
+understand nor be able to produce DTDs. I present one here just for
+completeness. A document type definition for the above 'people' instance
+could be as follows, and would be stored in a file called '<kbd>people.dtd</kbd>'</p><p>
+</p><pre>001  &lt;!ELEMENT people - - (name+)&gt;
+002  &lt;!ATTLIST people date NUMBERS #REQUIRED&gt;
+003  
+004  &lt;!ELEMENT name - - (first?, middle?, last)&gt;
+005  &lt;!ATTLIST name title CDATA #IMPLIED&gt;
+006  
+007  &lt;!ELEMENT first - - (#PCDATA)&gt;
+008  &lt;!ELEMENT middle - - (#PCDATA)&gt;
+009  &lt;!ELEMENT last - - (#PCDATA)&gt;
+</pre><p>
+</p><p>Lines 1 and 2 define the element PEOPLE which contains one or more NAME elements
+and has a compulsory attribute called DATE whose value must contain only numerical
+values.</p><p>
+</p><p>Line 4 defines the NAME element as containing one optional FIRST element,
+followed by one optional MIDDLE element followed by exactly one compulsory LAST
+element. In the NAME element a non-compulsory attribute called TITLE is allowed
+which can contain ordinary text. This is defined on line 5.</p><p>
+</p><p>Line 7, 8 and 9 specify that the content of the elements FIRST, MIDDLE and
+LAST is ordinary text data.</p><p>
+</p><p>The symbols '<kbd>- -</kbd>' which appear between an element name and
+its content model specify that both a starttag and an endtag are required
+for the element.
+</p><p>
+
+<font size="-1"><a href="#top">Topic List</a></font>
+
+
+
+</p></dd><dt><a name="T02"><h3>4.2: Processing SGML documents</h3></a>
+</dt><dd>
+<p>In these topics I present some sample OmniMark programs to process SGML
+documents. The depth to which I discuss this processing is
+quite limited. I will deal with the elementary and fundamental principles
+only. At this level the OmniMark programs which process the documents are fairly small.
+</p><p>
+</p><p></p></dd><dt><em><strong>4.2.1 Parsing an SGML instance</strong></em><br>
+</dt><dd>
+<p>SGML processing in OmniMark almost always involves first <em>parsing</em> a
+source document to check that the markup conforms to the specifications in the DTD
+followed by <em>element rules</em> which fire as each of the elements in the
+document stream through the program.
+</p><p>
+</p><p>A minimal OmniMark program to parse an SGML file is presented here:</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04T02a.xom">C04T02a.xom</a>]<br>
+</p><pre>001  ; minimal parsing program
+002  
+003  process
+004    do sgml-parse document
+005      scan file "people.sgml"
+006      output "%c"
+007    done
+008  
+009  element #implied
+010    suppress
+</pre><p>
+</p><p>In this program, the action starting on line 4 calls the OmniMark
+parser on an SGML document. For our purposes, an SGML 'document' is an
+SGML instance with an associated DTD.
+</p><p>
+</p><p>Line 5 contains an instruction indicating
+which SGML file should be <em>scan</em>ed. The file '<kbd>people.sgml</kbd>' contains
+the markup and, in this case, contains the instance used as an example
+in the previous topic.
+</p><p>
+</p><p>On line 9, is the single <em>element rule</em> of the program. This
+element rule is the most general of all and the word '<kbd>#implied</kbd>' means
+<em>every</em> element seen in the input stream for which there is no
+specific rule provided. Since there are no other (more specific) rules in this
+program, the rule on line 9 fires for <em>all</em> elements in the instance.
+The action on line 10, '<kbd>suppress</kbd>', causes any more specific rules
+to be disabled.
+</p><p>
+</p><p>It is a <strong>principle</strong> of OmniMark SGML processing programs that there
+must be an element rule provided for <em>every</em> element in the instance. The</p><p>
+</p><pre>element #implied
+</pre><p>
+</p><p>rule ensures this principle is upheld.
+</p><p>
+</p><p>The file '<kbd>people.sgml</kbd>' does, in fact, conform
+to the DTD in the file '<kbd>people.dtd</kbd>' so OmniMark produces
+no error messages. To demonstrate what happens when there are errors, consider
+the following <em>incorrect</em> instance of the PEOPLE document type. Can you
+see the error before reading on?
+</p><p>
+</p><pre>&lt;!DOCTYPE PEOPLE SYSTEM "people.dtd"&gt;
+&lt;PEOPLE&gt;
+ &lt;NAME TITLE="Mr"&gt;
+  &lt;FIRST&gt;Wally&lt;/FIRST&gt;
+  &lt;LAST&gt;Wallpaper&lt;/LAST&gt;
+ &lt;/NAME&gt;
+ &lt;NAME&gt;
+  &lt;LAST&gt;Jackson&lt;/LAST&gt;
+ &lt;/NAME&gt;
+ &lt;NAME TITLE="Dr"&gt;
+  &lt;FIRST&gt;Susan&lt;/FIRST&gt;
+  &lt;MIDDLE&gt;Ramsay&lt;/MIDDLE&gt;
+  &lt;LAST&gt;Sukie&lt;/LAST&gt;
+ &lt;/NAME&gt;
+&lt;/PEOPLE&gt;
+</pre><p>
+</p><p>When the OmniMark parsing program is run the following error message is produced:</p><p>
+</p><pre>omnimark --
+
+Markup Error (0259) on line 2 in file Markup Stream:
+In a start tag or ENTITY declaration, every required attribute must be
+given a value.
+
+In the start tag for element "PEOPLE", the REQUIRED attribute "DATE" is
+not specified.
+
+There was 1 SGML error detected.
+</pre><p>
+</p><p>This message indicates that the DATE attribute of the PEOPLE element
+is missing (did you pick it?). OmniMark knows that the DATE attribute is
+compulsory from line 2 in the DTD. Here is another incorrect version of the instance.
+See if you can detect the error before reading on.</p><p>
+</p><pre>&lt;!DOCTYPE PEOPLE SYSTEM "people.dtd"&gt;
+&lt;PEOPLE DATE="15 6 2000"&gt;
+ &lt;NAME TITLE="Mr"&gt;
+  &lt;FIRST&gt;Wally&lt;/FIRST&gt;
+  &lt;LAST&gt;Wallpaper&lt;/LAST&gt;
+ &lt;/NAME&gt;
+ &lt;NAME&gt;
+  &lt;LAST&gt;Jackson&lt;/LAST&gt;
+ &lt;/NAME&gt;
+ &lt;NAME TITLE="Dr"&gt;
+  &lt;MIDDLE&gt;Ramsay&lt;/MIDDLE&gt;
+  &lt;FIRST&gt;Susan&lt;/FIRST&gt;
+  &lt;LAST&gt;Sukie&lt;/LAST&gt;
+ &lt;/NAME&gt;
+&lt;/PEOPLE&gt;
+</pre><p>
+</p><p>Here the error message is less obvious but states:</p><p>
+</p><pre>omnimark --
+
+Markup Error (0056) on line 12 in file Markup Stream:
+A start tag must not be used if the element is neither allowed by the
+current content model or by an inclusion.
+
+The element is "FIRST".
+
+There was 1 SGML error detected.
+</pre><p>
+</p><p>which actually means that if Susan's middle name appears, it can only
+be followed by her last name, not here first name. OmniMark knows the right
+order of FIRST, MIDDLE and LAST from line 4 of the DTD.
+</p><p>
+
+<font size="-1"><a href="#top">Topic List</a></font>
+
+
+
+</p></dd><dt><a name="T03"><h3>4.3: Element rules and the document tree</h3></a>
+</dt><dd>
+<p>Mostly we want to process SGML files to extract or render the content
+in some way. Suppose we want to output all the last names of all the people
+in our sample SGML instance. To get to the LAST element
+we need to process the PEOPLE element and all of the NAME elements in order to
+get down into the tree structure to the level of the LAST element. When we
+reach the LAST element we want to output its content. We do not want to
+process the FIRST or the MIDDLE elements at all. The following program
+does this in a minimal way:</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04T03a.xom">C04T03a.xom</a>]<br>
+</p><pre>001  ; Output last names
+002  
+003  process
+004    do sgml-parse document
+005      scan file "people.sgml"
+006      output "%c"
+007    done
+008  
+009  element people
+010    output "%c"
+011  
+012  element name
+013    output "%c"
+014  
+015  element last
+016    output "%c%n"
+017  
+018  element #implied
+019    suppress
+</pre><p>
+</p><p>The element rule on line 9 fires when the PEOPLE element come
+through the input stream and its action</p><p>
+</p><pre>output "%c"
+</pre><p>
+</p><p>means 'now process this element's content'.
+This technique is also used by the rule for NAME elements on line 12 and 13.
+</p><p>
+</p><p>The LAST element is processed on line 15
+when the next LAST element comes through. The <em>content</em> of all LAST elements
+is ordinary text so the action on line 16 writes each last name data onto the
+output stream followed by a newline.
+</p><p>
+</p><p>The 'catch-all' rule on line 18 is fired for all elements which don't
+have explicit rules of their own. It is necessary due to the <strong>principle</strong> that
+all elements must have matching rules.</p><p>
+</p><p>The output from this program is</p><p>
+</p><pre>Wallpaper
+Jackson
+Sukie
+</pre><p>
+</p><p></p></dd><dt><em><strong>4.3.1 Stack or Tree behaviour</strong></em><br>
+</dt><dd>
+<p>What is not immediately apparent is that after the rules for
+PEOPLE and NAME fire the program is actually working <em>inside</em>
+the PEOPLE element and also <em>inside</em> one of the NAME elements. When the FIRST, MIDDLE
+and LAST elements are processed, control <em>returns</em> to the current NAME. When
+all the NAME elements are processed control returns to the PEOPLE element. One
+way of understanding this is to realise that we are traversing a <em>tree</em> structure. We
+traverse <em>down</em> the tree as each element opens and return up the tree
+to that element
+as it closes. Another way to deal with the concept is to see the processing
+as <em>stack based</em>, each time we start a new element it is <em>pushed</em> onto
+a stack and when its content is exhausted we <em>pop</em> back to the parent element.
+</p><p>
+</p><p>This stack or tree behaviour can be demonstrated by generating output
+before and after the content of each element is processed. The following
+program is a modification of the previous one.</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04T03b.xom">C04T03b.xom</a>]<br>
+</p><pre>001  ; Output last names
+002  
+003  process
+004    do sgml-parse document
+005      scan file "people.sgml"
+006      output "%c"
+007    done
+008  
+009  element people
+010    output "-Starting the PEOPLE element%n"
+011    output "%c"
+012    output "-Ending the PEOPLE element%n"
+013  
+014  element name
+015    output "--Starting a NAME element%n"
+016    output "%c"
+017    output "--Ending a NAME element%n%n"
+018  
+019  element last
+020    output "---Starting a LAST element%n"
+021    output "%c%n"
+022    output "---Ending a LAST element%n"
+023  
+024  element #implied
+025    suppress
+</pre><p>
+</p><p>for which the output is:</p><p>
+</p><pre>-Starting the PEOPLE element
+--Starting a NAME element
+---Starting a LAST element
+Wallpaper
+---Ending a LAST element
+--Ending a NAME element
+
+--Starting a NAME element
+---Starting a LAST element
+Jackson
+---Ending a LAST element
+--Ending a NAME element
+
+--Starting a NAME element
+---Starting a LAST element
+Sukie
+---Ending a LAST element
+--Ending a NAME element
+
+-Ending the PEOPLE element
+</pre><p>
+</p><p>It is a <strong>principle</strong> of SGML that elements in an instance form a tree
+and that any processing of them includes stack-based behaviour.
+</p><p>
+</p><p></p></dd><dt><em><strong>4.3.2 Counting elements</strong></em><br>
+</dt><dd>
+<p>Knowing the stack behaviour makes the positioning of output actions
+clear. The sample program below outputs a heading <em>before</em> the list
+of last names and the number of names <em>after</em> the list. Note
+carefully where the counting is done and where heading and total are
+output.</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04T03c.xom">C04T03c.xom</a>]<br>
+</p><pre>001  ; Output last names with a
+002  ; heading and total
+003  
+004  process
+005    do sgml-parse document
+006      scan file "people.sgml"
+007      output "%c"
+008    done
+009  
+010  global counter numNames initial {0}
+011  
+012  element people
+013    output "List of last names.%n"
+014    output "%c"
+015    output "There were %d(numNames) last names listed.%n"
+016   
+017  element name
+018     output "%c"
+019   
+020  element last
+021     increment numNames
+022     output "%c%n"
+023   
+024  element #implied
+025    suppress
+</pre><p>
+</p><p>The output is:</p><p>
+</p><pre>List of last names.
+Wallpaper
+Jackson
+Sukie
+There were 3 last names listed.
+</pre><p>
+</p><p>Adding the output of people's full names is a simple modification
+and is presented here:</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04T03d.xom">C04T03d.xom</a>]<br>
+</p><pre>001  ; Output full names with a
+002  ; heading and total
+003  
+004  process
+005    do sgml-parse document
+006      scan file "people.sgml"
+007      output "%c"
+008    done
+009  
+010  global counter numNames initial {0}
+011  
+012  element people
+013    output "List of names.%n"
+014    output "%c"
+015    output "There were %d(numNames) names listed.%n"
+016   
+017  element name
+018     output "%c"
+019   
+020  element last
+021     increment numNames
+022     output "%c%n"
+023   
+024  element first
+025    output "%c "
+026  
+027  element middle
+028    output "%c "
+</pre><p>
+</p><p>and outputs:</p><p>
+</p><pre>List of names.
+Wally Wallpaper
+Jackson
+Susan Ramsay Sukie
+There were 3 names listed.
+</pre><p>
+</p><p>Note that the element rules don't have to placed in any particular order
+in a program's source code. They do not necessarily fire in the order they are written.
+Just as in pattern matching programs, it is a <strong>principle</strong> of OmniMark
+that the order element rules fire is solely determined by the order the
+elements come in from the SGML input stream. Also note that an '<kbd>element #implied</kbd>'
+rule is not needed in the above program because there is an explicit rule provided
+for every possible element in the document type. An implied rule is still
+allowed in all programs.
+</p><p>
+
+<font size="-1"><a href="#top">Topic List</a></font>
+
+
+
+</p></dd><dt><a name="T04"><h3>4.4: Processing attributes</h3></a>
+</dt><dd>
+<p></p></dd><dt><em><strong>4.4.1 Processing attribute values
+</strong></em><br>
+</dt><dd>
+<p>Some of the interesting data in an SGML instance can be held in attributes
+and their values. OmniMark provides easy access to these by using the format modifier
+'<kbd>%v</kbd>' which, when used on an attribute's name, converts its value
+into a stream ready for output or further processing.
+</p><p>
+</p><p>The following sample is another modification of earlier programs. It
+tries to output each person's last name prefixed by their title. The title information
+is held in the attribute TITLE in each NAME element's starttag. Note that
+this program <em>contains an error</em> because some NAME elements do not
+specify a TITLE attribute.</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04T04a.xom">C04T04a.xom</a>]<br>
+</p><pre>001  ; Output last names with titles
+002  ; NOTE: contains an error!
+003  
+004  process
+005    do sgml-parse document
+006      scan file "people.sgml"
+007      output "%c"
+008    done
+009  
+010  element people
+011    output "%c"
+012   
+013  element name
+014     output "%v(title) "
+015     output "%c"
+016   
+017  element last
+018     output "%c%n"
+019   
+020  element #implied
+021    suppress
+</pre><p>
+</p><p>The program attempts to output the value of the TITLE attribute of the NAME
+element on line 14, followed by a space, before each of the last names. When the program
+is run, the error message obtained is an OmniMark error rather than an SGML error, and reads</p><p>
+</p><pre>omnimark --
+
+OmniMark Error 6037 on line 13 in file C04T04a.xom:
+Attempting to access #IMPLIED attribute value.
+For element 'NAME': For attribute 'TITLE'.
+
+There was 1 error detected.
+</pre><p>
+</p><p>What this means is that, on line 14, we are outputting the value of
+the attribute TITLE and that there are some NAME elements which don't have
+one specified. If you check line 5 of the DTD you will see that the TITLE
+attribute is marked as '<kbd>#IMPLIED</kbd>' which means that it is not compulsory.
+When an attribute is implied, the implication is that if it is not
+specified then the <em>processing program</em> should take responsibility. Since it is
+our program that is doing the processing, we have to take some action
+when the TITLE attribute is missing.
+</p><p>
+</p><p>The following (correct) program does this by checking if the
+attribute is available for each NAME. If there is a TITLE, we output
+it, if not we output no title at all.</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04T04b.xom">C04T04b.xom</a>]<br>
+</p><pre>001  ; Output last names with titles
+002  ; Note: some names don't have titles
+003  
+004  process
+005    do sgml-parse document
+006      scan file "people.sgml"
+007      output "%c"
+008    done
+009  
+010  element people
+011    output "%c"
+012   
+013  element name
+014     output "%v(title) " when attribute title is specified
+015     output "%c"
+016   
+017  element last
+018     output "%c%n"
+019   
+020  element #implied
+021    suppress
+</pre><p>
+</p><p>and the output is:</p><p>
+</p><pre>Mr Wallpaper
+Jackson
+Dr Sukie
+</pre><p>
+</p><p>It is a <strong>principle</strong> of SGML that attributes marked '<kbd>#REQUIRED</kbd>'
+in the DTD must be present and contain legal values (or else the instance won't
+parse); and that attributes marked '<kbd>#IMPLIED</kbd>' in the DTD may not be
+specified and it is the responsibility of any processing application to
+deal with this situation appropriately. Note that the DATE attribute
+of the PEOPLE element is required. An application does not
+need to check for its availability. If the DATE was implied and
+not specified, an application would
+probably insert today's date as a replacement.
+</p><p>
+</p><p></p></dd><dt><em><strong>4.4.2 Testing attribute values</strong></em><br>
+</dt><dd>
+<p>Tests can be easily applied to attribute values. The following program
+appends the string '<kbd>Ph. D</kbd>' onto the names of people whose TITLE
+attribute is '<kbd>Dr</kbd>'.</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04T04c.xom">C04T04c.xom</a>]<br>
+</p><pre>001  ; Add Ph.D to Drs
+002  
+003  global switch isDoctor
+004  
+005  process
+006    do sgml-parse document
+007      scan file "people.sgml"
+008      output "%c"
+009    done
+010  
+011  element people
+012    output "%c"
+013   
+014  element name
+015     do when attribute title is specified
+016       do when "%v(title)" = "Dr"
+017         activate isDoctor
+018       else
+019         deactivate isDoctor
+020       done
+021       output "%v(title) "
+022     done
+023     output "%c"
+024   
+025  element last
+026     output "%c"
+027     output " Ph. D" when isDoctor
+028     output "%n"
+029   
+030  element #implied
+031    suppress
+</pre><p>
+</p><p>The actual attribute test is done on line 16.
+
+</p><p>
+
+<font size="-1"><a href="#top">Topic List</a></font>
+
+
+
+</p></dd><dt><a name="T05"><h3>4.5: Processing content</h3></a>
+</dt><dd>
+<p></p></dd><dt><em><strong>4.5.1 Compulsory content processing
+</strong></em><br>
+</dt><dd>
+<p>It is a <strong>principle</strong> of OmniMark programming that every element
+rule must deal with the content of the element.
+</p><p>
+</p><p>Notice that every element rule in every program in this chapter
+has either an '<kbd>output "%c"</kbd>' action or a '<kbd>suppress</kbd>' action. OmniMark
+insists that every rule either processes its element's content or suppresses
+it.
+</p><p>
+</p><p>In SGML, elements can be declared as having no content - these
+are 'empty' elements and are marked up with a starttag but with no endtag. Even
+though these elements have by definition no content, any element rule which
+processes them <em>must still</em> either process their content or suppress it.
+</p><p>
+</p><p>Further, OmniMark allows an element rule to deal with the element's content only
+once. Having more than one '<kbd>output "%c"</kbd>' action causes an error.
+</p><p>
+</p><p>When the output of an element's content is dependent on some condition, we can easily
+write a selection statement which outputs the content in one branch and
+suppress the content in the other branch, like this:
+</p><p>
+</p><pre>001  element someelement
+002    do when .....
+003      output "%c"
+004    else
+005      suppress
+006    done
+</pre><p>
+</p><p>If the condition is true, this element's content (all its child elements
+and data content) will be processed, If the condition is false, then none
+of the element rules for child elements will fire and no data content for them will
+be output.</p><p>
+</p><p>The following program outputs two copies of the last name of people who's title
+is "Mr". It performs a test on the TITLE attribute to detect the "Mr" value. NAMEs who
+are "Mr" have their content output twice. Since we are only allowed to actually
+process the content once, we must do this by <em>saving</em> it into a stream
+variable, then output the stream twice.</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04T05a.xom">C04T05a.xom</a>]<br>
+</p><pre>001  ; Two copies of last names for Mr
+002  
+003  process
+004    do sgml-parse document
+005      scan file "people.sgml"
+006      output "%c"
+007    done
+008  
+009  element people
+010    output "%c"
+011   
+012  element name
+013     local stream theContent
+014     set theContent to "%c"  ;; process once only
+015  
+016     do when attribute title is specified
+017       do when "%v(title)" = "Mr"
+018         output "%g(theContent) - "   ;; output No. 1
+019         output "%g(theContent)%n"    ;; output No. 2
+020       done
+021     done
+022   
+023  element last
+024     output "%c"
+025   
+026  element #implied
+027    suppress
+</pre><p>
+</p><p></p></dd><dt><em><strong>4.5.2 Fine grained content processing</strong></em><br>
+</dt><dd>
+<p>Since element data content is usually just text, it is difficult
+to do tests on it as was done with attribute values. Often we need
+to <em>scan</em> the content to locate certain values in it or to
+extract parts of it. OmniMark provides a way to apply
+<em>pattern matching</em> rules to any stream <em>within</em> an element rule.</p><p>
+</p><p>As a gratuitous example, suppose we want to output just the first
+three characters of each person's last name. We proceed by writing a
+program to output just last names and inside the element rule for each last
+name we include a '<kbd>do scan</kbd>' to apply pattern matching to the
+content.</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04T05b.xom">C04T05b.xom</a>]<br>
+</p><pre>001  ; First three chars of last names
+002  
+003  process
+004    do sgml-parse document
+005      scan file "people.sgml"
+006      output "%c"
+007    done
+008  
+009  element people
+010    output "%c"
+011   
+012  element name
+013    output "%c"
+014   
+015  element last
+016     do scan "%c"
+017       match any{3} =&gt; firstThree
+018         output "%x(firstThree)%n"
+019     done
+020  
+021   
+022  element #implied
+023    suppress
+</pre><p>
+</p><p>The entire content of the LAST element is processed on line 16. The '<kbd>do scan</kbd>'
+action submits the content to its '<kbd>match</kbd>' patterns. The
+'<kbd>do scan</kbd>' activates each of its match actions once only from the first character in the
+stream and the scan exits when any match fails or the stream is exhausted.
+</p><p>
+</p><p>To make use of the full power of the pattern matching
+find rules seen in Chapter 3, within an element rule, a '<kbd>repeat scan...again</kbd>'
+structure can be
+used. As the content of the people instance does not contain any
+interesting data to scan, the program below uses the technique to scan for each of the
+separate numbers which make up the value of the DATE attribute of the PEOPLE element.
+Each of the three numbers are found by repeatedly scanning the date for
+sequences of digits and a check is performed to ensure
+there are exactly three numbers present. If there are three numbers they
+are output with slashes between them; if not then a message is written
+onto the standard error stream.</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04T05c.xom">C04T05c.xom</a>]<br>
+</p><pre>001  ; Check and output the date of the 
+002  ; PEOPLE element. Uses repeat-scan
+003  
+004  process
+005    do sgml-parse document
+006      scan file "people.sgml"
+007      output "%c"
+008    done
+009  
+010  element people
+011    local counter check3 initial {0}
+012    local stream formDate
+013    open formDate as buffer  ;; ie a stream buffer
+014  
+015    repeat scan "%v(date)"
+016      match digit+ =&gt; nextNum
+017       put formDate nextNum  ;; write number onto the buffer
+018       increment check3
+019       put formDate "/" when check3 &lt; 3
+020     
+021      match any
+022        ; consume space
+023    again
+024  
+025    close formDate  ;; close the buffer
+026  
+027    do when check3 = 3
+028      output "Date of People instance is %g(formDate)%n"
+029    else
+030      put #error "Date of People instance appears to be invalid: %g(formDate)%n"
+031    done
+032  
+033    suppress
+034  
+035   
+036  element #implied
+037    suppress
+</pre><p>
+</p><p>Lines 13, 17 and 25 show a technique of opening a stream variable as a buffer. This
+allows information to easily be appended to the stream with the '<kbd>put</kbd>' action. The
+repeat scan loop goes from line 15 to line 23. Each time through this loop a sequence
+of digits is matched (line 16), and processed and any other character is matched with
+line 21. A repeat scan loop always terminates when one of its match actions fails
+or when the input stream is exhausted - whichever comes first.
+</p><p>
+
+<font size="-1"><a href="#top">Topic List</a></font>
+
+
+
+</p></dd><dt><a name="T06"><h3>4.6: Strategies for processing SGML</h3></a>
+</dt><dd>
+<p>Given an unfamiliar SGML instance to process, you could use these
+guidelines to help organise the processing.</p><p>
+</p><ul>
+<li>Inspect the instance or a representative part of it to see the names
+of the elements and make some assumptions about the nesting and repeatability
+of the elements.
+</li><li>If you are familiar with SGML DTDs, inspect the DTD to get a precise
+view of the allowable structure.
+</li><li>Note which element is the root of the instance tree and sketch a diagram
+of the tree with elements positioned on it.
+</li><li>Note from the DTD which attributes are required and which are implied
+</li><li>Write your OmniMark program with due consideration of what you have to output
+and where in the tree this data is.
+</li><li>Make sure you provide an element rule for every possible element or use
+an implied element rule to deal with all the elements you don't want to process.
+</li><li>Make sure you process the content, or suppress it, exactly once for every element.
+</li><li>Remember that element rules will fire in the order the elements come through
+the program, not necessarily in the order the rules appear in the source code.
+</li><li>Remember that the OmniMark program sequence obeys the stack or tree based
+nature of SGML.
+</li><li>Remember that you can't assume implied attributes will be available and that
+it is your responsibility to deal with these.
+</li><li>Use variables to store data which is encountered early but to be output
+later.
+</li><li>Use scanning techniques to extract particular information from content
+or attributes.
+
+
+</li></ul><p>
+
+<font size="-1"><a href="#top">Topic List</a></font>
+</p><hr>
+</dd><dt><h3>Tasks</h3>
+</dt><dd><a name="TK01"><strong><em>Task 1</em></strong></a><br>
+<p>Below is a tiny SGML DTD and an instance. Write an OmniMark program to parse
+the instance against the DTD, locate any SGML errors, fix them by editing the
+instance and parse again.</p><p>
+</p><p>You should store the instance in a file called '<kbd>movie.sgml</kbd>' and the
+DTD in a file called '<kbd>movie.dtd</kbd>' and place these files together in the
+directory as your OmniMark parsing program.
+</p><p>
+</p><p>The DTD is</p><p>
+</p><pre>&lt;!ELEMENT movie - - (name,length,rating)&gt;
+&lt;!ELEMENT name - - (#PCDATA)&gt;
+&lt;!ELEMENT length - - (#PCDATA)&gt;
+&lt;!ATTLIST length units (min|hour) min&gt;
+
+&lt;!ELEMENT rating - - (#PCDATA)&gt;
+</pre><p>
+</p><p>An instance is</p><p>
+</p><pre>&lt;!DOCTYPE movie SYSTEM "movie.dtd"&gt;
+&lt;MOVIE&gt;
+&lt;NAME&gt;Gladiator&lt;/NAME&gt;
+&lt;RATING&gt;MA&lt;/RATING&gt;
+&lt;LENGTH UNITS="min"&gt;195&lt;/LENGTH&gt;
+</pre><p>
+</p></dd><dd><a name="TK02"><strong><em>Task 2</em></strong></a><br>
+<p>The following DTD is contained in a file called '<kbd>transact.dtd</kbd>' and
+specifies records which hold data about various transactions done with a credit card.</p><p>
+</p><pre>&lt;!ELEMENT transact - o (purchase|payment)*&gt;
+&lt;!ELEMENT purchase - o (from, amount)&gt;
+&lt;!ATTLIST purchase date NUMBERS #REQUIRED&gt;
+
+&lt;!ELEMENT payment - o (amount)&gt;
+&lt;!ATTLIST payment date NUMBERS #REQUIRED&gt;
+
+&lt;!ELEMENT from - o (#PCDATA)&gt;
+&lt;!ELEMENT amount - o (#PCDATA)&gt;
+</pre><p>
+</p><p>Transactions are either purchases containing a vendor and an amount or payments
+just containing an amount. Each purchase and each payment contains a date as
+an attribute.</p><p>
+</p><p>The sample below, in a file called '<kbd>transact.sgml</kbd>' shows
+a conforming instance of the above DTD.</p><p>
+</p><pre>&lt;!DOCTYPE transact SYSTEM "transact.dtd"&gt;
+&lt;TRANSACT&gt;
+&lt;PURCHASE DATE="1 3 1999"&gt;
+&lt;FROM&gt;Toyworld
+&lt;AMOUNT&gt;13067
+&lt;PURCHASE DATE="23 3 1999"&gt;
+&lt;FROM&gt;Gowings
+&lt;AMOUNT&gt;9713
+&lt;PURCHASE DATE="4 4 1999"&gt;
+&lt;FROM&gt;Coles Myer
+&lt;AMOUNT&gt;10600
+&lt;PAYMENT DATE="18 4 1999"&gt;
+&lt;AMOUNT&gt;25000
+&lt;PURCHASE DATE="21 7 1999"&gt;
+&lt;FROM&gt;City Fit
+&lt;AMOUNT&gt;34500
+&lt;PURCHASE DATE="30 8 1999"&gt;
+&lt;FROM&gt;Frank's Auto Shop
+&lt;AMOUNT&gt;1050
+&lt;PURCHASE DATE="17 9 1999"&gt;
+&lt;FROM&gt;Mobil
+&lt;AMOUNT&gt;3500
+&lt;PAYMENT DATE="18 9 1999"&gt;
+&lt;AMOUNT&gt;40000
+&lt;PURCHASE DATE="30 10 1999"&gt;
+&lt;FROM&gt;Travel Land
+&lt;AMOUNT&gt;56265
+</pre><p>
+</p><p>Write an OmniMark program which outputs the number of purchases and the number
+of payments in the instance.
+</p><p>
+</p></dd><dd><a name="TK03"><strong><em>Task 3</em></strong></a><br>
+<p>Write a program to report the total amount for purchases and the total
+amount for payments and the balance owing on the account. Assume a zero balance
+at the beginning of the transactions. All amounts are in cents.
+</p><p>
+</p><p>It should be apparent from the DTD that an AMOUNT element can occur
+within a purchase and also within a payment. OmniMark can distinguish between
+these by using the test</p><p>
+</p><pre>... when parent is ...
+</pre><p>
+</p></dd><dd><a name="TK04"><strong><em>Task 4</em></strong></a><br>
+<p>Write an OmniMark program to output from the transaction instance
+the names of the vendors (the FROM element) for purchases
+made after June 1999. Use a '<kbd>scan</kbd>' of each purchase date to capture the
+month and year. If these are respectively after 6 and 1999, then process the
+content of the purchase, otherwise suppress it. No information about payments
+is required in the output.
+
+
+</p><p>
+</p></dd><dd><a name="TK05"><strong><em>Task 5</em></strong></a><br>
+<p>The usual way of viewing credit card information is via a statement. Below
+is a the output of an OmniMark program which produces a simple statement
+from the '<kbd>transact.sgml</kbd>' instance. It has a tab character between
+each column and thus could easily be imported or copied into a spreadsheet
+file.</p><p>
+</p><pre>Date	   Transaction	Vendor            Amount  Balance
+1 3 1999   Purchase	Toyworld          13067   13067
+23 3 1999  Purchase	Gowings           9713    22780
+4 4 1999   Purchase	Coles Myer        10600   33380
+18 4 1999  Payment - ThankYou             25000   8380
+21 7 1999  Purchase	City Fit          34500   42880
+30 8 1999  Purchase	Frank's Auto Shop 1050    43930
+17 9 1999  Purchase	Mobil             3500    47430
+18 9 1999  Payment - ThankYou             40000   7430
+30 10 1999 Purchase	Travel Land       56265   63695
+</pre><p>
+</p><p>Here the figure in the balance column of each row is obtained
+by adding the previous amount if it belongs to a purchase and subtracting
+it if it belongs to a payment.</p><p>
+</p><p>Write the OmniMark program to produce this statement.
+
+
+
+
+
+
+</p><p>
+</p><hr>
+</dd><dt><h3>Sample Solutions</h3>
+</dt><dd><a name="TK01"><strong><em>Solution 1</em></strong></a><br>
+<p>A conforming instance of the document type MOVIE is presented here:</p><p>
+</p><pre>&lt;!DOCTYPE movie SYSTEM "movie.dtd"&gt;
+&lt;MOVIE&gt;
+&lt;NAME&gt;Gladiator&lt;/NAME&gt;
+&lt;LENGTH UNITS="min"&gt;195&lt;/LENGTH&gt;
+&lt;RATING&gt;MA&lt;/RATING&gt;
+&lt;/MOVIE&gt;
+</pre><p>
+</p><p>The errors in the original version were:</p><p>
+</p><ul>
+<li>The LENGTH element was placed after the RATING element rather than
+before it;
+</li><li>The endtag for the MOVIE element was missing.
+
+</li></ul><p>
+</p><p>A minimal parsing program was presented in subtopic 4.2.1 in this chapter.
+</p><p>
+</p></dd><dd><a name="TK02"><strong><em>Solution 2</em></strong></a><br>
+<p>No data content is output by this program so all rules except the transaction
+rule use a '<kbd>suppress</kbd>'
+action. Two global counters are used to count purchases and payments. The output
+is generated after all transactions have been processed.</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04S02.xom">C04S02.xom</a>]<br>
+</p><pre>001  ; Count purchases and payments
+002  
+003  global counter numPurch initial {0}
+004  global counter numPay initial {0}
+005  
+006  process
+007    do sgml-parse document
+008      scan file "transact.sgml"
+009      output "%c"
+010    done
+011  
+012  element transact
+013    output "%c"
+014    output "There were %d(numPurch) purchases.%n"
+015    output "There were %d(numPay) payments.%n"
+016  
+017  element purchase
+018    increment numPurch
+019    suppress
+020  
+021  element payment
+022    increment numPay
+023    suppress
+024  
+025  element #implied
+026    suppress
+</pre><p>
+</p></dd><dd><a name="TK03"><strong><em>Solution 3</em></strong></a><br>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04S03.xom">C04S03.xom</a>]<br>
+<pre>001  ; Calculate the balance owing
+002  
+003  global counter totalPurch initial {0}
+004  global counter totalPay initial {0}
+005  global counter balance
+006  
+007  process
+008    do sgml-parse document
+009      scan file "transact.sgml"
+010      output "%c"
+011    done
+012  
+013  element transact
+014    output "%c"
+015    output "Total of purchases: %d(totalPurch)%n"
+016    output "Total of payments: %d(totalPay)%n"
+017    set balance to totalPurch - totalPay
+018    output "Balance is %d(balance)%n"
+019    
+020  
+021  
+022  element purchase
+023    output "%c"
+024  
+025  element payment
+026    output "%c"
+027  
+028  element amount
+029    local counter thisAmount
+030    set thisAmount to "%c"
+031    increment totalPurch by thisAmount when parent is purchase
+032    increment totalPay by thisAmount when parent is payment
+033    
+034  
+035  element #implied
+036    suppress
+</pre><p>
+</p><p>The output of this program for the sample instance is</p><p>
+</p><pre>Total of purchases: 128695
+Total of payments: 65000
+Balance is 63695
+</pre><p>
+</p></dd><dd><a name="TK04"><strong><em>Solution 4</em></strong></a><br>
+<p>The output from my sample solution to this task is:</p><p>
+</p><pre>Purchases after 6/1999
+21 7 1999: City Fit
+30 8 1999: Frank's Auto Shop
+17 9 1999: Mobil
+30 10 1999: Travel Land
+</pre><p>
+</p><p>Here is my program:</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04S04.xom">C04S04.xom</a>]<br>
+</p><pre>001  ; Purchases after June 1999
+002  
+003  global counter numVendors initial {0}
+004  global counter afterMonth initial {6}
+005  global counter afterYear initial {1999}
+006  
+007  process
+008    do sgml-parse document
+009      scan file "transact.sgml"
+010      output "%c"
+011    done
+012  
+013  element transact
+014    output "Purchases after %d(afterMonth)/%d(afterYear)%n"
+015    output "%c"
+016    
+017  element purchase
+018    do scan "%v(date)"
+019      match digit+ space+ digit+ =&gt; month space+ digit+ =&gt; year
+020      do when month &gt; afterMonth AND year &gt;= afterYear
+021        output "%v(date): %c"
+022      else
+023        suppress
+024      done
+025    done
+026  
+027  element from
+028    output "%c%n"
+029  
+030  element #implied
+031    suppress
+</pre><p>
+</p><p>In this program I have placed the critical month (6) and year (1999) into
+global variables. Doing this makes it possible to set the values of these
+counter variables from the command line. For example, a command line such as</p><p>
+</p><pre>omnimark -sb program.xom  -c afterMonth 7 -c afterYear 2000
+</pre><p>
+</p><p>Would run the program with the critical month being 7 and year 2000.
+
+
+
+
+
+
+</p><p>
+</p></dd><dd><a name="TK05"><strong><em>Solution 5</em></strong></a><br>
+<p>This program produces the credit card statement shown in the task.</p><p>
+[Code Sample: <a href="https://web.archive.org/web/20110706111856/http://www.serverside.com.au/reference/omnimark/code/C04S05.xom">C04S05.xom</a>]<br>
+</p><pre>001  ; Statement style report
+002  
+003  global counter balance initial {0}
+004  
+005  process
+006    do sgml-parse document
+007      scan file "transact.sgml"
+008      output "%c"
+009    done
+010  
+011  element transact
+012    output "Statement Report%n"
+013    output "----------------%n"
+014    output "Date%tTransaction%tVendor%tAmount%tBalance%n"
+015    output "%c"
+016   
+017    
+018  element purchase
+019    output "%v(date)%tPurchase"
+020    output "%c"
+021  
+022  element from
+023    output "%t%c"
+024  
+025  element payment
+026    output "%v(date)%tPayment - ThankYou%t"
+027    output "%c"
+028  
+029  element amount
+030    local counter thisAmount
+031    set thisAmount to "%c"
+032    increment balance by thisAmount when parent is purchase
+033    decrement balance by thisAmount when parent is payment
+034    output "%t%d(thisAmount)%t%d(balance)%n"
+035    
+036  
+037  element #implied
+038    suppress
+039  
+</pre><p>
+</p></dd></dl>
+
+
+
+
+
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 11:18:56 Jul 06, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:18:52 Sep 18, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 144.972 (3)
+  exclusion.robots: 0.396
+  RedisCDXSource: 3.817
+  PetaboxLoader3.datanode: 54.61 (4)
+  esindex: 0.007
+  captures_list: 165.883
+  CDXLines.iter: 14.276 (3)
+  PetaboxLoader3.resolve: 124.491 (2)
+  exclusion.robots.policy: 0.381
+  load_resource: 72.476
+-->

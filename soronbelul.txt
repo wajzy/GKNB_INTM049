@@ -1,0 +1,7 @@
+A <small> elemmel kis betűs szöveget lehet írni. 
+Az <i> dőlt betűket eredményez, de az <em> nem csak formáz, hanem a szövegrész fontosságát is kiemeli. 
+A <b> szintén csak félkövérre formáz, de a <strong> nagyon fontos tartalmat sugall.
+
+E = mc2
+
+Az oktató ma síkhülyenagyon felkészületlen volt.
