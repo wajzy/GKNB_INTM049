@@ -435,12 +435,72 @@ beleértve a címkék definiálását is
     \column{0.25\textwidth}
       \begin{center}
         \begin{exampleblock}{\textattachfile{attila.html}{attila.html}}
-          \includegraphics[scale=.2]{attila.png}
+          \centering \includegraphics[scale=.2]{attila.png}
         \end{exampleblock}
       \end{center}
   \end{columns}
 \end{frame}
 
-% TODO: <pre> elem használata, Fahrenheit-Celsius
+%22
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.7\textwidth}
+      Formázza meg a klasszikus Fahrenheit-Celsius átváltó 
+      \textattachfile{fahrcels.c}{program} \textattachfile{fahrcels.txt}{kimenetét} 
+      a mellékelt ábra szerint, azaz őrizze meg a program karakteres kimenetének formázását 
+      a \kiemel{<pre>} elemmel!
+    \column{0.3\textwidth}
+      \begin{center}
+        \begin{exampleblock}{\textattachfile{fahrcels.html}{fahrcels.html}}
+          \centering \includegraphics[scale=.35]{fahrcels.png}
+        \end{exampleblock}
+      \end{center}
+  \end{columns}
+\end{frame}
+
+\subsection{Soron belüli formázások}
+
+%23
+\begin{frame}
+  A soron belüli formázó elemek közül előnyben részesítjük azok használatát, melyek \emph{szemantikai többletet}
+  adnak a szöveg tartalmának, a pusztán \emph{formázási célú} elemekkel szemben $\to$ erre ott a CSS!
+  \vfill
+  Ettől függetlenül, néhány, csak formázási célú elem használata továbbra is szabványos a HTML5-ben.
+  \vfill
+  \begin{description}[m]
+    \item[<small>] \hfill \\ Kisbetűs szöveg. (A <big> elem a HTML5-ben már nem támogatott.)
+    \item[<i>] (italics) \hfill \\ Döntötten szedett szöveg, jelentéstöbblet nélkül.
+    \item[<em>] (emphasized) \hfill \\ Hangsúlyos, fontos szövegrész, melyet a böngésző alapértelmezetten általában dőlt betűkkel jelenít meg.
+  \end{description}
+\end{frame}
+
+%24
+\begin{frame}
+  \begin{description}[m]
+    \item[<b>] (bold) \hfill \\ Félkövéren szedett szöveg, jelentéstöbblet nélkül.
+    \item[<strong>] (strong importance) \hfill \\ Kiemelten hangsúlyos, fontos szövegrész, melyet a böngésző alapértelmezetten általában félkövér betűkkel jelenít meg.
+    \item[<sup>] (superscript) \hfill \\ Felső index.
+    \item[<sub>] (subscript) \hfill \\ Alsó index.
+    \item[<ins>] (inserted) \hfill \\ Utólag beszúrt szöveg (ált. aláhúzással jelölve).
+    \item[<del>] (deleted) \hfill \\ Kitörölt szöveg (ált. áthúzással jelölve).
+  \end{description}
+\end{frame}
+
+%25
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.7\textwidth}
+      Próbálja meg előállítani azt a HTML fájlt, ami a jobb oldalon látható módon jelenik meg a böngészőben!
+      Kiinduláshoz felhasználhatja a dokumentum \textattachfile{soronbelul.txt}{nyers szövegét}.
+      Ne feledje, hogy az olyan, önmagukban is jelentéssel bíró karakterek megjelenítése, mint pl. a \kiemel{<}
+      karakter, \hiv{\href{https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references\#Character_entity_references_in_HTML}{HTML entitásokkal}} lehetséges.
+    \column{0.3\textwidth}
+      \begin{center}
+        \begin{exampleblock}{\textattachfile{soronbelul.html}{soronbelul.html}}
+          \centering \includegraphics[scale=.35]{soronbelul.png}
+        \end{exampleblock}
+      \end{center}
+  \end{columns}
+\end{frame}
 
 \end{document}
