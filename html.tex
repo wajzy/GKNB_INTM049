@@ -407,7 +407,7 @@ beleértve a címkék definiálását is
 \begin{frame}
   \begin{itemize}
     \item Bekezdések \texttt{<p>} elemmel jelölhetők
-    \item \texttt{title} attribútum felugró szövegdoboz, ,,tooltip'' szöveg megadására
+    \item \texttt{title} globális attribútum felugró szövegdoboz, ,,tooltip'' szöveg megadására
     \item Alapértelmezetten térközt hagy a böngésző a bekezdések között
     \item Sortörés új bekezdés (és térköz) nélkül: \texttt{<br />}
     \item Előformázott szöveg (pl. karakteres módú program kimenete), egyenszélességű (monospace) karakterekkel, forrás fehér karaktereinek megőrzésével: \texttt{<pre>}
@@ -448,7 +448,7 @@ beleértve a címkék definiálását is
       Formázza meg a klasszikus Fahrenheit-Celsius átváltó 
       \textattachfile{fahrcels.c}{program} \textattachfile{fahrcels.txt}{kimenetét} 
       a mellékelt ábra szerint, azaz őrizze meg a program karakteres kimenetének formázását 
-      a \kiemel{<pre>} elemmel!
+      a \texttt{<pre>} elemmel!
     \column{0.3\textwidth}
       \begin{center}
         \begin{exampleblock}{\textattachfile{fahrcels.html}{fahrcels.html}}
@@ -458,7 +458,7 @@ beleértve a címkék definiálását is
   \end{columns}
 \end{frame}
 
-\subsection{Soron belüli formázások}
+\subsection{Soron belüli jelölések}
 
 %23
 \begin{frame}
@@ -468,21 +468,23 @@ beleértve a címkék definiálását is
   Ettől függetlenül, néhány, csak formázási célú elem használata továbbra is szabványos a HTML5-ben.
   \vfill
   \begin{description}[m]
-    \item[<small>] \hfill \\ Kisbetűs szöveg. (A <big> elem a HTML5-ben már nem támogatott.)
-    \item[<i>] (italics) \hfill \\ Döntötten szedett szöveg, jelentéstöbblet nélkül.
-    \item[<em>] (emphasized) \hfill \\ Hangsúlyos, fontos szövegrész, melyet a böngésző alapértelmezetten általában dőlt betűkkel jelenít meg.
+    \item[\texttt{<small>}] \hfill \\ Kisbetűs szöveg. (A \texttt{<big>} elem a HTML5-ben már nem támogatott.)
+    \item[\texttt{<i>}] (italics) \hfill \\ Döntötten szedett szöveg, jelentéstöbblet nélkül.
+    \item[\texttt{<em>}] (emphasized) \hfill \\ Hangsúlyos, fontos szövegrész, melyet a böngésző alapértelmezetten általában dőlt betűkkel jelenít meg.
   \end{description}
 \end{frame}
 
 %24
 \begin{frame}
   \begin{description}[m]
-    \item[<b>] (bold) \hfill \\ Félkövéren szedett szöveg, jelentéstöbblet nélkül.
-    \item[<strong>] (strong importance) \hfill \\ Kiemelten hangsúlyos, fontos szövegrész, melyet a böngésző alapértelmezetten általában félkövér betűkkel jelenít meg.
-    \item[<sup>] (superscript) \hfill \\ Felső index.
-    \item[<sub>] (subscript) \hfill \\ Alsó index.
-    \item[<ins>] (inserted) \hfill \\ Utólag beszúrt szöveg (ált. aláhúzással jelölve).
-    \item[<del>] (deleted) \hfill \\ Kitörölt szöveg (ált. áthúzással jelölve).
+    \small
+    \item[\texttt{<b>}] (bold) \hfill \\ Félkövéren szedett szöveg, jelentéstöbblet nélkül.
+    \item[\texttt{<strong>}] (strong importance) \hfill \\ Kiemelten hangsúlyos, fontos szövegrész, melyet a böngésző alapértelmezetten általában félkövér betűkkel jelenít meg.
+    \item[\texttt{<sup>}] (superscript) \hfill \\ Felső index.
+    \item[\texttt{<sub>}] (subscript) \hfill \\ Alsó index.
+    \item[\texttt{<ins>}] (inserted) \hfill \\ Utólag beszúrt szöveg (ált. aláhúzással jelölve).
+    \item[\texttt{<del>}] (deleted) \hfill \\ Kitörölt szöveg (ált. áthúzással jelölve).
+    \item[\texttt{<mark>}] \hfill \\ Kijelölt szöveg (ált. sárga háttérrel kiemelve).
   \end{description}
 \end{frame}
 
@@ -498,6 +500,54 @@ beleértve a címkék definiálását is
       \begin{center}
         \begin{exampleblock}{\textattachfile{soronbelul.html}{soronbelul.html}}
           \centering \includegraphics[scale=.35]{soronbelul.png}
+        \end{exampleblock}
+      \end{center}
+  \end{columns}
+\end{frame}
+
+\subsection{Idézés, címek, írásirány}
+
+%26
+\begin{frame}
+  Szövegrészek idézése. Forrás jelölése: \texttt{cite} attribútummal.
+  \begin{description}[m]
+    \item[\texttt{<q>}] (quote) \hfill \\ Rövid szövegrészlet idézése, ált. automatikusan körbeveszi a böngésző idézőjelekkel. Soron belüli elem.
+    \item[\texttt{<blockquote>}] \hfill \\ Hosszú szövegrészek, bekezdések idézése. Jellemzően behúzással formázva. Blokkszintű elem.
+  \end{description}
+  \vfill
+  Rövidítések. Kifejtés megadható: \texttt{title} globális attribútummal.
+  \begin{description}[m]
+    \item[\texttt{<abbr>}] \hfill \\ Rövidítések és betűszavak jelöléséhez. Soron belüli elem.
+    \item[\texttt{<acronym>}] \hfill \\ Betűszavak jelöléséhez használták, \kiemel{ELAVULT}.
+  \end{description}
+\end{frame}
+
+%27
+\begin{frame}
+  Szöveg írásirányának jelölése: \texttt{dir} globális attribútummal, értékek:
+  \begin{description}[m]
+    \item[\texttt{ltr}] (left to right) \hfill \\ balról jobbra
+    \item[\texttt{rtl}] (right to left) \hfill \\ jobbról balra
+  \end{description}
+  \vfill
+  Írásirány helyi módosítása: \texttt{<bdo>} elemmel, \texttt{dir} attribútummal
+  \vfill
+  Mű címének jelölése: \texttt{<cite>} soron belüli elemmel.
+  \vfill
+  Postacím megadása: \texttt{<address>} blokkszintű elemmel.
+\end{frame}
+
+%28
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.6\textwidth}
+      Próbálja meg előállítani azt a HTML fájlt, ami a jobb oldalon látható módon jelenik meg a böngészőben!
+      Kiinduláshoz felhasználhatja a dokumentum \textattachfile{idezes.txt}{nyers szövegét}.
+      Az idézőjelek többféle szélességben elérhetők: \texttt{\&ndash;}, \texttt{\&mdash;}.
+    \column{0.4\textwidth}
+      \begin{center}
+        \begin{exampleblock}{\textattachfile{idezes.html}{idezes.html}}
+          \centering \includegraphics[scale=.23]{idezes.png}
         \end{exampleblock}
       \end{center}
   \end{columns}
