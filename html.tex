@@ -361,6 +361,9 @@ beleértve a címkék definiálását is
       \item[\texttt{<p>}] Bekezdés (paragraph)
     \end{description}
   \end{description}
+  \vfill
+  Megjegyzések\\
+  \kiemel{\texttt{<!{-}-}} és \kiemel{\texttt{{-}->}} között 
 \end{frame}
 
 %17
@@ -382,6 +385,7 @@ beleértve a címkék definiálását is
 \begin{frame}
   \begin{itemize}
     \item \texttt{<h1>}, \texttt{<h2>}, \dots, \texttt{<h6>}: legmagasabbtól legalacsonyabb szintig
+    \item Például: \texttt{<h1>Első fejezet, amelyben bemutatnak bennünket Micimackónak és a méheknek, mellékesen a könyv is elkezdődik</h1>}
     \item Általában nagyobb betűméretek és a címsor elé és/vagy mögé tett térközök jellemzik
     \item Keresőmotorok is használhatják a dokumentum struktúrájának feltérképezésére
     \item Tematikus részek elválasztására gyakran elválasztó vonalat (\texttt{<hr />}) használnak
@@ -406,8 +410,10 @@ beleértve a címkék definiálását is
 
 %20
 \begin{frame}
+  \small
   \begin{itemize}
     \item Bekezdések \texttt{<p>} elemmel jelölhetők
+    \item Például: \texttt{<p title="Bek. 1">Első bekezdés.</p><p>Második bekezdés.</p>}
     \item \texttt{title} globális attribútum felugró szövegdoboz, ,,tooltip'' szöveg megadására
     \item Alapértelmezetten térközt hagy a böngésző a bekezdések között
     \item Sortörés új bekezdés (és térköz) nélkül: \texttt{<br />}
@@ -450,6 +456,8 @@ beleértve a címkék definiálását is
       \textattachfile{fahrcels.c}{program} \textattachfile{fahrcels.txt}{kimenetét} 
       a mellékelt ábra szerint, azaz őrizze meg a program karakteres kimenetének formázását 
       a \texttt{<pre>} elemmel!
+      
+      A \texttt{<pre>} elem megőrzi a HTML forrásban lévő szóközöket, sortöréseket, és monospace betűtípust használ.
     \column{0.3\textwidth}
       \begin{center}
         \begin{exampleblock}{\textattachfile{fahrcels.html}{fahrcels.html}}
@@ -569,11 +577,19 @@ beleértve a címkék definiálását is
 \end{frame}
 
 %30
-\begin{frame}
+\begin{frame}[fragile]
   Széles körben támogatott formátumok: jpeg, gif, png.
   \vfill
   Képek (\texttt{<img>} elemek) beágyazhatók a \texttt{<figure>} blokk szintű elembe.\\
   Célszerű beágyazni a kép feliratát is \texttt{<figcaption>} elemben.
+  \vfill
+  Például:
+  \begin{verbatim}
+<figure>
+  <img alt="kep" src="kep.jpeg" width="320" height="240 /">
+  <figcaption>Az egyetem logoja</figcaption>
+</figure>
+  \end{verbatim}
 \end{frame}
 
 %31
