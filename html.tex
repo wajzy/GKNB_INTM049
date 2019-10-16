@@ -613,6 +613,7 @@ beleértve a címkék definiálását is
 
 %32
 \begin{frame}
+  \footnotesize
   Hiperhivatkozások készíthetők \texttt{<a>} (anchor) soron belüli elemmel. A nyitó és záró címkék közötti szöveg/kép az érzékeny terület. Attribútumok:
   \begin{description}[m]
     \item[\texttt{href}] (hypertext reference) \hfill \\ Abszolút/relatív útvonal/URL, az ugrás célja. Könyvtár megadás esetén célszerű / jellel zárni.
@@ -626,6 +627,7 @@ beleértve a címkék definiálását is
     \end{itemize}
     \item[\texttt{title}] \hfill \\ Tooltip szöveg
   \end{description}
+  Például: \texttt{<a href="https://www.google.com/">Ugrás a kereső oldalára</a>}
 \end{frame}
 
 %33
@@ -652,18 +654,18 @@ beleértve a címkék definiálását is
 \begin{frame}
   \begin{columns}[c]
     \footnotesize
-    \column{0.5\textwidth}
+    \column{0.65\textwidth}
       Oldalon belülre mutató hivatkozások is készíthetők, főleg hosszú dokumentumokhoz.
       \begin{enumerate}
-        \item Egyedi azonosító készítése az ugrás céljához \texttt{id} (globális) attribútummal.
-        \item Hivatkozás (\texttt<a> elem) készítése, a \texttt{href} attribútum értékét \#-tel kell kezdeni, majd az azonosítóval folytatni!
+        \item Egyedi azonosító készítése az ugrás céljához \texttt{id} (globális) attribútummal, pl.: \texttt{<h1 id="egy">Első fejezet</h1>}
+        \item Hivatkozás (\texttt<a> elem) készítése, a \texttt{href} attribútum értékét \#-tel kell kezdeni, majd az azonosítóval folytatni, pl. \texttt{<a href="\#egy">Ugrás az 1. fejezetre</a>}
       \end{enumerate}
       \vfill
       A \textattachfile{jonas.txt}{jonas.txt} fájlból kiindulva hozza létre az ábrán látható oldalt! Az első sor első szintű címsor, a tartalomjegyzék felirat és a vers egyes részei második szintűek. A vers bekezdései bekezdésként jelöltek. A tartalomjegyzék soraira kattintva lehessen elugrani a megfelelő versszakig!
-    \column{0.5\textwidth}
+    \column{0.35\textwidth}
       \begin{center}
         \begin{exampleblock}{\textattachfile{jonas.html}{jonas.html}}
-          \centering \includegraphics[scale=.2]{jonas.png}
+          \centering \includegraphics[scale=.15]{jonas.png}
         \end{exampleblock}
       \end{center}
   \end{columns}
@@ -702,5 +704,7 @@ beleértve a címkék definiálását is
       }
     \end{table}
 \end{frame}
+
+% A <picture> elemet is be lehetne mutatni
 
 \end{document}
