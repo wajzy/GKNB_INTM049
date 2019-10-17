@@ -1,0 +1,76 @@
+%13
+\begin{frame}
+  Válasszunk egy szövegszerkesztőt (pl. 
+    \hiv{\href{https://www.geany.org/}{Geany}}, 
+    \hiv{\href{https://code.visualstudio.com/}{VS Code}}, 
+    \hiv{\href{https://notepad-plus-plus.org/}{NotePad++}}, \dots), 
+    gépeljük be és mentsük ki az alábbi fájlt \texttt{elso.txt} néven, UTF-8 kódolással!
+    \footnotesize
+    \begin{exampleblock}{\textattachfile{elso.html}{elso.html}}
+      \lstinputlisting[style=HTML]{elso.html}
+    \end{exampleblock}
+\end{frame}
+
+%14
+\begin{frame}
+  Dokumentum típusának meghatározása
+  \begin{description}[m]
+    \item[HTML5] \kiemel{Nincs DTD!} \hfill \\
+      <!DOCTYPE html>
+    \item[4.01, Szigorú] \hfill \\
+      <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    \item[4.01, Átmeneti] \hfill \\
+      <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    \item[4.01, Keretek] \hfill \\
+      <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+    \end{description}
+\end{frame}
+
+%15
+\begin{frame}
+  Elemek (element)
+  \begin{itemize}
+    \item Általában nyitó és záró cimkék (tag) között, pl. \texttt{<body>\dots</body>}, \texttt{<p>\dots</p>}
+    \item Néha a böngésző kitalálja, hol kellene lennie az elem (pl. \texttt{<p>}, \texttt{<li>}) záró címkéjének, így az elhagyható, de \kiemel{nem javasolt} (XML elemző számára szabálytalanná teszi a fájlt)
+    \item Léteznek üres elemek is; itt nincs mit közbezárni címkékkel, pl. \texttt{<meta />}, vízszintes vonal \texttt{<hr~/>} vagy \texttt{<hr>}
+    \item Rögzített szabályok szerint egymásba ágyazhatók
+    \item Kis- és nagybetűkre érzéketlen, de \kiemel{ajánlott} a kisbetűs írásmód
+    \item A szöveg tördelése független a forrásszöveg tördelésétől (pl. az egymás mellé gépelt fehér karaktereket egynek tekinti)
+    \item Címkék mindig \kiemel{<} és \kiemel{>} jelek között
+    \item Jelentéssel bíró karakterek bevitele \hiv{\href{https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references\#Character_entity_references_in_HTML}{entitásokkal}} (pl. \kiemel{<} $\to$ \kiemel{\&lt;} vagy \kiemel{>} $\to$ \kiemel{\&gt;})
+  \end{itemize}
+\end{frame}
+
+%16
+\begin{frame}
+  Elemek
+  \begin{description}[m]
+    \item[\texttt{<html>}] gyökérelem, pontosan egynek kell lennie (dokumentum nyelve attribútummal, ld. )
+    \item[\texttt{<head>}] metaadatok
+    \begin{description}
+      \item[\texttt{<title>}] dokumentum címe (böngészőablak vagy -fül felirata)
+      \item[\texttt{<meta>}] általános metaadat
+    \end{description}
+    \item[\texttt{<body>}] megjelenítendő tartalom
+    \begin{description}
+      \item[\texttt{<h1>}] ,,Címsor1''
+      \item[\texttt{<p>}] Bekezdés (paragraph)
+    \end{description}
+  \end{description}
+  \vfill
+  Megjegyzések\\
+  \kiemel{\texttt{<!{-}-}} és \kiemel{\texttt{{-}->}} között 
+\end{frame}
+
+%17
+\begin{frame}
+  Attribútumok
+  \begin{itemize}
+    \item Mindig a nyitó címkében (pl. \texttt{<html lang="hu-HU">}, \hiv{\href{http://www.ietf.org/rfc/rfc1766.txt}{RFC1766}} szerint)
+    \item Kulcs-érték párok, = jellel elválasztva
+    \item \kiemel{Ajánlott} a kulcsot kisbetűvel írni
+    \item Az értéket \kiemel{ajánlott} idézni, lehetőleg ''-vel (de az ' is megfelel; szóközt tartalmazó értéknél pedig kötelező)
+    \item Egy címkében lehet több attribútum is
+    \item Vagy egy sem (minimalizált szintaxis); itt az attribútum léte hordoz információt (pl. \texttt{<p hidden>}). XML feldolgozók megkövetelik az értéket, pl. \texttt{<p~hidden="hidden">}
+  \end{itemize}
+\end{frame}
