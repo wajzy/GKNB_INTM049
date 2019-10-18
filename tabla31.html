@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Táblázat</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="tabla31.css" />
+  </head>
+  <body>
+    <table>
+      <caption>Calories</caption>
+      <colgroup>
+        <col class="health" />
+        <col span="2" class="fasting" />
+        <col class="after" />
+      </colgroup>
+      <thead>
+        <tr><th rowspan="2">State of Health</th><th colspan="2">Fasting Value</th><th>After Eating</th></tr>
+        <tr><th>Minimum</th><th>Maximum</th><th>2 Hours After Eating</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Healthy</td><td>70</td><td>100</td><td>Less than 140</td></tr>
+        <tr><td>Pre-Diabetes</td><td>101</td><td>126</td><td>140 to 200</td></tr>
+        <tr><td>Diabetes</td><td>More than 126</td><td>N/A</td><td>More than 200</td></tr>
+      </tbody>
+    </table>
+  </body>
+</html>
