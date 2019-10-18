@@ -1,28 +1,11 @@
-table {
-  border-collapse: collapse;
-}
-
-thead {
-  background-color: navy;
-  color: white;
-}
-
-thead th {
-  border-color: yellow;
-}
-
-td, th {
-  border: 1px solid black;
-}
-
-.health {
-  background-color: lightgray;
-}
-
-.fasting {
-    background-color: lightcoral;
-}
-
-.after {
-    background-color: lightgreen;
-}
+table { border-collapse: collapse; }
+thead { background-color: navy;
+        color: white; }
+thead th { border-color: yellow; }
+td, th { border: 1px solid black; }
+.health { 
+  background-color: lightgray; }
+.fasting { 
+  background-color: lightcoral; }
+.after { 
+  background-color: lightgreen; }
