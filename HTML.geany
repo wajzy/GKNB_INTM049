@@ -1,0 +1,48 @@
+[editor]
+line_wrapping=true
+line_break_column=72
+auto_continue_multiline=true
+
+[file_prefs]
+final_new_line=true
+ensure_convert_new_lines=false
+strip_trailing_spaces=false
+replace_tabs=false
+
+[indentation]
+indent_width=2
+indent_type=0
+indent_hard_tab_width=8
+detect_indent=false
+detect_indent_width=false
+indent_mode=2
+
+[project]
+name=HTML
+base_path=/home/wajzy/Dokumentumok/gknb_intm049/GKxB_INTM049
+description=
+file_patterns=*.tex;
+
+[long line marker]
+long_line_behaviour=1
+long_line_column=72
+
+[files]
+current_page=2
+FILE_NAME_0=2814;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fhtml.tex;0;2
+FILE_NAME_1=5091;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Flistak.tex;0;2
+FILE_NAME_2=2030;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fiframe.tex;0;2
+FILE_NAME_3=320;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fbetuszavak.html;0;2
+FILE_NAME_4=417;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fiframe.html;0;2
+
+[VTE]
+last_dir=/home/wajzy/Dokumentumok/fcm/ESCIM2019/paper
+
+[build-menu]
+EX_00_LB=V_iew PDF File
+EX_00_CM=evince "html.pdf"
+EX_00_WD=
+LaTeXFT_01_LB=LaTeX -> _PDF
+LaTeXFT_01_CM=pdflatex --file-line-error-style html.tex
+LaTeXFT_01_WD=
+filetypes=LaTeX;
