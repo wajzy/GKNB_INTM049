@@ -1,9 +1,7 @@
 %58
 \begin{frame}
-  \begin{itemize}
-    \item Egy HTML oldal megjelenítése egy másik oldalban: \texttt{<iframe>} elemmel
-    \item Amelyik böngésző nem támogatja, megjeleníti a nyitó- és záró címkék (tag-ek) közötti szöveget
-  \end{itemize}
+  Egy HTML oldal megjelenítése egy másik oldalban: \texttt{<iframe>} elemmel
+  \vfill
   Attribútumok:
   \begin{description}[m]
     \item[\texttt{src}] (source) \hfill \\ A keretbe betöltendő dokumentum URL-je
@@ -27,8 +25,21 @@
   Megjegyzések
   \begin{itemize}
     \item Az \texttt{srcdoc}-ot csak az \hiv{\href{https://caniuse.com/\#search=iframe\%20srcdoc}{újabb}} böngészők támogatják
-    \item \texttt{srcdoc} tartalmazhat \texttt{<iframe>} elemet \texttt{src} attribútummal, így közvetve teljes weboldal is hivatkozható
+    \item A webszerverek az \hiv{\href{https://developer.mozilla.org/hu/docs/Web/HTTP/Headers/X-Frame-Options}{X-Frame-Options}} HTTP válasz fejléccel kérhetik az ezt támogató böngészőktől, hogy ne engedjék a lapot \texttt{<iframe>}-be tölteni.
     \item \texttt{src}+\texttt{sandbox} biztonságos korszerű böngészőkben, de \kiemel{nem biztonságos a \texttt{sandbox}-ot nem támogatókban!}
     \item \texttt{srcdoc}+\texttt{sandbox} biztonságos korszerű böngészőkben, és nem működik (=biztonságos) az elavultakban
   \end{itemize}
+\end{frame}
+
+%61
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.6\textwidth}
+      \begin{exampleblock}{\textattachfile{iframe.html}{iframe.html}}
+        \footnotesize
+        \lstinputlisting[style=HTML,linerange={8-14},numbers=left,firstnumber=8]{iframe.html}
+      \end{exampleblock}
+    \column{0.35\textwidth}
+      \centering \includegraphics[width=\textwidth]{iframe.png}
+  \end{columns}
 \end{frame}
