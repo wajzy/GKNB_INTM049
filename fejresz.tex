@@ -1,0 +1,50 @@
+%62
+\begin{frame}
+  A \texttt{<head>} tartalmazza a HTML oldal metaadatait. HTML5-től elhagyható, de javasolt használni. Beágyazható elemek:
+  \begin{description}[m]
+    \item[\texttt{<title>}] \hfill \\ A dokumentum címe, kötelező.
+    \item[\texttt{<style>}] \hfill \\ CSS stílusok, formázás megadása; ált. jobb külön fájlba helyezni, ld. később 
+    \item[\texttt{<base>}] \hfill \\ A relatív URL-ek a \texttt{href} értéke alapján lesznek értelmezve. A \texttt{target} más elemek \texttt{target} attribútumának alapértelmezett értékét adja meg.
+  \end{description}
+\end{frame}
+
+%63
+\begin{frame}
+  \begin{description}[m]
+    \item[\texttt{<link>}] \hfill \\ Külső erőforrás és a dokumentum kapcsolatát adja meg. Jellemző alkalmazásai:
+    \begin{itemize}
+      \item Stíluslap meghatározása: \texttt{href}-ben a CSS fájl URL-je, \texttt{rel} (relationship) \emph{stylesheet}, a \texttt{type} \emph{text/css} értékű.
+      \item Ikon (favicon = favorite icon) beállítás: \texttt{href}-ben az ikon URL-je, \texttt{rel} \emph{icon}, a \texttt{type} pl. \emph{image/svg+xml} értékű.
+    \end{itemize}
+    \item[\texttt{<meta>}] \hfill \\ HTTP fejlécek kulcs (\texttt{http-equiv} attribútum) - érték (\texttt{content} attribútum) párok formájában történő megadására. Jellemző kulcsok:
+    \begin{itemize}
+      \item \emph{content-type}, a MIME típus és karakterkódolás megadására: \texttt{content="text/html; charset=UTF-8"} $\to$ HTML5-től: csak a \texttt{charset="UTF-8"} attribútummal
+      \item \emph{refresh}, automatikus újratöltés, pl. percenként: \texttt{content="60"}
+    \end{itemize}
+  \end{description}
+\end{frame}
+
+%64
+\begin{frame}
+  \begin{description}[m]
+    \item[\texttt{<meta>}] \hfill \\ Metaadatok kulcs (\texttt{name} attribútum) - érték (\texttt{content} attribútum) párok formájában történő megadására. Jellemző kulcsok:
+    \begin{itemize}
+      \item \emph{description}, weboldal általános leírása
+      \item \emph{keywords}, kulcsszavak keresőmotoroknak az oldal tartalmához kapcsolódóan
+      \item \emph{author}, szerző
+      \item \emph{viewport}, nézetablak beállítás, \texttt{content="width=device-width, initial-scale=1.0"}. Probléma: mobil eszközök nagy felbontásuak, de kis méretűek, számítógép-kijelzőre optimalizált oldalak gyenge felhasználói élménnyel használhatók. \emph{width=device-width}: a kép szélessége alkalmazkodik az eszköz szélességéhez. \emph{initial-scale=1.0} nagyítás kezdeti értéke. \hiv{\href{https://www.quirksmode.org/mobile/viewports2.html}{Részletek}}
+    \end{itemize}
+  \end{description}
+\end{frame}
+
+%65
+\begin{frame}
+  \begin{description}[m]
+    \item[\texttt{<script>}] \hfill \\ JavaScript programok megadására; előnyösebb a \texttt{<body>} végébe tenni
+    \item[\texttt{<noscript>}] \hfill \\ JavaScript támogatás hiányában a közrezárt szöveget megjeleníti. HTML5-től a \texttt{body}-ba is kerülhet.
+  \end{description}
+  \vfill
+  HTML5-től a \texttt{<html>}, \texttt{<head>} és \texttt{<body>} elemek elhagyhatók, de ezt nem ajánljuk.
+\end{frame}
+
+% minta, feladat

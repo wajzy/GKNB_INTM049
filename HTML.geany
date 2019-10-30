@@ -28,12 +28,12 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=4
-FILE_NAME_0=2814;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fhtml.tex;0;2
-FILE_NAME_1=5091;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Flistak.tex;0;2
-FILE_NAME_2=2030;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fiframe.tex;0;2
-FILE_NAME_3=320;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fbetuszavak.html;0;2
-FILE_NAME_4=417;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fiframe.html;0;2
+current_page=1
+FILE_NAME_0=3071;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fhtml.tex;0;2
+FILE_NAME_1=3187;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Ffejresz.tex;0;2
+FILE_NAME_2=810;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Ffejresz.html;0;2
+FILE_NAME_3=20;CSS;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Ffejresz%2Ffejresz.css;0;2
+FILE_NAME_4=105;Javascript;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Ffejresz%2Ffejresz.js;0;2
 
 [VTE]
 last_dir=/home/wajzy/Dokumentumok/fcm/ESCIM2019/paper
