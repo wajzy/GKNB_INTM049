@@ -1,0 +1,27 @@
+h1 {
+  font-family: Arial, Verdana, sans-serif;
+  font-size: 18pt;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Times New Roman", Palatino, serif;
+  font-size: 14pt;
+  line-height: 1.1em;
+  text-align: justify;
+  text-indent: 0.75cm;
+  margin-top: 3pt;
+  margin-bottom: 3pt;
+  hyphens: auto;
+}
+
+h1 + p {
+  text-indent: 0;
+}
+
+img {
+  float: left;
+  margin-right: 0.5cm;
+  margin-bottom: 0.5cm;
+}
+
