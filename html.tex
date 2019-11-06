@@ -24,7 +24,9 @@
   breaklines=true,
   postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
   stringstyle=\ttfamily,
-  inputencoding=utf8
+  inputencoding=utf8,
+  morekeywords={header, time, nav, main, article, section, aside, role, 
+    footer, details, open, summary, srcdoc}
 }
 \usepackage{hyperref}
 \usepackage{attachfile}
@@ -111,6 +113,10 @@ megtekintéséhez!},icon=Paperclip}
 \subsection{A fejrész elemei}
 
 \input{fejresz.tex}
+
+\subsection{Oldalak főbb részeinek jelölése}
+
+\input{reszek.tex}
 
 % blokkszintű és soron belüli elemek összefoglalója
 % class és id attribútumok

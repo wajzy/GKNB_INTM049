@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Funkcionális részek jelölése</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <header>
+      <h1>Web technológiák</h1>
+      <p>A korszerű webalkalmazások a HTML, CSS és JS technológiákon 
+      alapulnak.</p>
+      <p>Megjelenés dátuma:<time datetime="2019-11-06 16:00">2019. 
+      november 6.</time></p>
+    </header>
+    <nav>
+      <a href="#html">HTML</a> |
+      <a href="#css">CSS</a> |
+      <a href="https://en.wikipedia.org/wiki/JavaScript">JS</a>
+    </nav>
+    <main>
+      <article id="html">
+        <header>
+          <h2>HTML</h2>
+          <p>A web leírónyelve</p>
+        </header>
+        <p>A HTML (angolul: HyperText Markup Language=hiperszöveges 
+        jelölőnyelv) egy leíró nyelv, melyet weboldalak készítéséhez 
+        fejlesztettek ki, és mára már internetes szabvánnyá vált a W3C 
+        (World Wide Web Consortium) támogatásával. Az aktuális 
+        változata az 5, mely az SGML általános jelölőnyelv egy konkrét 
+        alkalmazása (azaz minden 5-ös HTML dokumentum egyben az SGML 
+        dokumentumszabványnak is meg kell hogy feleljen). Ezt tervek 
+        szerint lassan kiszorította volna az XHTML, amely a szintén 
+        SGML alapú XML leíró nyelven alapul.</p>
+        <section>
+          <h3>Használata</h3>
+          <p>HTML általában szöveges állományokban található meg olyan 
+          számítógépeken, melyek az internethez kapcsolódnak. Ezek az 
+          állományok tartalmazzák azokat a szimbólumokat, amelyek a 
+          megjelenítő programnak leírják, hogyan is kell megjeleníteni 
+          illetve feldolgozni az adott állomány tartalmát. Megjelenítő 
+          program lehet egy webböngésző (angolul: web browser), aural 
+          böngésző (olyan, amelyik a felhasználónak felolvassa a 
+          megjelenítendő szöveget), braille olvasó, amely konvertálja a 
+          szöveget braille "formátumba", levelező program (mint 
+          például: Mozilla Thunderbird, Microsoft Outlook, Eudora 
+          stb.), valamint egyéb eszközök, például mobiltelefon.</p>
+          <aside role="note">
+            <p>A legnépszerűbb webböngészők a <a 
+            href="https://www.google.com/chrome/">Google Chrome</a>, a 
+            <a href="https://www.mozilla.org/hu/firefox/new/">Mozilla 
+            Firefox</a> és a <a 
+            href="https://www.microsoft.com/hu-hu/windows/microsoft-edge">
+            Microsoft Edge</a>.</p>
+          </aside>
+        </section>
+        <section>
+          <h3>Szimbólumok, tartalom</h3>
+          <p>Négyfajta szimbólum (leíró elem) található meg a 
+          HTML-ben:</p>
+          <ul>
+            <li>strukturális elemek</li>
+            <li>prezentációs szimbólumok</li>
+            <li>hiperszöveg</li>
+            <li>eszköz elemek</li>
+          </ul>
+        </section>
+      </article>
+      <article id="css">
+        <header>
+          <h2>CSS</h2>
+          <p>Webes dokumentumok formázása</p>
+        </header>
+        <p>A CSS ( Cascading Style Sheets, magyarul: lépcsőzetes 
+        stíluslapok) a számítástechnikában egy stílusleíró nyelv, mely 
+        a HTML vagy XHTML típusú strukturált dokumentumok megjelenését 
+        írja le. Ezenkívül használható bármilyen XML alapú dokumentum 
+        stílusának leírására is, mint például az SVG, XUL stb.</p>
+        <section>
+          <h3>Áttekintés</h3>
+          <p>A CSS-t a weblapok szerkesztői és olvasói egyaránt 
+          használhatják, hogy átállítsák vele a lapok színét, 
+          betűtípusait, elrendezését, és más megjelenéshez kapcsolódó 
+          elemeit. A tervezése során a legfontosabb szempont az volt, 
+          hogy elkülönítsék a dokumentumok struktúráját (melyet HTML 
+          vagy egy hasonló leíró nyelvben lehet megadni) a dokumentum 
+          megjelenésétől (melyet CSS-sel lehet megadni). Az ilyen 
+          elkülönítésnek több haszna is van, egyrészt növeli a weblapok 
+          használhatóságát, rugalmasságát és a megjelenés 
+          kezelhetőségét, másrészt csökkenti a dokumentum tartalmi 
+          struktúrájának komplexitását. A CSS ugyancsak alkalmas arra, 
+          hogy a dokumentum stílusát a megjelenítési módszer 
+          függvényében adja meg, így elkülöníthető a dokumentum formája 
+          a képernyőn, nyomtatási lapon, hangos böngészőben (mely 
+          beszédszintetizátor segítségével olvassa fel a weblapok 
+          szövegét), vagy Braille-készüléken megjelenítve.</p>
+          <p>A CSS használható XML fájlok megjelenítésére is, így a 
+          strukturált dokumentumokhoz teljes körű stílust lehet 
+          megadni, befolyásolva az elrendezését, színét, betűtípusait 
+          az erre alkalmas kliensekben vagy webböngészőkben.</p>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <p>Készítette: <a 
+      href="mailto:miklos.hatwagner@sze.hu?subject=Web%20technológia">
+      Dr. Hatwágner F. Miklós</a>. Minden jog fenntartva.</p>
+      <address>
+        Széchenyi István Egyetem<br />
+        Informatika Tanszék<br />
+        Győr, Egyetem tér 1. B602<br />
+        H-9026<br />
+      </address>
+    </footer>
+  </body>
+</html>

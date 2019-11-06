@@ -1,0 +1,38 @@
+index.hu
+
+Tech, hardver
+index | C64.com | Wikipedia
+Idén 25 éves a Commodore 64
+
+Szerző: Stöckert Gábor
+
+Megjelent: 2007.12.29. 16:18
+
+1982-ben a szocialista blokktól nyugatra a játékterem akkori csodáitól – Pac Man, Galaga és társai – lenyűgözött gyerekek ZX Spectrumot, Apple II-t vagy Atari 2600-at kértek a Jézuskától. Az igazán előrelátók azonban Commodore 64-ért nyúzták a szüleiket: nemcsak azért, mert az akkor pár hónapja piacon levő gép által produkált kép és hang sokkal alkalmasabb volt játékra, mint a konkurens masináké, hanem azért is, mert a később csak C64 és C=64 rövidítésekkel illetett kütyü jóval olcsóbb volt a rivális számítógépeknél, ezért a felmenők ellenkezését is könnyebb volt legyűrni. Az Index tiszteleg a legsikeresebb otthoni computer előtt.
+
+Természetesen én is karácsonyra kaptam a C64-emet, bár csak öt vagy hat évvel a gép debütálása után. Fater napokig számolgatta, hogy miként lesz a Mariahilferstrassén a családi vagyonból hűtőláda és új cipők mellett még számítógép is, és hogyan úszhatja meg, hogy az anyósát is vinni kelljen a fejenként kivihető schillinglimit miatt. Végül ő lemondott a cipőről, és ezzel mindkét problémát megoldotta: a kirakatán óriási "beszélünk magyarul" felirattal kérkedő osztrák műszaki bolttól egy Commodore 64 utazott velünk hazáig a negyedik ülésen.
+
+Egy maroknyi dollárért
+
+Akkor a platformot már újra gyártották: 1985-ben ugyanis a Commodore cég többször leállította a modell gyártását, mert azt gondolta, hogy az amerikai piac már nem nagyon vesz fel több C64-et. Európában azonban még csak ekkor futott be igazán a gép, megteremtve a videojáték-fejlesztés iparszerűvé válásához szükséges kritikus tömeget. Végül 1994-ben gördült le az utolsó C64 a futószalagról: bő egy évtized alatt 30 milliót adtak el belőle, amivel máig tartja a legsikeresebb számítógép Guinness-rekordját.
+
+A fényes karriert egy jó üzleti érzékkel megáldott, agresszív cégvezető, Jack Tramiel indította el. Tramiel 1954-ben alapította a Commodore-t, és eleinte írógépek javításával és irodabútorokkal foglalkozott. Érdeklődött az elektronika újdonságai iránt, ezért később a cég kínálatába bekerültek a digitális órák, a szövegszerkesztő gépek, és az első üzleti számítógépek. A hetvenes évek második felében Tramiel már saját computer készítésén gondolkozott: 1976-ban megvásárolta a MOS Technologies nevű csipgyártót, 1980-ban pedig bemutatta a VIC-20-at, a Commodore 64 elődjét. A gép sikeres volt – pár év alatt egymillió darabot vettek belőle –, de legnagyobb haszna abban rejlett, hogy Tramiel felismerte a gépre készült játékok korlátait.
+
+Specifikáció
+
+Microprocesszor
+
+MOS 6510 vagy MOS 8500 (a 6510/8500 valójában egy módosított 6502-es egy integrált 6 bites I/O porttal, a 8500-as pedig a 6510-es CMOS technológiával készült változata)
+Órajel: 0,985 MHz (PAL) / 1,023 MHz (NTSC)
+
+Video hardver: MOS VIC-II, MOS 6567/8567 (NTSC), MOS 6569/8569 (PAL)
+
+Szöveges mód: 40×25, 16 szín
+Grafikus módok: 160×200 (egy karakternyi helyen maximum 4 szint tartalmazhat), 320×200 (monokróm)
+8 hardveres sprite (mozgatható grafikus elem, játékprogramokhoz)
+
+Önök írták
+
+"Neki köszönhetem, hogy ma ott tartok ahol. A sok meggyilkolt joystick után rájöttem, hogy én is akarok ilyen programokat írni. Hát írtam. Ma is. Csak ma már más platformon, más célból :). Köszönöm C64! Isten éltessen!"
+
+"A táp bordája megpuhult, annyit ment hétvégenként. :) Háromcsuklós (tárcsás optokapus) házi készítésű robotkart is hajtottunk vele egyszer. Miután a pályaadatokat beadtuk, induláskor a monitorvezérlést is kikapcsolta a program, hogy bírja. Küzdött, de ment! Csupa vicces emlék."
