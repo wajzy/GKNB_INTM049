@@ -1,0 +1,25 @@
+Mi lesz az uj karakterlánc tartalma az alábbi C/C++ függvény hívását követően, ha regi tartalma "Mari foz, Mari sut, Mari mosogat.", mit értéke "Mari", mire értéke pedig "Julcsa"?
+
+
+void nevek(const char* regi, char* uj, 
+           const char* mit, const char* mire) {
+  const char *eleje = regi;
+  char *vege;
+  int mitHossz = strlen(mit);
+  while((vege = strstr(eleje, mit)) != NULL) {
+    strncat(uj, eleje, vege-eleje);
+    strcat(uj, mire);
+    eleje = vege + mitHossz;
+  }
+  strcat(uj, eleje);
+}
+    
+
+Jelölje meg a helyes választ!
+
+"Mari foz, Mari sut, Mari mosogat."
+"Marisa foz, Marisa sut, Marisa mosogat."
+"Julcsa foz, Julcsa sut, Julcsa mosogat."
+"Julcsa foz, Julcsa sut, Julcsa"
+Semmi, a program lefagy.
+Semmi, a program nem fordítható.

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Vizsga</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <p>Mi lesz az <var>uj</var> karakterlánc tartalma az alábbi C/C++ 
+    függvény hívását követően, ha <var>regi</var> tartalma "Mari 
+    foz, Mari sut, Mari mosogat.", <var>mit</var> értéke "Mari", 
+    <var>mire</var> értéke pedig "Julcsa"?</p>
+    <pre><code>
+void nevek(const char* regi, char* uj, 
+           const char* mit, const char* mire) {
+  const char *eleje = regi;
+  char *vege;
+  int mitHossz = strlen(mit);
+  while((vege = strstr(eleje, mit)) != NULL) {
+    strncat(uj, eleje, vege-eleje);
+    strcat(uj, mire);
+    eleje = vege + mitHossz;
+  }
+  strcat(uj, eleje);
+}
+    </code></pre>
+    <p>Jelölje meg a helyes választ!</p>
+    <ol type="a">
+      <li>"Mari foz, Mari sut, Mari mosogat."</li>
+      <li>"Marisa foz, Marisa sut, Marisa mosogat."</li>
+      <li>"Julcsa foz, Julcsa sut, Julcsa mosogat."</li>
+      <li>"Julcsa foz, Julcsa sut, Julcsa"</li>
+      <li>Semmi, a program lefagy.</li>
+      <li>Semmi, a program nem fordítható.</li>
+    </ol>
+  </body>
+</html>
