@@ -28,13 +28,14 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
-FILE_NAME_0=3107;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fhtml.tex;0;2
-FILE_NAME_1=5402;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Freszek.tex;0;2
-FILE_NAME_2=3807;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Ffejresz.tex;0;2
-FILE_NAME_3=473;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Freszek.html;0;2
-FILE_NAME_4=922;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Freszletek.html;0;2
-FILE_NAME_5=5644;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fc64.html;0;2
+current_page=6
+FILE_NAME_0=3472;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fhtml.tex;0;2
+FILE_NAME_1=1539;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fkod.tex;0;2
+FILE_NAME_2=2273;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fentitas.tex;0;2
+FILE_NAME_3=494;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fentitas.html;0;2
+FILE_NAME_4=755;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap1.html;0;2
+FILE_NAME_5=771;PHP;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap1.php;0;2
+FILE_NAME_6=4049;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap.tex;1;2
 
 [VTE]
 last_dir=/home/wajzy/Dokumentumok/fcm/ESCIM2019/paper
