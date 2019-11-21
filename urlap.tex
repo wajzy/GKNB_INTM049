@@ -115,3 +115,60 @@
     \lstinputlisting[style=HTML,linerange={8-20},numbers=left,firstnumber=8]{urlap1.html}
   \end{exampleblock}
 \end{frame}
+
+%93
+\begin{frame}
+  A legtöbb vezérlő az \texttt{<input>} elemmel és annak \texttt{type} 
+  attribútumával állítható elő. Az összes vezérlővel használható főbb 
+  attribútumai: 
+  \begin{description}[m]
+    \item[\texttt{autocomplete}] \hfill \\ Automatikus kiegészítés a 
+    korábban begépelt tartalom alapján. (\texttt{on}, \texttt{off}) 
+    \item[\texttt{autofocus}] \hfill \\ Oldalbetöltés után 
+    automatikusan fókuszba kerül 
+    \item[\texttt{disabled}] \hfill \\ Letiltott vezérlő 
+    \item[\texttt{form}] \hfill \\ Ha a vezérlő 
+    nincs \texttt{<form>} elembe ágyazva, akkor annak \texttt{id}-je 
+    alapján logikailag összekapcsolható vele.
+  \end{description}
+\end{frame}
+
+%94
+\begin{frame}
+  \begin{description}[m]
+    \item[\texttt{id}] \hfill \\ A vezérlőt egyedileg azonosítja a 
+    \kiemel{kliens} oldalon (pl. JavaScript programokban)
+    \item[\texttt{name}] \hfill \\ A vezérlőt azonosítja a 
+    \kiemel{szerver} oldalon (kulcs) 
+    \item[\texttt{readonly}] \hfill \\ Csak olvashatóvá teszi a vezérlőt 
+    \item[\texttt{required}] \hfill \\ A mező kitöltése kötelező 
+    \item[\texttt{value}] \hfill \\ A vezérlő értéke
+  \end{description}
+\end{frame}
+
+%95
+\begin{frame}
+  Egysoros szövegbeviteli mező: \texttt{type="text"} (alapértelmezés)
+  \begin{description}[m]
+    \item[\texttt{list}] \hfill \\ Egy \texttt{<datalist>} elem (ajánlatok legördülő listája) \texttt{id}-jét tartalmazza
+    \item[\texttt{maxlength}] \hfill \\ A begépelhető karakterek száma
+    \item[\texttt{pattern}] \hfill \\ Reguláris kifejezés az érték ellenőrzéséhez
+    \item[\texttt{placeholder}] \hfill \\ Helyőrző, ami az első karakter begépeléséig segít a felhasználónak, pl. ,,A rendszámot kötőjel nélkül, nagybetűkkel adja meg!''
+    \item[\texttt{size}] \hfill \\ A vezérlő szélessége átlagos karakterszélességben mérve (CSS jobb)
+  \end{description}
+\end{frame}
+
+%96
+\begin{frame}
+  A \texttt{<datalist>} elembe \texttt{<option>} elemek ágyazhatók, 
+  melyek gépelést segítő legördülő lista elemeiként jelennek meg.\\
+  A (\texttt{<select>} elemben is használható) \texttt{<option>} attribútumai:
+  \begin{description}[m]
+    \item[\emph{attribútum nélkül}] \hfill \\ Az elem tartalma jelenik meg a legördülő listában, és ezt továbbítják a szervernek is
+    \item[\texttt{label}] \hfill \\ A listában egy rövidebb szöveg jelenhet meg, mint az elem értéke
+    \item[\texttt{selected}] \hfill \\ Kiválasztottá teszi az elemet az oldal betöltésekor
+    \item[\texttt{value}] \hfill \\ Ha megadják, ennek tartalmát küldi a szervernek, nem a megjelenő szöveget
+  \end{description}
+\end{frame}
+
+% reguláris kifejezések ismertetése!
