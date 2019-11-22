@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Egysoros szövegbeviteli mező</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <form action="http://xenia.sze.hu/~wajzy/html/urlap2.php">
+      <div><label>Név: <input name="nev" type="text" size="32" 
+        placeholder="Pl. Dr. Prof. Remek Elek" required="required" />
+        </label></div>
+      <div><label>Neptun kód: <input name="neptun" 
+        pattern="[a-zA-Z0-9]{6}" maxlength="6" 
+        title="a kód pontosan 6 alfanumerikus jelből áll" />
+        </label></div>
+      <div><label>Kedvenc böngészőprogram: <input name="bongeszo" 
+        list="programok" /></label></div>
+      <datalist id="programok">
+        <option value="ie" label="MS Internet Explorer">
+          Microsoft Internet Explorer</option>
+        <option value="edge">Microsoft Edge</option>
+        <option selected="selected">Google Chrome</option>
+        <option>Mozilla Firefox</option>
+        <option>Apple Safari</option>
+      </datalist>
+      <div><input type="submit" value="Beküldés" /></div>
+    </form>
+  </body>
+</html>

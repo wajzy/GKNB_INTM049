@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Beviteli mezők</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <form action="http://xenia.sze.hu/~wajzy/html/urlap3.php"
+      enctype="multipart/form-data" method="post">
+      <div><label>Jelszó: <input name="jelszo" type="password" 
+        maxlength="16" required="required" /></label></div>
+      <div><label>Kedvenc színe: <input name="szin" type="color" 
+        value="#FF0000" /></label></div>
+      <div><label>Születési dátum: <input name="datum" type="date" 
+        min="1900-01-01" max="2020-12-31" /></label></div>
+      <div><label>Vizsga kezdete: <input name="datumido" 
+        type="datetime-local" /></label></div>
+      <div><label>Elsődleges e-mail cím: <input name="e-mail" 
+        type="email" /></label></div>
+      <div><label>További e-mail címek: <input name="e-mailek" 
+        type="email" multiple="multiple" /></label></div>
+      <input name="rejtett" value="titok" type="hidden" />
+      <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
+      <div><label>Képek: <input name="kepek[]" type="file" 
+        multiple="multiple" accept="image/*" /></label></div>
+      <div><input type="submit" value="Beküldés" /></div>
+    </form>
+  </body>
+</html>

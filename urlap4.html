@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Film adatok</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <form action="http://xenia.sze.hu/~wajzy/html/urlap3.php"
+      enctype="multipart/form-data" method="post">
+      <fieldset>
+        <legend>Adja meg kedvenc filmjének adatait!</legend>
+        <div><label>Cím: <input name="cim" type="text" size="32" 
+          placeholder="Pl. Kis kedvencek titkos élete" 
+          required="required" /></label></div>
+        <div><label>Megtekintés tervezett időpontja: <input 
+          name="vetites" type="datetime-local" /></label></div>
+        <div><label>Játékidő (perc): <input name="jatekido" 
+          type="number" min="0" max="300" step="1" /></label></div>
+        <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
+        <div><label>Borító: <input name="borito" type="file" 
+          accept="image/*" /></label></div>
+      </fieldset>
+      <div><input type="submit" value="Küldés" /></div>
+    </form>
+  </body>
+</html>
+

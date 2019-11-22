@@ -152,7 +152,7 @@
   \begin{description}[m]
     \item[\texttt{list}] \hfill \\ Egy \texttt{<datalist>} elem (ajánlatok legördülő listája) \texttt{id}-jét tartalmazza
     \item[\texttt{maxlength}] \hfill \\ A begépelhető karakterek száma
-    \item[\texttt{pattern}] \hfill \\ Reguláris kifejezés az érték ellenőrzéséhez
+    \item[\texttt{pattern}] \hfill \\ Reguláris kifejezés az érték ellenőrzéséhez. Hiba esetén a \texttt{title} értéke magyarázza az elvárt formátumot.
     \item[\texttt{placeholder}] \hfill \\ Helyőrző, ami az első karakter begépeléséig segít a felhasználónak, pl. ,,A rendszámot kötőjel nélkül, nagybetűkkel adja meg!''
     \item[\texttt{size}] \hfill \\ A vezérlő szélessége átlagos karakterszélességben mérve (CSS jobb)
   \end{description}
@@ -166,9 +166,138 @@
   \begin{description}[m]
     \item[\emph{attribútum nélkül}] \hfill \\ Az elem tartalma jelenik meg a legördülő listában, és ezt továbbítják a szervernek is
     \item[\texttt{label}] \hfill \\ A listában egy rövidebb szöveg jelenhet meg, mint az elem értéke
-    \item[\texttt{selected}] \hfill \\ Kiválasztottá teszi az elemet az oldal betöltésekor
-    \item[\texttt{value}] \hfill \\ Ha megadják, ennek tartalmát küldi a szervernek, nem a megjelenő szöveget
+    \item[\texttt{selected}] \hfill \\ Kiválasztottá teszi az elemet az oldal betöltésekor (csak \texttt{<select>-nél})
+    \item[\texttt{value}] \hfill \\ Ha megadják, ennek tartalmát küldi a szervernek (vagy másolja a szövegmezőbe), nem a megjelenő szöveget
   \end{description}
 \end{frame}
 
-% reguláris kifejezések ismertetése!
+%97
+\begin{frame}
+  Reguláris kifejezések dióhéjban\\
+  \vfill
+  Általános forma: \texttt{/\kiemel{minta}/módosítók}\\
+  Input ellenőrzésre csak a \texttt{minta} szolgál; ha a vezérlő értéke nem illeszkedik az általános mintára, az űrlapot nem lehet beküldeni.\\
+  \begin{itemize}
+    \item Az általános karakterek önmagukat reprezentálják.
+    \item A metakarakterek önmagukban is halmazt vagy vezérlőjelet testesítenek meg, pl. \texttt{\textbackslash d} a számjegyek, \texttt{\textbackslash s} a fehér karakterek, \texttt{\textbackslash n} az újsor, stb.
+    \item Halmaz elemei közül elég egynek illeszkednie, pl. \texttt{[abc]} elfogadja az abc első három betűje közül bármelyiket.
+    \item Halmaz intervallummal is megadható, pl. \texttt{[a-z]} a kisbetűk halmaza, de a két módszer kombinálható is, pl. \texttt{[a-zA-Z]} a betűk halmaza.
+    \item Az \texttt{[\textasciicircum abc]} minden jelre illeszkedik, ami nem \texttt{a}, \texttt{b}, és \texttt{c}.
+    \item Alternatívák is létrehozhatók \texttt{(a|b)} formában.
+  \end{itemize}  
+\end{frame}
+
+%98
+\begin{frame}
+  Mennyiségek szabályozása
+  \medskip
+  \begin{itemize}
+    \item \texttt{n+} legalább egy előfordulást vár el
+    \item \texttt{n*} 0 vagy több előfordulást követel
+    \item \texttt{n?} 0 vagy 1 előfordulás
+    \item \texttt{n\{X\}} pontosan X előfordulás
+    \item \texttt{n\{X,Y\}} legalább X, legfeljebb Y előfordulás
+    \item \texttt{n\{X,\}} legalább X előfordulás
+  \end{itemize}
+  Pl. egy rendszámot ellenőriz a \texttt{[A-Za-z]\{3\}-\textbackslash d\{3\}} minta. 
+  \hiv{\href{http://html5pattern.com/}{További minták.}}
+  \vfill
+  \hiv{\href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions}{További részletek}}
+\end{frame}
+
+%99
+\begin{frame}
+  \begin{center}
+    \includegraphics[width=.5\textwidth]{urlap2-1.png}\\\vspace{-.5cm}\hrulefill\\
+    \includegraphics[width=.5\textwidth]{urlap2-2.png}\\\vspace{-.5cm}\hrulefill\\
+    \includegraphics[width=.5\textwidth]{urlap2-3.png}\\
+  \end{center}
+\end{frame}
+
+%100
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{urlap2.html}{urlap2.html} (\textattachfile{urlap2.php}{urlap2.php})}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={9-15},numbers=left,firstnumber=9]{urlap2.html}
+  \end{exampleblock}
+\end{frame}
+
+%101
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{urlap2.html}{urlap2.html} (\textattachfile{urlap2.php}{urlap2.php})}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={16-25},numbers=left,firstnumber=16]{urlap2.html}
+  \end{exampleblock}
+\end{frame}
+
+%102
+\begin{frame}
+  Jelszóbeviteli mező: \texttt{type="password"}\\
+  Nagyon hasonló a \texttt{text} típushoz, de a karaktereket ,,elrejti'' (viszont \kiemel{nem titkosítja}!)
+  \vfill
+  Színválasztó: \texttt{type="color"}\\
+  A \texttt{value} értéke \texttt{\#RRGGBB} formátumú.
+  \vfill
+  Dátumválasztó: \texttt{type="date"}\\
+  A \texttt{value} értéke \emph{éééé-hh-nn} formátumú. Használhatóak még a \texttt{min}, \texttt{max} attribútumok.
+  \vfill
+  Dátum és időválasztó (időzóna nélkül):  \texttt{type="datetime-local"}\\
+  A \texttt{value} értéke \emph{éééé-hh-nnTóó:pp} formátumú.
+\end{frame}
+
+%103
+\begin{frame}
+  E-mail cím megadása: \texttt{type="email"}\\
+  Automatikusan ellenőrzi formailag. Több cím is megadható vesszőkkel elválasztva, ha megadják a \texttt{multiple} attribútumot.
+  \vfill
+  Rejtett mező: \texttt{type="hidden"}\\
+  Egyáltalán nem jelenik meg, de egy (pl. JavaScript kóddal előállított) kulcs 
+  (\texttt{name}) - érték (\texttt{value}) pár felküldhető a szerverre.
+  \vfill
+  Fájlok feltöltése: \texttt{type="file"}\\
+  Több fájl feltölthető a \texttt{multiple} attribútum megadásával. 
+  Korlátozható a tallózható fájlok köre, pl. \texttt{accept=".jpg"} csak 
+  JPEG fájlokat enged, egy MIME-típus, mint pl. a \texttt{accept="video/*"} 
+  mindenféle videót, stb. Korlátozható a fájlok mérete is:\\
+  \texttt{<input type="hidden" name="MAX\_FILE\_SIZE" value="\emph{méret}" />}\\
+  A kódolás típusa legyen \texttt{enctype="multipart/form-data"}, a HTTP 
+  metódus \texttt{method="POST"}!
+\end{frame}
+
+%104
+\begin{frame}
+  \begin{center}
+    \includegraphics[width=.5\textwidth]{urlap3.png}
+  \end{center}
+\end{frame}
+
+%105
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{urlap3.html}{urlap3.html} (\textattachfile{urlap3.php}{urlap3.php})}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={8-17},numbers=left,firstnumber=8]{urlap3.html}
+  \end{exampleblock}
+\end{frame}
+
+%106
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{urlap3.html}{urlap3.html} (\textattachfile{urlap3.php}{urlap3.php})}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={18-27},numbers=left,firstnumber=18]{urlap3.html}
+  \end{exampleblock}
+\end{frame}
+
+%107
+\begin{frame}
+  \begin{exampleblock}{Készítse el az alábbi űrlapot! (\textattachfile{urlap4.html}{urlap4.html})}
+    Az adatokat küldje a \texttt{http://xenia.sze.hu/\textasciitilde wajzy/html/urlap3.php} címre!
+    \begin{columns}[T]
+      \column{0.45\textwidth}
+        \includegraphics[width=\textwidth]{urlap4-1.png}
+      \column{0.45\textwidth}
+        \includegraphics[width=\textwidth]{urlap4-2.png}
+    \end{columns} 
+  \end{exampleblock}
+\end{frame}
+
+% eddig az input type attribútumával előállítható vezérlőkről volt szó, de a többi is kell!
