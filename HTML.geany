@@ -28,12 +28,14 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=4
+current_page=1
 FILE_NAME_0=1397;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Fhtml.tex;0;2
-FILE_NAME_1=12377;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap.tex;0;2
-FILE_NAME_2=363;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap2.html;0;2
+FILE_NAME_1=16240;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap.tex;1;2
+FILE_NAME_2=0;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap2.html;0;2
 FILE_NAME_3=629;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap3.html;0;2
-FILE_NAME_4=481;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap4.html;0;2
+FILE_NAME_4=486;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap4.html;0;2
+FILE_NAME_5=0;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap5.html;0;2
+FILE_NAME_6=480;HTML;0;EUTF-8;0;1;1;%2Fhome%2Fwajzy%2FDokumentumok%2Fgknb_intm049%2FGKxB_INTM049%2Furlap6.html;0;2
 
 [VTE]
 last_dir=/home/wajzy/Dokumentumok/fcm/ESCIM2019/paper

@@ -300,4 +300,101 @@
   \end{exampleblock}
 \end{frame}
 
+%108
+\begin{frame}
+  Év és hónap kiválasztás: \texttt{type="month"}\\
+  A \texttt{value} értéke \emph{éééé-hh} formátumú. Használhatóak még a \texttt{min}, \texttt{max} attribútumok.
+  \vfill
+  Év és azon belül egy hét kiválasztása: \texttt{type="week"}\\
+  A \texttt{value} értéke \emph{éééé-Whh} formátumú.
+  \vfill
+  Idő megadása: \texttt{type="time"}\\
+  A \texttt{value} értéke \emph{óó:pp} formátumú.
+  \vfill
+  Nyomógomb: \texttt{type="button"}\\
+  Önmagában semmire nem jó, JavaScript kódok futtatására használják.
+  \vfill
+  Űrlap alaphelyzetbe állítása: \texttt{type="reset"}\\
+  Az űrlap betöltése utáni állapotot állítja vissza; ha véletlenül kattintanak rá, minden addigi munka elvész!
+\end{frame}
+
+%109
+\begin{frame}
+  Jelölőnégyzet: \texttt{type="checkbox"}\\
+  Egymástól független választási lehetőségekhez. 
+  \vfill
+  Rádiógomb: \texttt{type="radio"}\\
+  Egy rádiógomb-csoporton belül csak egy elem lehet kiválasztva. 
+  A felhasználó nem tudja az összes elemet ki nem választottá 
+  tenni. Csoportképző módszer: azonos \texttt{name} attribútum 
+  értékek.
+  \vfill
+  Mindkét típusra igaz, hogy egy elemet kiválasztani a 
+  \texttt{checked} attribútummal lehet. A \texttt{value} attribútumot rádiógomboknál 
+  ,,kötelező'' megadni, mert különben csak az \texttt{on} értéket 
+  kapja meg a szerver $\to$ a gomb azonosíthatatlan. A ki nem 
+  választott elemeknek még a kulcsa sem látszik a szerveren.
+\end{frame}
+
+%110
+\begin{frame}
+  \begin{center}
+    \includegraphics[width=.5\textwidth]{urlap5.png}
+  \end{center}
+\end{frame}
+
+%111
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{urlap5.html}{urlap5.html}}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={11-16},numbers=left,firstnumber=11]{urlap5.html}
+    \lstinputlisting[style=HTML,linerange={19-23},numbers=left,firstnumber=19]{urlap5.html}
+  \end{exampleblock}
+\end{frame}
+
+%112
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{urlap5.html}{urlap5.html}}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={27-30},numbers=left,firstnumber=27]{urlap5.html}
+    \lstinputlisting[style=HTML,linerange={34-35},numbers=left,firstnumber=34]{urlap5.html}
+  \end{exampleblock}
+\end{frame}
+
+%113
+\begin{frame}
+  Beküldés gomb képpel helyettesítve: \texttt{type="image"}\\
+  \texttt{src}  adja meg a képet, \texttt{width} a szélességet, 
+  \texttt{height} a magasságot, \texttt{alt} a helyettesítő 
+  szöveget. Beküldi a kattintás helyét is (\texttt{x}, \texttt{y} 
+  kulcsok).
+  \vfill
+  A \texttt{submit} és \texttt{image} vezérlők néhány közös 
+  attribútuma:
+  \begin{itemize}
+    \item \texttt{formaction}: a \texttt{<form>} \texttt{action} 
+    attribútumának értékét írja felül; pl. két gomb két 
+    külön helyre küldheti az adatokat.
+    \item \texttt{formenctype}, \texttt{formmethod}, 
+    \texttt{formnovalidate}, \texttt{formtarget} hasonlóan, a 
+    \texttt{<form>} attribútum értékeinek felülírására szolgál.
+  \end{itemize}
+\end{frame}
+
+%114
+\begin{frame}
+  Csúszka: \texttt{type="range"}\\
+  Alapértelmezetten [0, 100] közti érték kiválasztására, ahol a 
+  pontos érték nem számít. Adatbevitel szabályozható a 
+  \texttt{min}, \texttt{max}, \texttt{step} attribútumokkal.
+  \vfill
+  Keresőmező: \texttt{type="search"}\\
+  Adatok keresésére egy oldalon.
+  \vfill
+  Telefonszám: \texttt{type="tel"}\\
+  A bevitt szám ellenőrizhető a \texttt{pattern} segítségével.
+  \vfill
+  %%% url
+\end{frame}
+
 % eddig az input type attribútumával előállítható vezérlőkről volt szó, de a többi is kell!

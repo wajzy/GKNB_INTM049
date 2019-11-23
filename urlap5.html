@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Beviteli mezők</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <form action="http://xenia.sze.hu/~wajzy/html/urlap2.php">
+      <fieldset>
+        <legend>Dátum és idő</legend>
+        <div><label>Év és hónap: <input name="evho" type="month" />
+          </label></div>
+        <div><label>Év és hét: <input name="evhet" type="week" />
+          </label></div>
+        <div><label>Idő: <input name="ido" type="time" />
+          </label></div>
+      </fieldset>
+      <fieldset>
+        <legend>Jelöld meg kedvenc márkáidat!</legend>
+        <div><label><input name="wrangler" type="checkbox" 
+          value="wrangler" />Wrangler</label></div>
+        <div><label><input name="levis" type="checkbox" 
+          checked="checked" />Levi's</label></div>
+      </fieldset>
+      <fieldset>
+        <legend>Nagy élvezettel tanulja a Web technológiákat?</legend>
+        <div><label><input name="web" type="radio" 
+          value="igen" />Igen</label></div>
+        <div><label><input name="web" type="radio" 
+          checked="checked" />Persze</label></div>
+      </fieldset>
+      <div>
+        <input type="submit" value="Beküldés" />
+        <input type="reset" value="Alaphelyzet" />
+        <input type="button" id="meglepetes" value="Meglepetés" />
+      </div>
+    </form>
+    <script>
+      document.getElementById("meglepetes").onclick = function() {
+        alert("Aki kíváncsi, hamar megöregszik!");
+      };
+    </script>
+  </body>
+</html>
