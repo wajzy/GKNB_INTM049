@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Beviteli mezők</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <form action="http://xenia.sze.hu/~wajzy/html/urlap2.php">
+      <div><label>Melyik napon jön vizsgázni?<select name="vizsga">
+        <option>2019. december 16.</option>
+        <option>2020. január 6.</option>
+        <option selected="selected">2020. január 20.</option>
+        <option>2020. január 27.</option>
+      </select></label></div>
+      <div><label>Mely tárgyakat sikerült eddig teljesítenie?
+        <select name="elotanulmanyok[]" multiple="multiple" size="6">
+          <optgroup label="1. félév">
+            <option value="GKNB_INTM012">Számítógépek működése</option>
+            <option value="GKNB_MSTM001">Matematika 1.</option>
+            <option value="GKNB_MSTM014">Diszkrét matematika</option>
+            <option value="GKNB_MSTM016">Algoritmusok és adatstruktúrák</option>
+            <option value="KGNB_NETM042">Közgazdaságtan</option>
+          </optgroup>
+          <optgroup label="2. félév">
+            <option value="GKNB_INTM001">Rendszer és irányítás</option>
+            <option value="GKNB_INTM018">Számítógép-hálózatok</option>
+            <option value="GKNB_INTM021">Programozás</option>
+            <option value="GKNB_INTM022">Projektmunka és szoftvertechnológia</option>
+            <option value="GKNB_MSTM008">Matematika 2.</option>
+          </optgroup>
+      </select></label></div>
+      <div><label for="k_nehez">Melyik tárgy teljesítése jelentette 
+        eddig a legnagyobb nehézséget, és miért?</label><br />
+        <textarea id="k_nehez" name="sz_nehez" rows="5" cols="40">Minden akadályt simán vettem, nagy májer vagyok :)</textarea>
+      </div>
+      <div><button type="button" id="kocka">
+        <img src="dice.svg" alt="Dobókocka" width="50" height="50" />
+        Unom ezt az űrlapozást, inkább dobok a kockával!
+        </button><output name="sz_dobas" id="k_dobas" for="kocka">
+      </output></div>
+      <div><input type="submit" value="Küldés" /></div>
+    </form>
+    <script>
+      window.addEventListener("load", function() {
+        document.getElementById("kocka").addEventListener("click",
+        function() {
+          document.getElementById("k_dobas").value=
+            1+Math.floor(Math.random()*6);
+        }, false);
+      }, false);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Jármű konfigurátor</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Jármű konfigurátor</h1>
+    <form action="http://xenia.sze.hu/~wajzy/html/urlap2.php">
+      <h2>Extrák</h2>
+      <div><select name="extrak[]" size="6" multiple="multiple">
+        <optgroup label="Biztonság">
+          <option>Led-fényszórók</option>
+          <option>Első szélvédő fűtés</option>
+        </optgroup>
+        <optgroup label="Kényelem">
+          <option>Fűthető ülések</option>
+          <option>Fűthető kormánykerék</option>
+        </optgroup>
+      </select></div>
+      <h2>Szín</h2>
+      <div><select name="szin">
+        <option>Fehér</option>
+        <option>Szürke</option>
+        <option>Fekete</option>
+        <option selected="selected">Vörös</option>
+        <option>Kék</option>
+        <option>Sárga</option>
+      </select></div>
+      <h2>Fényezés típusa</h2>
+      <div><label><input type="radio" name="fenyezes" value="n" checked="checked" />Normál</label></div>
+      <div><label><input type="radio" name="fenyezes" value="m" />Metál</label></div>
+      <div><label><input type="radio" name="fenyezes" value="g" />Gyöngyház</label></div>
+      <h2>Egyéb szolgáltatások</h2>
+      <div><label><input type="checkbox" name="casco" />Casco kötés</label></div>
+      <div><label><input type="checkbox" name="hitel" />Hitel</label></div>
+      <div><label><input type="checkbox" name="hitel" />Mobilitás garancia</label></div>
+      <h2>Egyéb kérés, kérdés</h2>
+      <textarea name="egyeb" cols="60" rows="10">Forduljon hozzánk bizalommal!</textarea>
+      <h2>Elérhetőségei, ahol ajánlatunkkal kereshetjük</h2>
+      <div><label>Tel.:<input type="tel" name="telefon" /></label></div>
+      <div><label>E-mail:<input type="email" name="e-mail" /></label></div>
+      <div><input type="submit" value="Beküldés" /></div>
+    </form>
+  </body>
+</html>

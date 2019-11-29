@@ -394,7 +394,146 @@
   Telefonszám: \texttt{type="tel"}\\
   A bevitt szám ellenőrizhető a \texttt{pattern} segítségével.
   \vfill
-  %%% url
+  URL: \texttt{type="url"}\\
+  A böngésző formai ellenőrzést végezhet vagy speciális gombokat 
+  tehet a virtuális billentyűzetre (pl. \emph{.com}, \emph{www.}, \dots)
 \end{frame}
 
-% eddig az input type attribútumával előállítható vezérlőkről volt szó, de a többi is kell!
+%115
+\begin{frame}
+  \begin{columns}[T]
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{urlap6-1.png}
+    \column{0.66\textwidth}
+      \includegraphics[width=\textwidth]{urlap6-2.png}
+  \end{columns}
+\end{frame}
+
+%116
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{urlap6.html}{urlap6.html} 
+  (\textattachfile{urlap2.php}{urlap2.php})}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={9-22},numbers=left,firstnumber=9]{urlap6.html}
+  \end{exampleblock}
+\end{frame}
+
+%117
+\begin{frame}
+  Vezérlők, amiket \emph{nem} az \texttt{input} elemmel hozunk létre:
+  \begin{description}[m]
+    \item[\texttt{<select>}] \hfill \\ Legördülő lista, melynek 
+    bejegyzéseit \texttt{option} elemekkel adhatjuk meg. Attribútumai:
+    \begin{description}[m]
+      \item[\texttt{size}] \hfill \\ Ennyi elem fog látszani egyszerre 
+      egymás alatt (görgethető doboz)
+      \item[\texttt{multiple}] \hfill \\ Több elem is kiválasztható 
+      egyszerre (Ctrl, Shift) (PHP: a \texttt{name} értéke 
+      \texttt{[]}-re végződjön!)
+    \end{description}
+    \item[\texttt{<optgroup>}] \hfill \\ Sok lehetőség esetén 
+    csoportok képzésére: \texttt{<select>} $\to$ \texttt{<optgroup>} 
+    $\to$ \texttt{<option>}
+    \begin{description}[m]
+      \item[\texttt{label}] \hfill \\ Csoport (ki nem választható) 
+      felirata
+    \end{description}
+  \end{description}
+\end{frame}
+
+%118
+\begin{frame}
+  \begin{description}[m]
+    \item[\texttt{<textarea>}] \hfill \\ Hosszabb szövegek 
+    megadására. Még a címkék közötti fehér karaktereket is 
+    belefoglalja a vezérlő tartalmába! Attribútumok:
+    \begin{description}[m]
+      \item[rows] \hfill \\ Sorok száma
+      \item[cols] \hfill \\ Oszlopok száma
+    \end{description}
+    \item[<button>] \hfill \\ Hasonló, mint \texttt{<input 
+    type="button">}, de HTML/CSS formázható tartalommal.
+    \begin{description}[m]
+      \item[type] \hfill \\ A gomb típusa, lehet \texttt{button}, 
+      \texttt{submit} és \texttt{reset}.
+    \end{description}
+  \end{description}
+\end{frame}
+
+%119
+\begin{frame}
+  \begin{description}[m]
+    \item[\texttt{<output>}] \hfill \\ JavaScript számítások 
+    eredményének jelölésére. Nincs látványos formázása.
+    \begin{description}[m]
+      \item[\texttt{for}] \hfill \\ Azon \texttt{<input>} elemek 
+      \texttt{id}-i szóközzel elválasztva, melyekből kiindulva az eredmény 
+      megszületett.
+    \end{description}
+  \end{description}
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \includegraphics[width=\textwidth]{urlap7-1.png}
+    \column{0.45\textwidth}
+      \includegraphics[width=\textwidth]{urlap7-2.png}
+  \end{columns}
+\end{frame}
+
+%120
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{urlap7.html}{urlap7.html} 
+  (\textattachfile{urlap2.php}{urlap2.php})}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={9-14},numbers=left,firstnumber=9]{urlap7.html}
+  \end{exampleblock}
+\end{frame}
+
+%121
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{urlap7.html}{urlap7.html}}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={15-18},numbers=left,firstnumber=15]{urlap7.html}
+    \lstinputlisting[style=HTML,linerange={22-25},numbers=left,firstnumber=22]{urlap7.html}
+    \lstinputlisting[style=HTML,linerange={29-31},numbers=left,firstnumber=29]{urlap7.html}
+  \end{exampleblock}
+\end{frame}
+
+%122
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{urlap7.html}{urlap7.html}}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={32-40},numbers=left,firstnumber=32]{urlap7.html}
+  \end{exampleblock}
+\end{frame}
+
+%123
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.25\textwidth}
+      \scriptsize
+      A mellékelt ábrának megfelelően hozzon létre egy weboldalt!
+      \begin{itemize}
+        \item Az \emph{Extrák} közül többet is lehessen választani!
+        \item A választható \emph{színek} legyenek: \emph{fehér}, \emph{szürke}, 
+        \emph{fekete}, \emph{vörös}, \emph{kék}, \emph{sárga}. Alapértelmezetten legyen 
+        kiválasztva a \emph{vörös}!
+        \item A \emph{fényezés} típusa alapértelmezetten legyen 
+        \emph{normál}!
+      \end{itemize}
+    \column{0.8\textwidth}
+      \begin{exampleblock}{\small \textattachfile{urlap8.html}{urlap8.html}}
+        \begin{columns}[T]
+          \column{0.45\textwidth}
+            \begin{center}
+              \includegraphics[width=\textwidth]{urlap8-1.png}\\
+              \tiny Az oldal teteje
+            \end{center}
+          \column{0.45\textwidth}
+            \begin{center}
+              \includegraphics[width=\textwidth]{urlap8-2.png}\\
+              \tiny Az oldal alja
+            \end{center}
+        \end{columns}
+      \end{exampleblock}
+  \end{columns}
+\end{frame}
