@@ -1,0 +1,101 @@
+%124
+\begin{frame}
+  A HTML5-ben beépülő modulok (pl. Flash) és akár programozás nélkül 
+  lehet videót és zenét lejátszani a \texttt{<video>} elemmel (de a böngészők codec 
+  támogatása hiányos). Használható formátumok:
+  \begin{itemize}
+    \item MP4 (\hiv{\href{https://caniuse.com/\#feat=mpeg4}{legjobb böngésző támogatás}})
+    \item WebM
+    \item Ogg
+  \end{itemize}
+  Ha biztosra akarunk menni: publikálás több formátumban is.\\
+  Formátumok közötti konvertálás: pl. 
+  \hiv{\href{http://www.mirovideoconverter.com/}{MiroVideoConverter}}\\
+  A lejátszás programozható a \hiv{\href{https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement}{Media API}}-val\\
+\end{frame}
+
+%125
+\begin{frame}
+  Ha a \texttt{<video>} elem nem támogatott egy böngészőben, a 
+  címkék közötti szöveg jelenik meg. Opcionális attribútumok:
+  \begin{description}[m]
+    \item[\texttt{<autoplay>}] \hfill \\ A lejátszás azonnal indul; 
+    \kiemel{nem ajánlott}, zavarhatja a felhasználót
+    \item[\texttt{<controls>}] \hfill \\ Vezérlő gombokat jelenít meg
+    \item[\texttt{<width>}, \texttt{<height>}] \hfill \\ A lejátszó 
+    ablak szélessége, magassága képpontokban; \kiemel{ajánlott} megadni
+    \item[\texttt{<loop>}] \hfill \\ Végtelenített lejátszás
+  \end{description}
+\end{frame}
+
+%126
+\begin{frame}
+  \begin{description}[m]
+    \item[\texttt{<muted>}] \hfill \\ Némítás
+    \item[\texttt{<poster>}] \hfill \\ Egy kép, amit a betöltés 
+    alatt / lejátszás megkezdéséig lát a felhasználó. Érték: URL
+    \item[\texttt{<preload>}] \hfill \\ Adatfolyam betöltési módja. 
+    Érték: \texttt{auto | metadata | none}.
+    \item[\texttt{<src>}] \hfill \\ Videó forrása. \kiemel{Nem 
+    ajánlott} a használata, mert csak egyetlen forrás nevezhető meg, 
+    amit valószínűleg nem támogat minden böngésző. Érték: URL.
+  \end{description}
+\end{frame}
+
+%127
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{video1.html}{video1.html}}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={8-13},numbers=left,firstnumber=8]{video1.html}
+  \end{exampleblock}
+\end{frame}
+
+%128
+\begin{frame}
+  Több adatforrás is megadható beágyazott \texttt{<source>} elemekkel, melyek 
+  közül a böngésző az első támogatott formátumhoz tartozót 
+  fogja választani. Attribútumok:
+  \begin{description}[m]
+    \item[\texttt{<src>}] \hfill \\ Adatforrás. Érték: URL
+    \item[\texttt{<type>}] \hfill \\ A forrás MIME típusa.
+  \end{description}
+\end{frame}
+
+%129
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{video2.html}{video2.html}}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={8-22},numbers=left,firstnumber=8]{video2.html}
+  \end{exampleblock}
+\end{frame}
+
+%130
+\begin{frame}
+  A videók feliratozhatóak is a \texttt{<track>} elemmel. Felirat 
+  formátum: \hiv{\href{https://www.w3.org/TR/webvtt1/}{VTT}}. 
+  \hiv{\href{https://www.nikse.dk/SubtitleEdit/Online}
+  {Online szerkesztő}}, 
+  \hiv{\href{https://subtitletools.com/convert-to-vtt-online}{átalakító}}. 
+  Attribútumok:
+  \begin{description}[m]
+    \item[\texttt{<default>}] \hfill \\ Kijelölhető több feliratsáv 
+    közül az alapértelmezett.
+    \item[\texttt{<kind>}] \hfill \\ Feliratsáv típusa: 
+    \texttt{captions | chapters | descriptions | metadata | 
+    subtitles} (ez az alapértelmezés).
+    \item[\texttt{<label>}] \hfill \\ Feliratsáv címkéje, pl. a 
+    felirat nyelve.
+    \item[\texttt{<src>}] \hfill \\ A felirat forrása, kötelező. 
+    Érték: URL
+    \item[\texttt{<srclang>}] \hfill \\ Felirat nyelvének ISO 639-1 
+    kódja, pl. hu.
+  \end{description}
+\end{frame}
+
+%131
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{video3.html}{video3.html}}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={8-23},numbers=left,firstnumber=8]{video3.html}
+  \end{exampleblock}
+\end{frame}
