@@ -1,0 +1,134 @@
+\subsection{Előnyök}
+
+%2
+\begin{frame}
+  CSS: Cascading Style Sheets
+  \begin{itemize}
+    \item $\approx$ lépcsőzetes/sorba kapcsolt stíluslapok
+    \item \emph{formázás, megjelenés} leírásának elválasztása a \emph{tartalomtól} (HTML), előnyei:
+    \begin{itemize}
+      \item külön fájlban tárolható, ami több weboldalhoz is használható, így csökken az összesített kódméret, 
+      \item egységessé válik ezen oldalak megjelenése,
+      \item egymástól függetlenül, egyidejűleg lehet szerkeszteni a formát és a tartalmat,
+      \item gyorsabban módosítható a megjelenés, mert csak egy helyen kell változtatni,
+      \item hatékonyabbá válik a gyorstárazás,
+    \end{itemize}
+    \item különféle médiára eltérő formázás lehetséges (pl. képernyő, nyomtatás)
+    \item \hiv{\href{http://www.csszengarden.com/}{a CSS ereje}}
+    \item \hiv{\href{https://www.w3.org/Style/CSS/learning.en.html}{hivatalos W3C oldal}}
+  \end{itemize}
+\end{frame}
+
+\subsection{Formázás HTML elemekkel és CSS-sel}
+
+%3
+\begin{frame}
+  \small
+  \begin{alertblock}{Elavult módszer (\textattachfile{htmlFormazas.html}{htmlFormazas.html})}
+    \lstinputlisting[style=HTML,numbers=left]{htmlFormazas.html}
+  \end{alertblock}
+\end{frame}
+
+%4
+\begin{frame}
+  \scriptsize
+  \begin{exampleblock}{Formázás CSS-sel (\textattachfile{cssFormazas.html}{cssFormazas.html})}
+    \lstinputlisting[style=HTML,linerange={3-10},numbers=left,firstnumber=3]{cssFormazas.html}
+  \end{exampleblock}
+  \begin{exampleblock}{Formázás CSS-sel (\textattachfile{cssFormazas.css}{cssFormazas.css})}
+    \lstinputlisting[style=HTML,numbers=left]{cssFormazas.css}
+  \end{exampleblock}
+\end{frame}
+
+\subsection{Szintaktika}
+
+%5
+\begin{frame}[fragile]
+  \begin{columns}[c]
+    \column{0.5\textwidth}
+      \includegraphics[scale=0.75]{szintakszis.pdf}\\
+      \begin{block}{Deklaráció sablonja}
+      \vspace{-0.5cm}
+\begin{verbatim}
+szelektor {
+  tulajdonság1: érték(ek);
+  tulajdonság2: érték(ek);
+  ...
+  tulajdonságN: érték(ek);
+}
+\end{verbatim}
+      \vspace{-0.4cm}
+      \end{block}
+    \column{0.5\textwidth}
+      \begin{description}[m]
+        \item[Szelektor] \hfill \\ Mit akarunk formázni?
+        \item[Tulajdonság] \hfill \\ Milyen tulajdonságán változtassunk?
+        \item[Érték] \hfill \\ Milyen legyen az új állapot?
+      \end{description}
+  \end{columns}
+  
+\end{frame}
+
+%6
+\begin{frame}
+  Megjegyzések a CSS-ben:
+  \begin{itemize}
+    \item \texttt{/* megjegyzes */}
+    \item végleges kódból célszerű elhagyni
+    \item Lehet több soros is
+  \end{itemize} 
+  \hiv{\href{https://jigsaw.w3.org/css-validator/}{CSS ellenőrző}}
+\end{frame}
+
+\subsection{Egyszerű szelektorok}
+
+%7
+\begin{frame}
+  \begin{description}[m]
+    \item[HTML elem neve] \hfill \\ \texttt{p \{ font-style: italic; \}}
+    \item[Egyedi azonosító (\texttt{id} attribútum) alapján] \hfill \\ 
+      \texttt{\#lablec \{ font-size: 10pt; \}}\\
+      Az \texttt{id} nem kezdődhet számjegy karakterrel!
+    \item[Univerzális szelektor, mindenre illeszkedik] \hfill \\ \texttt{* \{ font-size: smaller; \}}
+  \end{description}
+\end{frame}
+
+%8
+\begin{frame}
+  \begin{description}[m]
+    \item[Osztály (\texttt{class} attribútum alapján)] \hfill \\ 
+      \texttt{*.kisbetus \{ font-size: small; \} /* bármilyen HTML elemhez */} \\
+      \texttt{.kisbetus \{ font-size: small; \} /* bármilyen HTML elemhez, rövid alak */}\\
+      \texttt{p.voros \{ color: red; \} /* csak adott (pl. <p>) HTML elemhez */}\\
+      A \texttt{class} értéke nem kezdődhet számjeggyel, de lehet egyszerre több, szóközzel elválasztott értéke: \\
+      \texttt{<p class="kisbetus voros">Apróbetűs piros bekezdés</p>}
+    \item[Elemek csoportosítása] \hfill \\ \texttt{h1, h2, h3 \{ font-family: Arial; \}}
+  \end{description}
+\end{frame}
+
+%9
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{egyszeruSzelektor.html}{egyszeruSzelektor.html}}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={3-13},numbers=left,firstnumber=3]{egyszeruSzelektor.html}
+  \end{exampleblock}
+\end{frame}
+
+%10
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{egyszeruSzelektor.html}{egyszeruSzelektor.html}}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={14-15},numbers=left,firstnumber=14]{egyszeruSzelektor.html}
+  \end{exampleblock}
+\end{frame}
+
+%11
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{egyszeruSzelektor.css}{egyszeruSzelektor.css}}
+    \scriptsize
+    \lstinputlisting[style=HTML,numbers=left]{egyszeruSzelektor.css}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=.9\textwidth]{egyszeruSzelektor.png}
+  \end{center}
+\end{frame}
