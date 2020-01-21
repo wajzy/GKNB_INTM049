@@ -1,0 +1,169 @@
+%124
+\begin{frame}
+  A HTML5-ben beépülő modulok (pl. Flash) és akár programozás nélkül 
+  lehet videót lejátszani a \texttt{<video>} elemmel (de a böngészők codec 
+  támogatása hiányos). Használható formátumok:
+  \begin{itemize}
+    \item MP4 (video/mp4, \hiv{\href{https://caniuse.com/\#feat=mpeg4}{legjobb böngésző támogatás}})
+    \item WebM (video/webm)
+    \item Ogg (video/ogg)
+  \end{itemize}
+  Ha biztosra akarunk menni: publikálás több formátumban is.\\
+  Formátumok közötti konvertálás: pl. 
+  \hiv{\href{http://www.mirovideoconverter.com/}{MiroVideoConverter}}\\
+  A lejátszás programozható a \hiv{\href{https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement}{Media API}}-val\\
+\end{frame}
+
+%125
+\begin{frame}
+  Ha a \texttt{<video>} elem nem támogatott egy böngészőben, a 
+  címkék közötti szöveg jelenik meg. Opcionális attribútumok:
+  \begin{description}[m]
+    \item[\texttt{<autoplay>}] \hfill \\ A lejátszás azonnal indul; 
+    \kiemel{nem ajánlott}, zavarhatja a felhasználót
+    \item[\texttt{<controls>}] \hfill \\ Vezérlő gombokat jelenít meg
+    \item[\texttt{<width>}, \texttt{<height>}] \hfill \\ A lejátszó 
+    ablak szélessége, magassága képpontokban; \kiemel{ajánlott} megadni
+    \item[\texttt{<loop>}] \hfill \\ Végtelenített lejátszás
+  \end{description}
+\end{frame}
+
+%126
+\begin{frame}
+  \begin{description}[m]
+    \item[\texttt{<muted>}] \hfill \\ Némítás
+    \item[\texttt{<poster>}] \hfill \\ Egy kép, amit a betöltés 
+    alatt / lejátszás megkezdéséig lát a felhasználó. Érték: URL
+    \item[\texttt{<preload>}] \hfill \\ Adatfolyam betöltési módja. 
+    Érték: \texttt{auto | metadata | none}.
+    \item[\texttt{<src>}] \hfill \\ Videó forrása. \kiemel{Nem 
+    ajánlott} a használata, mert csak egyetlen forrás nevezhető meg, 
+    amit valószínűleg nem támogat minden böngésző. Érték: URL.
+  \end{description}
+\end{frame}
+
+%127
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{video1.html}{video1.html}}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={8-13},numbers=left,firstnumber=8]{video1.html}
+  \end{exampleblock}
+    \begin{center}
+    \includegraphics[scale=.2]{video1.png}
+  \end{center}
+\end{frame}
+
+%128
+\begin{frame}
+  Több adatforrás is megadható beágyazott \texttt{<source>} elemekkel, melyek 
+  közül a böngésző az első támogatott formátumhoz tartozót 
+  fogja választani. Attribútumok:
+  \begin{description}[m]
+    \item[\texttt{<src>}] \hfill \\ Adatforrás. Érték: URL
+    \item[\texttt{<type>}] \hfill \\ A forrás MIME típusa.
+  \end{description}
+  A \texttt{<video>} elemmel történő kísérletezéshez egy 
+  \hiv{\href{http://v4e.thewikies.com/}{érdekes eszköz}}.
+\end{frame}
+
+%129
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{video2.html}{video2.html}}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={8-22},numbers=left,firstnumber=8]{video2.html}
+  \end{exampleblock}
+\end{frame}
+
+%130
+\begin{frame}
+  A videók feliratozhatóak is a \texttt{<track>} elemmel. Felirat 
+  formátum: \hiv{\href{https://www.w3.org/TR/webvtt1/}{VTT}}. 
+  \hiv{\href{https://www.nikse.dk/SubtitleEdit/Online}
+  {Online szerkesztő}}, 
+  \hiv{\href{https://subtitletools.com/convert-to-vtt-online}{átalakító}}. 
+  Attribútumok:
+  \begin{description}[m]
+    \item[\texttt{<default>}] \hfill \\ Kijelölhető több feliratsáv 
+    közül az alapértelmezett.
+    \item[\texttt{<kind>}] \hfill \\ Feliratsáv típusa: 
+    \texttt{captions | chapters | descriptions | metadata | 
+    subtitles} (ez az alapértelmezés).
+    \item[\texttt{<label>}] \hfill \\ Feliratsáv címkéje, pl. a 
+    felirat nyelve.
+    \item[\texttt{<src>}] \hfill \\ A felirat forrása, kötelező. 
+    Érték: URL
+    \item[\texttt{<srclang>}] \hfill \\ Felirat nyelvének ISO 639-1 
+    kódja, pl. hu.
+  \end{description}
+\end{frame}
+
+%131
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{video3.html}{video3.html} 
+  (\textattachfile{subtitle.vtt}{subtitle.vtt})}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={8-23},numbers=left,firstnumber=8]{video3.html}
+  \end{exampleblock}
+\end{frame}
+
+%132
+\begin{frame}
+  Feladat: készítse el a Big Buck Bunny webes lejátszóját!
+  \begin{columns}[c]
+    \column{0.45\textwidth}
+      \begin{itemize}
+        \scriptsize
+        \item A videó felbontása 800x450 képpont.
+        \item Poszter fotó: 
+        \texttt{https://upload.wikimedia.org/wikipedia/}
+        \texttt{commons/thumb/c/c5/}
+        \texttt{Big\_buck\_bunny\_poster\_big.jpg/}
+        \texttt{800px-Big\_buck\_bunny\_poster\_big.jpg}
+        \item Két adatforrás is van, ezeket kell felajánlani: 
+        \texttt{https://download.blender.org/peach/}
+        \texttt{bigbuckbunny\_movies/}
+        \texttt{big\_buck\_bunny\_480p\_stereo.ogg}
+        és ugyanezen az útvonalon \texttt{big\_buck\_bunny\_480p\_h264.mov} 
+        néven.
+        \item Feliratsáv nem áll rendelkezésre.
+        \item Biztosítsa a letöltés lehetőségét, ha a böngésző nem 
+        támogatja a lejátszást!
+      \end{itemize}      
+    \column{0.45\textwidth}
+      \begin{exampleblock}{\textattachfile{video4.html}{video4.html}}
+        \begin{center}
+          \includegraphics[width=\textwidth]{video4.png}\\
+        \end{center}
+      \end{exampleblock}
+  \end{columns} 
+\end{frame}
+
+%133
+\begin{frame}
+  Az \texttt{<audio>} elemmel lehet hangokat, zenét lejátszani. 
+  Szabványos formátumok:
+  \begin{itemize}
+    \item MP3 (audio/mpeg, \hiv{\href{https://caniuse.com/\#feat=mp3}
+    {legjobb böngésző támogatás}})
+    \item Wav (audio/wav)
+    \item Ogg (audio/ogg)
+  \end{itemize}
+  Attribútumai a méretektől eltekintve azonosak a 
+  \texttt{<video>}-éival. \\
+  Itt is célszerű az adatforrást beágyazott \texttt{<source>} 
+  elemekkel megadni, és a lejátszást nem támogató böngészőknél 
+  hibaüzenetet megjeleníteni.
+\end{frame}
+
+%134
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{audio1.html}{audio1.html}
+    (\textattachfile{dog.ogg}{dog.ogg}, 
+     \textattachfile{dog.mp3}{dog.mp3})}
+    \small
+    \lstinputlisting[style=HTML,linerange={8-15},numbers=left,firstnumber=8]{audio1.html}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[scale=.5]{audio1.png}\\
+  \end{center}
+\end{frame}
