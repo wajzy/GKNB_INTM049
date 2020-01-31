@@ -16,35 +16,79 @@
         height: 100px;
         position: relative;
         left: 25%;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      #teglalap > p {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin-top: -9pt;
+        font-size: 18pt;
       }
     </style>
     <script>
-      let szinvalaszto = {
-        vezerlok: document.querySelectorAll("input[type='range']"),
-        frissit: function() {
-          
+      class Szinvalaszto {
+        constructor() {
+          this.teglalap = document.getElementById("teglalap");
+          this.vezerlok = document.querySelectorAll("input[type='range']");
+          this.r = document.getElementById("r");
+          this.g = document.getElementById("g");
+          this.b = document.getElementById("b");
+          this.stilus = document.getElementById("stilus");
         }
-        
-      };
-      document.addEventListener("load", function() {
+        frissit() {
+          let stilus = "background-color: rgb(" +
+            this.vezerlok[0].value + ", " +
+            this.vezerlok[1].value + ", " +
+            this.vezerlok[2].value + ");";
+          this.teglalap.style = stilus;
+          this.stilus.textContent = stilus;
+          this.stilus.style = "color: rgb(" +
+            (this.vezerlok[0].value^127) + ", " +
+            (this.vezerlok[1].value^127) + ", " +
+            (this.vezerlok[2].value^127) + ");";
+          this.r.textContent = this.vezerlok[0].value + 
+            ", " + (100*this.vezerlok[0].value/255).toFixed(0) + "%";
+          this.g.textContent = this.vezerlok[1].value + 
+            ", " + (100*this.vezerlok[1].value/255).toFixed(0) + "%";
+          this.b.textContent = this.vezerlok[2].value + 
+            ", " + (100*this.vezerlok[2].value/255).toFixed(0) + "%";
+        }
+      }
+     
+      let szv;
+
+      window.addEventListener("load", function() {
+        szv = new Szinvalaszto();
+        szv.frissit();
         document.getElementById("urlap").addEventListener("change", function() {
-          szinvalaszto.frissit();
+          szv.frissit();
         });
       });
     </script>
   </head>
   <body>
-    <div id="teglalap"></div>
+    <div id="teglalap">
+      <p id="stilus"></p>
+    </div>
     <form id="urlap">
       <div class="sor">
         <div class="harmad">
-          <input type="range" min="0" max="255" value="127" /><br /><p>Vörös</p>
+          <input type="range" min="0" max="255" value="127" />
+          <br />
+          <p>Vörös (<span id="r"></span>)</p>
         </div>
         <div class="harmad">
-          <input type="range" min="0" max="255" value="127" /><br /><p>Zöld</p>
+          <input type="range" min="0" max="255" value="127" />
+          <br />
+          <p>Zöld (<span id="g"></span>)</p>
         </div>
         <div class="harmad">
-          <input type="range" min="0" max="255" value="127" /><br /><p>Kék</p>
+          <input type="range" min="0" max="255" value="127" />
+          <br />
+          <p>Kék (<span id="b"></span>)</p>
         </div>
       </div>
     </form>
