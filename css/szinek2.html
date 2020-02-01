@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Színek</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background-image: url("papir.jpg");
+        background-size: cover;
+      }
+      .sor {
+        display: flex;
+      }
+      .negyed {
+        flex: 25%;
+        text-align: center;
+      }
+      #teglalap {
+        width: 50%;
+        height: 100px;
+        position: relative;
+        left: 25%;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      #teglalap > p {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin-top: -9pt;
+        font-size: 18pt;
+      }
+    </style>
+    <script>
+      class Szinvalaszto {
+        constructor() {
+          this.teglalap = document.getElementById("teglalap");
+          this.vezerlok = document.querySelectorAll("input[type='range']");
+          this.h = document.getElementById("h");
+          this.s = document.getElementById("s");
+          this.l = document.getElementById("l");
+          this.a = document.getElementById("a");
+          this.stilus = document.getElementById("stilus");
+        }
+        frissit() {
+          let stilus = "background-color: hsla(" +
+            this.vezerlok[0].value + ", " +
+            this.vezerlok[1].value + "%, " +
+            this.vezerlok[2].value + "%, " +
+            (+this.vezerlok[3].value).toFixed(2) + ");";
+          this.teglalap.style = stilus;
+          this.stilus.textContent = stilus;
+          this.stilus.style = "color: hsl(" +
+            (+this.vezerlok[0].value^180) + ", " +
+            (+this.vezerlok[1].value^50) + "%, " +
+            (+this.vezerlok[2].value^50) + "%);";
+          this.h.textContent = this.vezerlok[0].value;
+          this.s.textContent = this.vezerlok[1].value;
+          this.l.textContent = this.vezerlok[2].value;
+          this.a.textContent = (+this.vezerlok[3].value).toFixed(2);
+        }
+      }
+     
+      let szv;
+
+      window.addEventListener("load", function() {
+        szv = new Szinvalaszto();
+        szv.frissit();
+        document.getElementById("urlap").addEventListener("change", function() {
+          szv.frissit();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="teglalap">
+      <p id="stilus"></p>
+    </div>
+    <form id="urlap">
+      <div class="sor">
+        <div class="negyed">
+          <input type="range" min="0" max="359" value="180" />
+          <br />
+          <p>Árnyalat (<span id="h"></span>&deg;)</p>
+        </div>
+        <div class="negyed">
+          <input type="range" min="0" max="100" value="50" />
+          <br />
+          <p>Telítettség (<span id="s"></span>%)</p>
+        </div>
+        <div class="negyed">
+          <input type="range" min="0" max="100" value="50" />
+          <br />
+          <p>Fényesség (<span id="l"></span>%)</p>
+        </div>
+        <div class="negyed">
+          <input type="range" min="0" max="1" value="0.5" step="any" />
+          <br />
+          <p>Átlátszóság (<span id="a"></span>)</p>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

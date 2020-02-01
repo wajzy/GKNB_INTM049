@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Háttér</title>
+    <meta charset="utf-8" />
+    <style>
+      #hatter {
+        background-color: yellow;
+        background-image: url("css3.svg");
+        background-size: 13.2%;
+        width: 300px;
+        height: 200px;
+        float: left;
+        margin-right: 20px;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", function() {
+        document.getElementById("urlap").addEventListener("change", function() {
+          document.getElementById("hatter").style = "background-repeat: " +
+            document.querySelector("input:checked").value;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="hatter"></div>
+    <div id="vezerlok">
+      <code>background-repeat:</code>
+      <form id="urlap">
+        <div><label><input type="radio" name="csoport" value="repeat" checked="checked" />Mindkét irányban csempéz</label></div>
+        <div><label><input type="radio" name="csoport" value="repeat-x" />Vízszintesen csempéz</label></div>
+        <div><label><input type="radio" name="csoport" value="repeat-y" />Függőlegesen csempéz</label></div>
+        <div><label><input type="radio" name="csoport" value="no-repeat" />Csak egyszer jelenik meg</label></div>
+        <div><label><input type="radio" name="csoport" value="space" />Elosztja térközökkel</label></div>
+        <div><label><input type="radio" name="csoport" value="round" />Torzít</label></div>
+      </form>
+    </div>
+  </body>
+</html>

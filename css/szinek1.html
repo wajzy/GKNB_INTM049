@@ -50,11 +50,14 @@
             (this.vezerlok[1].value^127) + ", " +
             (this.vezerlok[2].value^127) + ");";
           this.r.textContent = this.vezerlok[0].value + 
-            ", " + (100*this.vezerlok[0].value/255).toFixed(0) + "%";
+            ", 0x" + (+this.vezerlok[0].value).toString(16) + ", " +
+            (100*this.vezerlok[0].value/255).toFixed(0) + "%";
           this.g.textContent = this.vezerlok[1].value + 
-            ", " + (100*this.vezerlok[1].value/255).toFixed(0) + "%";
+            ", 0x" + (+this.vezerlok[1].value).toString(16) + ", " +
+            (100*this.vezerlok[1].value/255).toFixed(0) + "%";
           this.b.textContent = this.vezerlok[2].value + 
-            ", " + (100*this.vezerlok[2].value/255).toFixed(0) + "%";
+            ", 0x" + (+this.vezerlok[2].value).toString(16) + ", " +
+            (100*this.vezerlok[2].value/255).toFixed(0) + "%";
         }
       }
      
