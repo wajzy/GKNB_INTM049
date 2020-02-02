@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Méretezés</title>
+    <meta charset="utf-8" />
+    <style>
+      #hatter {
+        background-color: yellow;
+        background-image: url("css3.svg");
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 200px;
+        float: left;
+        margin-right: 20px;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", function() {
+        document.getElementById("urlap").addEventListener("change", function() {
+          let ertek = document.querySelector("input:checked").value;
+          let szazalek = document.getElementById("szazalek").value;
+          document.getElementById("kijelzo").textContent = szazalek;
+          if(ertek != "szazalek") {
+            document.getElementById("hatter").style = "background-size: " + ertek;
+          } else {
+            document.getElementById("hatter").style = "background-size: " + 
+              szazalek + "%;";
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="hatter"></div>
+    <div id="vezerlok">
+      <code>background-size:</code>
+      <form id="urlap">
+        <div><label><input type="radio" name="csoport" value="auto" checked="checked" />Eredeti méret (<code>auto</code>)</label></div>
+        <div><label><input type="radio" name="csoport" value="cover" />Teljes lefedés (<code>cover</code>)</label></div>
+        <div><label><input type="radio" name="csoport" value="contain" />Maximális méret vágás nélkül (<code>contain</code>)</label></div>
+        <div>
+          <input type="radio" name="csoport" value="szazalek" />
+          <label>
+            <input id="szazalek" type="range" min="0" max="100" value="100" />
+            <span id="kijelzo">100</span>%
+          </label>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

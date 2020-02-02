@@ -110,28 +110,28 @@ szelektor {
 
 %9
 \begin{frame}
-  \begin{exampleblock}{\textattachfile{egyszeruSzelektor.html}{egyszeruSzelektor.html}}
+  \begin{exampleblock}{\textattachfile{egyszeruSzelektor1.html}{egyszeruSzelektor1.html}}
     \scriptsize
-    \lstinputlisting[style=HTML,linerange={3-13},numbers=left,firstnumber=3]{egyszeruSzelektor.html}
+    \lstinputlisting[style=HTML,linerange={3-13},numbers=left,firstnumber=3]{egyszeruSzelektor1.html}
   \end{exampleblock}
 \end{frame}
 
 %10
 \begin{frame}
-  \begin{exampleblock}{\textattachfile{egyszeruSzelektor.html}{egyszeruSzelektor.html}}
+  \begin{exampleblock}{\textattachfile{egyszeruSzelektor1.html}{egyszeruSzelektor1.html}}
     \scriptsize
-    \lstinputlisting[style=HTML,linerange={14-15},numbers=left,firstnumber=14]{egyszeruSzelektor.html}
+    \lstinputlisting[style=HTML,linerange={14-15},numbers=left,firstnumber=14]{egyszeruSzelektor1.html}
   \end{exampleblock}
 \end{frame}
 
 %11
 \begin{frame}
-  \begin{exampleblock}{\textattachfile{egyszeruSzelektor.css}{egyszeruSzelektor.css}}
+  \begin{exampleblock}{\textattachfile{egyszeruSzelektor1.css}{egyszeruSzelektor1.css}}
     \scriptsize
-    \lstinputlisting[style=HTML,numbers=left]{egyszeruSzelektor.css}
+    \lstinputlisting[style=HTML,numbers=left]{egyszeruSzelektor1.css}
   \end{exampleblock}
   \begin{center}
-    \includegraphics[width=.9\textwidth]{egyszeruSzelektor.png}
+    \includegraphics[width=.9\textwidth]{egyszeruSzelektor1.png}
   \end{center}
 \end{frame}
 
@@ -327,11 +327,10 @@ szelektor {
 
 %23
 \begin{frame}
-  \begin{exampleblock}{\textattachfile{hatter.html}{hatter.html}}
-    \begin{center}
-      \includegraphics[width=.75\textwidth]{hatter.png}
-    \end{center}
-  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=.75\textwidth]{hatter.png}\\
+    \textattachfile{hatter.html}{hatter.html}
+  \end{center}
 \end{frame}
 
 %24
@@ -353,13 +352,13 @@ szelektor {
 
 %25
 \begin{frame}
-  \begin{exampleblock}{\textattachfile{pozicio.html}{pozicio.html}}
+  \begin{exampleblock}{\textattachfile{pozicio1.html}{pozicio1.html}}
     \fontsize{7}{8} \selectfont
-    \lstinputlisting[style=HTML,linerange={7-11},numbers=left,firstnumber=7]{pozicio.html}
-    \lstinputlisting[style=HTML,linerange={15-16},numbers=left,firstnumber=15]{pozicio.html}
-    \lstinputlisting[style=HTML,linerange={24-25},numbers=left,firstnumber=24]{pozicio.html}
-    \lstinputlisting[style=HTML,linerange={37-38},numbers=left,firstnumber=37]{pozicio.html}
-    \lstinputlisting[style=HTML,linerange={53-54},numbers=left,firstnumber=53]{pozicio.html}
+    \lstinputlisting[style=HTML,linerange={7-11},numbers=left,firstnumber=7]{pozicio1.html}
+    \lstinputlisting[style=HTML,linerange={15-16},numbers=left,firstnumber=15]{pozicio1.html}
+    \lstinputlisting[style=HTML,linerange={24-25},numbers=left,firstnumber=24]{pozicio1.html}
+    \lstinputlisting[style=HTML,linerange={37-38},numbers=left,firstnumber=37]{pozicio1.html}
+    \lstinputlisting[style=HTML,linerange={53-54},numbers=left,firstnumber=53]{pozicio1.html}
   \end{exampleblock}
 \end{frame}
 
@@ -379,4 +378,79 @@ szelektor {
       Két bekezdés között kilátszik a háttérben rögzített logo: 
       \textattachfile{rogzites2.html}{rogzites2.html}
   \end{description}
+\end{frame}
+
+%27
+\begin{frame}
+  \begin{description}[m]
+    \item[\texttt{background}] \hfill \\ Rövidítés: egy összetett 
+    tulajdonsággal sok egyszerű tulajdonság értéke állítható 
+    be. \kiemel{Értékek sorrendje rögzített, de tetszőleges 
+    számú érték elhagyható!}\\
+    \texttt{background: \emph{background-color background-image 
+    background-repeat}\\
+    \qquad\emph{background-attachment background-position}}
+  \end{description}
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \begin{exampleblock}{\textattachfile{pozicio1.html}{pozicio1.html}}
+        \fontsize{7}{8} \selectfont
+        \lstinputlisting[xleftmargin=-1cm,style=HTML,linerange={7-11}]{pozicio1.html}
+      \end{exampleblock}
+    \column{0.5\textwidth}
+      \begin{exampleblock}{\textattachfile{pozicio2.html}{pozicio2.html}}
+        \fontsize{7}{8} \selectfont
+        \lstinputlisting[xleftmargin=-1cm,style=HTML,linerange={7-10}]{pozicio2.html}
+      \end{exampleblock}
+  \end{columns} 
+\end{frame}
+
+%28
+\begin{frame}
+  \begin{description}[m]
+    \item[\texttt{background-size}] \hfill \\
+      \begin{itemize}
+        \item \texttt{auto}: Alapértelmezés, eredeti méret.
+        \item \emph{szélesség, magasság}: utóbbi elhagyásával 
+        \texttt{auto}-t feltételez. Használhatók CSS 
+        mértékegységek és százalékok (\kiemel{a szülő elem mérete a 
+        100\%}, nem a sajátja!).
+        \item \texttt{cover} Addig nyújt és vág, amíg le nem fedi a 
+        szülő elem teljes területét.
+        \item \texttt{contain} Addig nyújt, amíg egyszer bele nem fér a 
+        háttér a szülő elembe.
+      \end{itemize}
+  \end{description}
+  \vfill
+  \begin{center}
+    \includegraphics[scale=0.3]{meret.png}\\
+    \textattachfile{meret.html}{meret.html}
+  \end{center}
+\end{frame}
+
+%29
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.5\textwidth}
+      \footnotesize
+      Induljon ki a \textattachfile{rogzites2.html}{rogzites2.html} 
+      fájlból, és alakítsa át a jobb oldali ábrának megfelelően!
+      \begin{itemize}
+        \item Az írásszín legyen világos szürke!
+        \item A teljes oldal háttere legyen kék (RGB-összetevők: 0, 
+        145 és 190)!
+        \item A \texttt{<div>} elem háttereként állítsa be a 
+        \textattachfile{HTML5sticker.png}{HTML5sticker.png} fájl!
+        \item Ennek helyzete ne függjön a görgetéstől!
+        \item Helyezze el azt a képernyő közepén!
+        \item A képet méretezze aránytartó módon úgy, hogy éppen 
+        kitöltse a rendelkezésre álló helyet!
+        \item Próbálja mindezt a lehető legkevesebb CSS tulajdonság 
+        felhasználásával elérni!
+      \end{itemize}
+    \column{0.5\textwidth}
+      \begin{exampleblock}{\textattachfile{rogzites3-mo.html}{rogzites3-mo.html}, \textattachfile{HTML5sticker.png}{HTML5sticker.png}}
+        \includegraphics[width=\textwidth]{rogzites3-mo.png}
+      \end{exampleblock}
+  \end{columns} 
 \end{frame}

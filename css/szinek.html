@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Színek</title>
+    <meta charset="utf-8" />
+    <style>
+      .sor {
+        display: flex;
+      }
+      .harmad {
+        flex: 33.333%;
+        text-align: center;
+      }
+      #teglalap {
+        width: 50%;
+        height: 100px;
+        position: relative;
+        left: 25%;
+      }
+    </style>
+    <script>
+      let szinvalaszto = {
+        vezerlok: document.querySelectorAll("input[type='range']"),
+        frissit: function() {
+          
+        }
+        
+      };
+      document.addEventListener("load", function() {
+        document.getElementById("urlap").addEventListener("change", function() {
+          szinvalaszto.frissit();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="teglalap"></div>
+    <form id="urlap">
+      <div class="sor">
+        <div class="harmad">
+          <input type="range" min="0" max="255" value="127" /><br /><p>Vörös</p>
+        </div>
+        <div class="harmad">
+          <input type="range" min="0" max="255" value="127" /><br /><p>Zöld</p>
+        </div>
+        <div class="harmad">
+          <input type="range" min="0" max="255" value="127" /><br /><p>Kék</p>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
