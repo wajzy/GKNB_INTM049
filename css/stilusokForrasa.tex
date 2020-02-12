@@ -1,0 +1,20 @@
+\subsection{Stílusok forrása}
+
+%12
+\begin{frame}
+  Háromféle helyen lehet stílusokat megadni:
+  \begin{enumerate}
+    \item Külső fájlban (\texttt{css} kiterjesztés, \texttt{<link>} elem)
+    \item A \texttt{<head>} elembe ágyazott \texttt{<style>} elemben. Csak akkor ajánlott, ha egyetlen HTML fájlt kívánunk formázni ezekkel a stílusokkal.
+    \item Soron belül: a HTML elemek \texttt{style} attribútumának értékeként. Ismét \kiemel{keveredik a tartalom a stílussal}, ezért általában \kiemel{nem ajánlott} a használata!
+  \end{enumerate}
+\end{frame}
+
+%13
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{egyszeruSzelektor2.html}{egyszeruSzelektor2.html}}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={3-12},numbers=left,firstnumber=3]{egyszeruSzelektor2.html}
+    \lstinputlisting[style=HTML,linerange={16-16},numbers=left,firstnumber=16]{egyszeruSzelektor2.html}
+  \end{exampleblock}
+\end{frame}
