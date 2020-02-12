@@ -1,0 +1,42 @@
+\subsection{Dobozmodell}
+
+%30
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.5\textwidth}
+      Minden HTML elemet egy \emph{doboznak} tekintünk. Ezek szerkezete belülről kifelé:
+      \begin{itemize}
+        \item Az elem tartalma (szöveg, kép, \dots)
+        \item Kitöltés (\texttt{padding}; átlátszó)
+        \item Szegély (\texttt{border})
+        \item Margó (\texttt{margin}; átlátszó)
+      \end{itemize}
+      \vfill
+      Megjegyzések
+      \begin{itemize}
+        \item A szélesség (\texttt{width}) és magasság (\texttt{height}) 
+      tulajdonságok a tartalmi rész méreteire vonatkoznak.
+        \item Soron belüli elemek méretét a böngésző határozza 
+        meg, nem méretezhetőek át.
+      \end{itemize}
+    \column{0.5\textwidth}
+      \includegraphics[width=\textwidth]{doboz.pdf}
+  \end{columns} 
+\end{frame}
+
+%31
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.45\textwidth}
+      \begin{exampleblock}{\textattachfile{dobozMeret.html}{dobozMeret.html}}
+        \tiny
+        \lstinputlisting[style=HTML,linerange={7-18},numbers=left,firstnumber=7]{dobozMeret.html}
+      \end{exampleblock}
+    \column{0.55\textwidth}
+      \includegraphics[width=0.9\textwidth]{dobozMeret.png}
+  \end{columns}
+  \begin{exampleblock}{\vspace*{-3ex}}
+    \tiny
+    \lstinputlisting[style=HTML,linerange={22-25},numbers=left,firstnumber=22]{dobozMeret.html}
+  \end{exampleblock}
+\end{frame}

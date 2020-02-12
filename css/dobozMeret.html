@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Dobozok méretezése</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0px;
+      }
+      p {
+        background-color: yellow;
+        padding: 20px;
+        border: 5px solid red;
+        margin: 10px;
+      }
+      span {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Ez a bekezdés a szülő (<code>body</code>) szélességéhez igazodik, magassága a tartalom függvénye.</p>
+    <p style="width: 200px; height: 100px;">Ez egy 200x100 képpont méretű bekezdés.</p>
+    <p>A bekezdésben lévő <span style="width: 120px; height: 50px;">soron belüli elemek</span> mérete nem módosítható!</p>
+    <p>Kivéve, ha a <span style="display: block; width: 120px; height: 50px;">megjelenítés módját</span> blokkszintűre módosítjuk.</p>
+  </body>
+</html>
