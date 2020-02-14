@@ -40,3 +40,27 @@
     \lstinputlisting[style=HTML,linerange={22-25},numbers=left,firstnumber=22]{dobozMeret.html}
   \end{exampleblock}
 \end{frame}
+
+%32
+\begin{frame}
+\begin{columns}[c]
+  \column{0.5\textwidth}
+    Mit számol bele a böngésző a méret (\texttt{width}, 
+    \texttt{height}) adatokba? $\to$ \texttt{box-sizing}
+    \begin{description}[m]
+      \item[\texttt{content-box}] \hfill \\ 
+        Csak a tartalom méretét
+      \item[\texttt{border-box}] \hfill \\ 
+        Tartalom + kitöltés + szegély
+    \end{description}
+  \column{0.5\textwidth}
+    \begin{center}
+      \includegraphics[scale=0.5]{meretezes.png}
+    \end{center}
+    \begin{exampleblock}{\textattachfile{meretezes.html}{meretezes.html}}
+      \scriptsize
+      \lstinputlisting[style=HTML,linerange={11-17},numbers=left,firstnumber=11]{meretezes.html}
+    \end{exampleblock}
+\end{columns} 
+  
+\end{frame}
