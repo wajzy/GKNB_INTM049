@@ -65,5 +65,56 @@
       \lstinputlisting[style=HTML,linerange={11-17},numbers=left,firstnumber=11]{meretezes.html}
     \end{exampleblock}
 \end{columns} 
-  
+\end{frame}
+
+%33
+\begin{frame}
+  Blokk szintű elemek szélessége (\texttt{width}) és magassága (\texttt{height}) megadható:
+  \begin{itemize}
+    \item \texttt{auto}: alapértelmezett
+    \item valós világbeli, relatív vagy megjelenítőtől függő mértékegység (pl. \texttt{cm}, \texttt{ex}, \texttt{px})
+    \item a tartalmazó blokk \%-ában megadva
+    \item \texttt{initial}: az alapértelmezett értéket használja az örökölt helyett
+    \item \texttt{inherit}: a szülőtől örökölt értéket használja
+  \end{itemize}
+\end{frame}
+
+%34
+\begin{frame}
+  A merev méretek helyett megadhatók intervallumok is:
+  \begin{description}[m]
+    \item[\texttt{max-width}] \hfill \\ Ennél csak keskenyebb lehet. Felülírja \texttt{width} értékét.
+    \item[\texttt{min-width}] \hfill \\ Ennél csak szélesebb lehet. Ha a tartalom ennél szélesebb, nem veszik figyelembe. A szélesség változásával a magasság is változhat.
+    \item[\texttt{max-height}] \hfill \\ Ennél csak alacsonyabb lehet. Ha a tartalom ennél magasabb, a viselkedés az \texttt{overflow}-tól függ. Felülírja \texttt{height} értékét.
+    \item[\texttt{min-height}] \hfill \\ Ennél csak magasabb lehet. Ha a tartalom ennél alacsonyabb, akkor ekkorára növeli meg a magasságot.
+  \end{description}
+\end{frame}
+
+%35
+\begin{frame}
+  Túlcsordulások kezelése: \texttt{overflow}
+  \begin{description}[m]
+    \item[\texttt{visible}] \hfill \\ A túllógó részek is megjelennek, esetleg rálógva más tartalmakra. Alapértelmezés.
+    \item[\texttt{hidden}] \hfill \\ A túllógó részeket levágják.
+    \item[\texttt{scroll}] \hfill \\ Görgetősávok jelennek meg a túllógó részek megjelenítéséhez. Némelyik böngésző mindig mutatja, mások csak akkor, ha szükséges.
+    \item[\texttt{auto}] \hfill \\ Csak akkor jelennek meg görgetősávok, ha nem fér el a tartalom.
+  \end{description}
+  \vfill
+  Léteznek \texttt{overflow-x} és \texttt{overflow-y} tulajdonságok csak az egyik irány viselkedésének megadásához.
+\end{frame}
+
+%36
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{tulnyulas.html}{tulnyulas.html} -- Ellenőrizze a méretezés hatását, túlcsordulásokat!}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={11-12},numbers=left,firstnumber=11]{tulnyulas.html}
+    \lstinputlisting[style=HTML,linerange={20-22},numbers=left,firstnumber=20]{tulnyulas.html}
+  \end{exampleblock}
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \includegraphics[width=\textwidth]{tulnyulas.png}
+    \column{0.45\textwidth}
+      Az első bekezdés tartalma rálóg a másodikra, túl alacsony a blokk.\\
+      A második bekezdés maximális méreten. Ha keskenyre állítjuk az ablakot, vízszintes görgetősáv jelenik meg a böngészőablak alján.
+  \end{columns}
 \end{frame}
