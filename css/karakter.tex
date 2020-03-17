@@ -1,0 +1,95 @@
+\subsection{Karakterkészletek}
+
+%53
+\begin{frame}
+  Általános fontcsaládok: nagyon hasonló megjelenésű karakterkészletek
+  \begin{description}[m]
+    \item[Serif] \hfill \\ ,,Talpas'' betűkészletek; főleg bekezdések szövegéhez, mert ,,vezeti a szemet'' az alapvonalon, de képernyőn sokan nehezen olvassák
+    \item[Sans-serif] \hfill \\ ,,Talp nélküli'' betűkészletek, 
+    főleg címsorokhoz
+    \item[Monospace] \hfill \\ ,,Egyenközű'', azonos szélességű 
+    betűkből álló betűkészletek, főleg forrásszövegekhez
+  \end{description}
+\end{frame}
+
+%54
+\begin{frame}
+  \texttt{font-family}: karakterkészlet kiválasztása
+  \begin{itemize}
+    \item Karakterkészletek listája; 
+    ha valamelyik nincs telepítve, a következővel próbálkozik 
+    $\to$ érdemes egy általános fontcsalád nevét tenni a végére
+    \item Ha a névben szóköz van, idézőjelek közé kell tenni
+    \item Jól bejáratott kombinációk, pl.
+    \begin{itemize}
+      \item \texttt{"Times New Roman", Times, serif}
+      \item \texttt{Arial, Helvetica, sans-serif}
+      \item \texttt{"Courier New", Courier, monospace}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+%55
+\begin{frame}
+  \texttt{font-style}: álló és dőlt betűk
+  \begin{description}[m]
+    \item[\texttt{normal}] \hfill \\ Álló betűk, alapértelmezés
+    \item[\texttt{italic}] \hfill \\ Dőlt betűk
+    \item[\texttt{oblique}] \hfill \\ ,,Kevésbé dőlt'', gyenge támogatás
+  \end{description}
+  \vfill
+  \texttt{font-variant}: változatok
+  \begin{description}[m]
+    \item[\texttt{normal}] \hfill \\ Normál betűk, alapértelmezett.
+    \item[\texttt{small-caps}] \hfill \\ Kiskapitális, a kisbetűket 
+    kicsinyített nagybetűkkel helyettesíti.
+  \end{description}
+\end{frame}
+
+%56
+\begin{frame}
+  \texttt{font-size}: méretezés
+  \begin{description}[m]
+    \item[Abszolút méretekben] \hfill \\ A felhasználó nem 
+    méretezheti át. Pl. \texttt{px} (CSS képpont), \texttt{pt} 
+    (nyomdai pont).
+    \item[Relatív méretekben] \hfill \\ Felhasználó átméretezheti. Pl. \texttt{em} (1em a 
+    bekezdések alapértelmezett mérete = \texttt{16px}), \texttt{\%} 
+    (a szülő elem betűkészletének méretéhez viszonyítva), 
+    \texttt{vw} (\texttt{1vw} = a \emph{viewport} szélességének 
+    1\%-a; átméreteződik az ablak méretezésével)
+    \item[Kulcsszavakkal] \hfill \\ Előre definiált méretek: \texttt{xx-small}, 
+    \texttt{x-small}, \texttt{small}, \texttt{medium}, \texttt{large}, 
+    \texttt{x-large}, \texttt{xx-large}. \\
+    Átméretezés: \texttt{smaller}, \texttt{larger}.
+  \end{description}
+\end{frame}
+
+%57
+\begin{frame}
+  \texttt{font-weight}: ,,vastagság'', ,,súly''
+  \begin{description}[m]
+    \item[\texttt{normal}] \hfill \\ Normál szélesség (400), alapértelmezett.
+    \item[\texttt{bold}] \hfill \\ Félkövér (700)
+    \item[\texttt{bolder}, \texttt{lighter}] \hfill \\ Növeli, 
+    csökkenti a vastagságot
+    \item[\texttt{100, 200, 300, \dots, 900}] \hfill \\ Különféle 
+    vastagságok, de többnyire csak a normál és a félkövér támogatott.
+  \end{description}
+\end{frame}
+
+%58
+\begin{frame}
+  Rövidítés:
+  \begin{description}[m]
+    \item[\texttt{font: font-style font-variant font-weight 
+    font-size/line-height}] \hfill \\
+    \item[\qquad \texttt{font-family | caption | icon | menu | 
+    message-box | }] \hfill \\
+    \item[\qquad \texttt{small-caption | status-bar | initial | inherit;}] \hfill \\ A méret és a 
+    karakterkészlet megadása kötelező. A \texttt{caption}, 
+    \texttt{icon}, ... kulcsszavakkal lehet a böngésző által 
+    valamilyen célra már használt beállításokat kérni egy adott helyen.
+  \end{description}
+\end{frame}
+% diaszámokat frissíteni kell az ezt követő fájlokban!
