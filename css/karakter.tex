@@ -92,4 +92,107 @@
     valamilyen célra már használt beállításokat kérni egy adott helyen.
   \end{description}
 \end{frame}
-% diaszámokat frissíteni kell az ezt követő fájlokban!
+
+%59
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{karakter.html}{karakter.html}}
+    \fontsize{7}{8} \selectfont
+    \lstinputlisting[style=HTML,linerange={6-10},numbers=left,firstnumber=6]{karakter.html}
+    \lstinputlisting[style=HTML,linerange={13-25},numbers=left,firstnumber=13]{karakter.html}
+  \end{exampleblock}
+\end{frame}
+
+%60
+\begin{frame}
+  \begin{center}
+    \includegraphics[scale=0.6]{karakter.png}
+  \end{center}
+\end{frame}
+
+%61
+\begin{frame}
+  Karakterkészletek letölthetők a hálózatról: \texttt{@font-face}
+  \begin{itemize}
+    \item egyedi megjelenést kölcsönöz
+    \item mindenki ugyanazt a készletet használja, garantáltan azonos megjelenés mindenhol (sok eszközön hiányosak a készletek, főleg a ritkán használt karakterek)
+  \end{itemize}
+  \vfill
+  Megbízhatóan használható formátumok:
+  \begin{itemize}
+    \item \hiv{\href{https://en.wikipedia.org/wiki/TrueType}{TrueType Font (TTF)}}
+    \item \hiv{\href{https://en.wikipedia.org/wiki/OpenType}{OpenType Font (OTF)}}
+    \item \hiv{\href{https://en.wikipedia.org/wiki/Web_Open_Font_Format}{Web Open Font Format (WOFF)}}
+  \end{itemize}
+\end{frame}
+
+%62
+\begin{frame}
+  A \texttt{@font-face} szabályban használható tulajdonságok:
+  \begin{description}[m]
+    \item[\texttt{font-family}] \hfill \\ Ezzel a névvel lehet majd hivatkozni a karakterkészletre később, kötelező.
+    \item[\texttt{src}] \hfill \\ A fájl forrását adja meg \texttt{url()} CSS függvénnyel, kötelező.
+    \item[\texttt{font-stretch}] \hfill \\ Ha a karakterkészletnek készültek különféle sűrűségű változatai, ezzel lehet kiválasztani, hogy valamelyiket milyennek tekintsen a böngésző (pl. \texttt{normal}, \texttt{condensed}, \texttt{expanded}). Ennek hiányában a böngészőnek kell előállíttatnia a speciális formákat a normálból kiindulva.
+    \item[\texttt{font-style}] \hfill \\ Hasonlóan, dőlt változatokhoz (pl. \texttt{normal}, \texttt{italic}).
+    \item[\texttt{font-weight}] \hfill \\ Hasonlóan, a ,,kövérséghez'' (pl. \texttt{normal}, \texttt{bold}).
+  \end{description}
+\end{frame}
+
+%63
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{webfont.html}{webfont.html}}
+        \fontsize{7}{8} \selectfont
+        \lstinputlisting[style=HTML,linerange={7-17},numbers=left,firstnumber=7]{webfont.html}
+        \lstinputlisting[style=HTML,linerange={21-22},numbers=left,firstnumber=21]{webfont.html}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{webfont.png}
+  \end{columns}
+\end{frame}
+
+%64
+\begin{frame}
+  \hiv{\href{https://developers.google.com/fonts}{Google Fonts}}
+  \begin{itemize}
+    \item Több száz ingyenes karakterkészlet
+    \item Könnyű kereshetőség
+    \item Egyszerű integráció a weboldalba
+  \end{itemize}
+\end{frame}
+
+%65
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{googleFonts.html}{googleFonts.html}}
+        \scriptsize
+        \lstinputlisting[style=HTML,linerange={6-12},numbers=left,firstnumber=6]{googleFonts.html}
+        \lstinputlisting[style=HTML,linerange={15-15},numbers=left,firstnumber=15]{googleFonts.html}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{googleFonts.png}
+  \end{columns}
+\end{frame}
+
+%66
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.5\textwidth}
+      Készítse el Semmelweis Ignác oldalát a \hiv{\href{https://hu.wikipedia.org/wiki/Semmelweis_Ign\%C3\%A1c}{Wiki}} oldal szövegét felhasználva!
+      \begin{itemize}
+        \item Töltse le a \hiv{\href{https://befonts.com/ballerina-script-font.html}{Ballerina}} karakterkészletet!
+        \item Használja ezt az első szintű címsorban szereplő név kiírására, 42 nyomdai pont méretben!
+        \item A bekezdések szövegét írja \hiv{\href{https://fonts.google.com/}{Libre Baskerville}} karakterkészlettel, 12 nyodai pont mérettel!
+        \item Készítsen stílusokat a félkövér és dőlt betűs részek megjelöléséhez!
+      \end{itemize}
+    \column{0.45\textwidth}
+      \begin{exampleblock}{\textattachfile{semmelweis.html}{semmelweis.html}}
+        \begin{center}
+          \includegraphics[width=0.7\textwidth]{semmelweis.png}
+        \end{center}
+      \end{exampleblock}
+  \end{columns}
+\end{frame}
+
+% önálló feladat
