@@ -1,2 +1,60 @@
 \subsection{Táblázatok}
 
+%_
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.5\textwidth}
+      Táblázatok alapértelmezett formázása:
+      \begin{itemize}
+        \item Cellaméretek a tartalomhoz igazodnak
+        \item Nincsenek szegélyek
+        \item Fejléc (\texttt{<th>}) cellák félkövérek, középre zártak
+        \item Normál cellák (\texttt{<td>}) balra zártak
+      \end{itemize}
+    \column{0.45\textwidth}
+        \begin{exampleblock}{\textattachfile{tablazat01.html}{tablazat01.html}}
+          \begin{center}
+            \includegraphics[width=\textwidth]{tablazat01.png}
+          \end{center}
+        \end{exampleblock}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Kaphat szegélyt a teljes táblázat \dots
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      \begin{exampleblock}{\textattachfile{tablazat02.html}{tablazat02.html}}
+        \scriptsize
+        \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{tablazat02.html}
+        \lstinputlisting[style=HTML,linerange={11-16},numbers=left,firstnumber=11]{tablazat02.html}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{tablazat02.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  \dots vagy annak cellái \dots
+  \vfill
+  \begin{exampleblock}{\textattachfile{tablazat03.html}{tablazat03.html}}
+    \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{tablazat03.html}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{tablazat03.png}
+  \end{center}
+\end{frame}
+
+%_
+\begin{frame}
+  \dots vagy mindkettő.
+  \vfill
+  \begin{exampleblock}{\textattachfile{tablazat04.html}{tablazat04.html}}
+    \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{tablazat04.html}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{tablazat04.png}
+  \end{center}
+\end{frame}
