@@ -122,3 +122,117 @@
     \includegraphics[width=\textwidth]{tablazat09.png}
   \end{center}
 \end{frame}
+
+%_
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.3\textwidth}
+      \small
+      Az olvashatóság javításához pl. kiemelhetjük az egér alatti sort a \texttt{:hover} látszólagos osztállyal.\\
+      Figyeljük meg a ,,csíkozást''!
+      \vfill
+      \begin{center}
+        \includegraphics[width=\textwidth]{tablazat10.png}
+      \end{center}
+    \column{0.66\textwidth}
+      \begin{exampleblock}{\textattachfile{tablazat10.html}{tablazat10.html}}
+        \scriptsize
+        \lstinputlisting[style=HTML,linerange={7-14},numbers=right,firstnumber=7]{tablazat10.html}
+      \end{exampleblock}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Az olvashatóság a sorok váltakozó háttérszínével is javítható. Egy szülő elem (pl. \texttt{<table>}) gyerekei (sorok) közül meghatározottak kiválasztása: \hiv{\href{https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child}{\texttt{nth-child()}}} látszólagos osztállyal.
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      \begin{description}[m]
+        \item[\texttt{An+b}] \hfill \\ $n = 0 \dots$, de a gyerekek számozása 1-től indul!
+        \item[\texttt{even}] \hfill \\ Páros elemek $\equiv$ \texttt{2n}
+        \item[\texttt{odd}] \hfill \\ Páratlan elemek $\equiv$ \texttt{2n+1}
+      \end{description}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{tablazat11.png}
+  \end{columns} 
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{tablazat11.html}{tablazat11.html}}
+    \small
+    \lstinputlisting[style=HTML,linerange={7-17},numbers=left,firstnumber=7]{tablazat11.html}
+  \end{exampleblock}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      Görgethető táblázat, trükkök:
+      \begin{itemize}
+        \item Rögzített fejléc $\to$ két külön táblázat, csak az alsó görgethető
+        \item Görgetés: táblázat beágyazva egy túl alacsony elembe, és \texttt{overflow-y: scroll} (hasonlóan a vízszintes irányú görgetés is lehetséges az \texttt{overflow-x} tulajdonsággal)
+        \item Legyenek a két táblázat oszlopai rendre azonos szélességűek!
+      \end{itemize}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{tablazat12.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{tablazat12.html}{tablazat12.html}}
+    \fontsize{7}{8} \selectfont
+    \lstinputlisting[style=HTML,linerange={28-41},numbers=left,firstnumber=28]{tablazat12.html}
+    \lstinputlisting[style=HTML,linerange={51-53},numbers=left,firstnumber=51]{tablazat12.html}
+  \end{exampleblock}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{tablazat12.html}{tablazat12.html}}
+    \fontsize{7}{8} \selectfont
+    \lstinputlisting[style=HTML,linerange={7-24},numbers=left,firstnumber=7]{tablazat12.html}
+  \end{exampleblock}
+\end{frame}
+
+%_
+\begin{frame}
+  Táblázat címkéjének elhelyezése: \texttt{caption-side}
+  \begin{description}[m]
+    \item[\texttt{top}] \hfill \\ Fent, alapértelmezés.
+    \item[\texttt{bottom}] \hfill \\ Lent.
+  \end{description}
+  \vfill
+  Üres cellák szegélyeinek rajzolása: \texttt{empty-cells}
+  \begin{description}[m]
+    \item[\texttt{show}] \hfill \\ Megrajzolja, alapértelmezés.
+    \item[\texttt{hide}] \hfill \\ Nem rajzolja meg.
+  \end{description}
+\end{frame}
+
+%_
+\begin{frame}
+  Táblázat megjelenítési algoritmus: \texttt{table-layout}
+  \begin{description}[m]
+    \item[\texttt{auto}] \hfill \\ A cellák szélessége a legszélesebb nem tördelhető tartalmi elem függvénye. Alapértelmezés.
+    \item[\texttt{fixed}] \hfill \\ Az oszlopok szélességét vagy
+    \begin{itemize}
+      \item a \texttt{<table>} és \texttt{<col>} elemek szélességei adják meg, vagy
+      \item az első sor celláinak szélességei. Ha ilyen nincs, egyforma szélesek lesznek a cellák.
+    \end{itemize}
+    Nagy táblázatoknál jelentősen gyorsabb megjelenés.
+  \end{description}
+\end{frame}
+
+%_
+\begin{frame}
+  Készítse el a \textattachfile{queen.png}{queen.png} fájl felhasználásával az alábbi weboldalt, ami a \hiv{\href{https://hu.wikipedia.org/wiki/Nyolckir\%C3\%A1lyn\%C5\%91-probl\%C3\%A9ma}{Nyolckirálynő probléma}} egy lehetséges megoldását mutatja! Ügyeljen rá, hogy keskeny kijelzőkön a táblázat vízszintesen görgethető legyen! (A cellák 50x50, a képek 40x40px méretűek.)
+  \begin{exampleblock}{\textattachfile{sakk.html}{sakk.html}}
+    \begin{center}
+      \includegraphics[scale=0.15]{sakk1.png}\hspace{1cm}
+      \includegraphics[scale=0.15]{sakk2.png}
+    \end{center}
+  \end{exampleblock}  
+\end{frame}
