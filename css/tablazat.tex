@@ -58,3 +58,67 @@
     \includegraphics[width=0.4\textwidth]{tablazat04.png}
   \end{center}
 \end{frame}
+
+%_
+\begin{frame}
+  A cellák közötti távolság változtatható a \texttt{<table>} \texttt{border-spacing} tulajdonságával \dots
+  \vfill
+  \begin{exampleblock}{\textattachfile{tablazat05.html}{tablazat05.html}}
+    \lstinputlisting[style=HTML,linerange={7-8},numbers=left,firstnumber=7]{tablazat05.html}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{tablazat05.png}
+  \end{center}
+\end{frame}
+
+%_
+\begin{frame}
+  \dots de teljesen el is tüntethető a \texttt{<table>} \texttt{border-collapse} tulajdonságával:
+  \begin{description}[m]
+    \item[\texttt{separate}] elkülönített cellák, alapértelmezés.
+    \item[\texttt{collapse}] összevont cellaszegélyek.
+  \end{description}
+  \vfill
+  \begin{exampleblock}{\textattachfile{tablazat06.html}{tablazat06.html}}
+    \lstinputlisting[style=HTML,linerange={7-8},numbers=left,firstnumber=7]{tablazat06.html}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{tablazat06.png}
+  \end{center}
+\end{frame}
+
+%_
+\begin{frame}
+  A cellák szegélye és tartalma közötti távolság a \texttt{<td>}, \texttt{<th>} \texttt{padding} tulajdonságával állítható.
+  \begin{exampleblock}{\textattachfile{tablazat07.html}{tablazat07.html}}
+    \footnotesize
+    \lstinputlisting[style=HTML,linerange={7-11},numbers=left,firstnumber=7]{tablazat07.html}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{tablazat07.png}
+  \end{center}
+\end{frame}
+
+%_
+\begin{frame}
+  A cellákon belüli igazítás a \texttt{text-align}, \texttt{vertical-align} tulajdonságokkal állítható.
+  \begin{exampleblock}{\textattachfile{tablazat08.html}{tablazat08.html}}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={7-13},numbers=left,firstnumber=7]{tablazat08.html}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=0.35\textwidth]{tablazat08.png}
+  \end{center}
+\end{frame}
+
+%_
+\begin{frame}
+  Ha a táblázat szélesebb, mint amit a tartalom indokol, a maradék hely arányosan lesz elosztva.
+  \begin{exampleblock}{\textattachfile{tablazat09.html}{tablazat09.html}}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={7-14},numbers=left,firstnumber=7]{tablazat09.html}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=\textwidth]{tablazat09.png}
+  \end{center}
+\end{frame}
