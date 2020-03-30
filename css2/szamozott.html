@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Számozott felsorolások</title>
+    <meta charset="utf-8" />
+    <script>
+      window.addEventListener("load", function() {
+        let felsorolas = document.getElementById("felsorolas");
+        document.getElementById("urlap").addEventListener("change", function(e) {
+          felsorolas.style = "list-style-type: " + e.srcElement.value;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>Válasszon a felsorolásjelek közül!</p>
+    <form id="urlap">
+      <div><label><input type="radio" name="tipus" value="decimal" checked="checked" /><code>decimal</code></label></div>
+      <div><label><input type="radio" name="tipus" value="armenian" /><code>armenian</code></label></div>
+      <div><label><input type="radio" name="tipus" value="cjk-ideographic" /><code>cjk-ideographic</code></label></div>
+      <div><label><input type="radio" name="tipus" value="decimal-leading-zero" /><code>decimal-leading-zero</code></label></div>
+      <div><label><input type="radio" name="tipus" value="georgian" /><code>georgian</code></label></div>
+      <div><label><input type="radio" name="tipus" value="hebrew" /><code>hebrew</code></label></div>
+      <div><label><input type="radio" name="tipus" value="hiragana" /><code>hiragana</code></label></div>
+      <div><label><input type="radio" name="tipus" value="hiragana-iroha" /><code>hiragana-iroha</code></label></div>
+      <div><label><input type="radio" name="tipus" value="katakana" /><code>katakana</code></label></div>
+      <div><label><input type="radio" name="tipus" value="katakana-iroha" /><code>katakana-iroha</code></label></div>
+      <div><label><input type="radio" name="tipus" value="lower-alpha" /><code>lower-alpha</code></label></div>
+      <div><label><input type="radio" name="tipus" value="lower-greek" /><code>lower-greek</code></label></div>
+      <div><label><input type="radio" name="tipus" value="lower-latin" /><code>lower-latin</code></label></div>
+      <div><label><input type="radio" name="tipus" value="lower-roman" /><code>lower-roman</code></label></div>
+      <div><label><input type="radio" name="tipus" value="upper-alpha" /><code>upper-alpha</code></label></div>
+      <div><label><input type="radio" name="tipus" value="upper-greek" /><code>upper-greek</code></label></div>
+      <div><label><input type="radio" name="tipus" value="upper-latin" /><code>upper-latin</code></label></div>
+      <div><label><input type="radio" name="tipus" value="upper-roman" /><code>upper-roman</code></label></div>
+      <div><label><input type="radio" name="tipus" value="none" /><code>none</code></label></div>
+    </form>
+    <ol id="felsorolas">
+      <li>Répa</li>
+      <li>Retek</li>
+      <li>Mogyoró</li>
+    </ol>
+  </body>
+</html>

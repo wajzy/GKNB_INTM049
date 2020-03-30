@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Nem számozott felsorolások</title>
+    <meta charset="utf-8" />
+    <script>
+      window.addEventListener("load", function() {
+        let felsorolas = document.getElementById("felsorolas");
+        document.getElementById("urlap").addEventListener("change", function(e) {
+          felsorolas.style = "list-style-type: " + e.srcElement.value;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>Válasszon a felsorolásjelek közül!</p>
+    <form id="urlap">
+      <div><label><input type="radio" name="tipus" value="disc" checked="checked" /><code>disc</code></label></div>
+      <div><label><input type="radio" name="tipus" value="circle" /><code>circle</code></label></div>
+      <div><label><input type="radio" name="tipus" value="square" /><code>square</code></label></div>
+      <div><label><input type="radio" name="tipus" value="none" /><code>none</code></label></div>
+    </form>
+    <ul id="felsorolas">
+      <li>Répa</li>
+      <li>Retek</li>
+      <li>Mogyoró</li>
+    </ul>
+  </body>
+</html>
