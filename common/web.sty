@@ -1,5 +1,3 @@
-\documentclass[usenames,dvipsnames,aspectratio=169]{beamer}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[magyar]{babel}
@@ -53,49 +51,16 @@ megtekintéséhez!},icon=Paperclip}
 \newcommand{\kiemelZ}[1]{{\color{kiemelesszinZ}#1}}
 \newcommand{\kiemelN}[1]{{\color{kiemelesszinN}#1}}
 \newcommand{\hiv}[1]{{\color{hivatkozasszin}#1}}
-\frenchspacing
-\usetheme[compress]{Berlin}
-
-\title[Web technológiák - HTML]{Web-technológia}
-\subtitle{Cascading Style Sheets}
-\author{Dr. Hatwagner F. Miklós}
-\institute{Széchenyi István Egyetem, Győr}
-\date{\hiv{\href{https://github.com/wajzy/GKxB\_INTM049.git}{https://github.com/wajzy/GKxB\_INTM049.git}}\\ \today}
-
-\begin{document}
-
-% initial, inherit általános értékekről írni kellene valamit, valahol!
-% diaszámokat frissíteni kell, mert csomó helyre közbeszúrtam valamit
-
-%1
-\begin{frame}[plain]
-  \titlepage
+\newcommand{\logoalul}{
   \begin{picture}(0,0)
     \put(120,-0){\hbox{\includegraphics[scale=.5]{../common/sze_logo.pdf}}}
     \put(205,-6){\hbox{\includegraphics[scale=.4]{../common/it_logo.pdf}}}
   \end{picture}
-\end{frame}
+}
 
-\section{Alapok}
+\frenchspacing
+\usetheme[compress]{Berlin}
 
-\input{elonyok.tex}
-\input{formazas.tex}
-\input{szintaktika.tex}
-\input{egyszeruSzelektorok.tex}
-%ide jöhetnének a mértékegységek
-\input{stilusokForrasa.tex}
-\input{utkozesekFeloldasa.tex}
-\input{szinek.tex}
-\input{hatter.tex}
-\input{doboz.tex}
-\input{szegely.tex}
-\input{margo.tex}
-\input{kitoltes.tex}
-\input{korvonal.tex}
-\input{karakter.tex}
-\input{szoveg.tex}
-\input{hivatkozas.tex}
-%ide jöjjenek a felsorolások
-\input{tablazat.tex}
-
-\end{document}
+\author{Dr. Hatwagner F. Miklós}
+\institute{Széchenyi István Egyetem, Győr}
+\date{\hiv{\href{https://github.com/wajzy/GKxB\_INTM049.git}{https://github.com/wajzy/GKxB\_INTM049.git}}\\ \today}
