@@ -26,6 +26,24 @@
   Negatív értékek is használhatók.
 \end{frame}
 
+%_
+\begin{frame}
+  Az ablak keskenyebb, mint az elem \emph{rögzített} szélessége? $\to$ gördítősáv. \emph{Maximális} szélesség $\to$ csökkenthető. Középre igazítás: \texttt{margin: auto}-val.
+  \begin{columns}[c]
+    \column{0.55\textwidth}
+      \begin{exampleblock}{\textattachfile{kozepre.html}{kozepre.html}}
+        \fontsize{7}{8} \selectfont
+        \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{kozepre.html}
+        \lstinputlisting[style=HTML,linerange={12-15},numbers=left,firstnumber=12]{kozepre.html}
+        \lstinputlisting[style=HTML,linerange={19-21},numbers=left,firstnumber=19]{kozepre.html}
+      \end{exampleblock}
+    \column{0.25\textwidth}
+      \includegraphics[width=\textwidth]{kozepre1.png}
+    \column{0.15\textwidth}
+      \includegraphics[width=\textwidth]{kozepre2.png}
+  \end{columns}
+\end{frame}
+
 %44
 \begin{frame}
   A blokkok felső és alsó margói időnként összeolvadnak, és a kettő közül csak a nagyobb marad meg:
