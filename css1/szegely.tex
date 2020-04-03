@@ -95,3 +95,39 @@
       és \texttt{left}; csak ezekre állítja a fenti három tulajdonságot.
   \end{description}
 \end{frame}
+
+%_
+\begin{frame}
+  Szegélyek lekerekítése
+  \begin{description}[m]
+    \item[\texttt{border-top-left-radius}] \hfill \\ Bal felső
+    \item[\texttt{border-top-right-radius}] \hfill \\ Jobb felső
+    \item[\texttt{border-bottom-right-radius}] \hfill \\ Jobb alsó
+    \item[\texttt{border-bottom-left-radius}] \hfill \\ Bal alsó
+    \item[\texttt{border-radius}] \hfill \\ Rövidítés fentiek gyors beállításához
+  \end{description}
+\end{frame}
+
+%_
+\begin{frame}
+  \texttt{border-radius} paraméterezése
+  \begin{description}[m]
+    \item[1 érték megadásával] \hfill \\ mind a négy sarkot állítja
+    \item[2 érték megadásával] \hfill \\ bal felső + jobb alsó, jobb felső + bal alsó
+    \item[3 érték megadásával] \hfill \\ bal felső,  jobb felső + bal alsó, jobb alsó
+    \item[4 érték megadásával] \hfill \\ bal felső,  jobb felső, jobb alsó, bal alsó
+  \end{description}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      \begin{exampleblock}{\textattachfile{lekerekites.html}{lekerekites.html}}
+        \fontsize{7}{8} \selectfont
+        \lstinputlisting[style=HTML,linerange={7-26},numbers=left,firstnumber=7]{lekerekites.html}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{lekerekites.png}
+  \end{columns}
+\end{frame}
