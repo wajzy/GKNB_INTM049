@@ -1,4 +1,4 @@
-\subsection{Egyszerű szelektorok}
+\subsection{Szelektorok}
 
 %7
 \begin{frame}
@@ -49,4 +49,127 @@
   \begin{center}
     \includegraphics[width=.9\textwidth]{egyszeruSzelektor1.png}
   \end{center}
+\end{frame}
+
+%_
+\begin{frame}
+  Egy elembe tetszőleges mélységben beágyazott másik elemek kiválasztása
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      \begin{exampleblock}{\textattachfile{leszarmazott.html}{leszarmazott.html}}
+        \footnotesize
+        \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{leszarmazott.html}
+        \lstinputlisting[style=HTML,linerange={11-18},numbers=left,firstnumber=11]{leszarmazott.html}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{leszarmazott.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Egy elembe közvetlenül beágyazott gyermek elemek kiválasztása
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      \begin{exampleblock}{\textattachfile{gyermek.html}{gyermek.html}}
+        \footnotesize
+        \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{gyermek.html}
+        \lstinputlisting[style=HTML,linerange={11-18},numbers=left,firstnumber=11]{gyermek.html}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{gyermek.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Egy elemet közvetlenül követő testvér elem kiválasztása
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      \begin{exampleblock}{\textattachfile{testver.html}{testver.html}}
+        \footnotesize
+        \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{testver.html}
+        \lstinputlisting[style=HTML,linerange={11-19},numbers=left,firstnumber=11]{testver.html}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{testver.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Egy elemet közvetlenül követő összes testvér kiválasztása
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      \begin{exampleblock}{\textattachfile{testver2.html}{testver2.html}}
+        \footnotesize
+        \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{testver2.html}
+        \lstinputlisting[style=HTML,linerange={11-19},numbers=left,firstnumber=11]{testver2.html}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{testver2.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Látszólagos osztályok (pseudo-class): egy elem adott állapota esetén alkalmazandó formázása, 
+  \hiv{\href{https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes}{referencia}}
+  \vfill
+  Az egér alatti elem kiválasztása
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      \begin{exampleblock}{\textattachfile{hover.html}{hover.html}}
+        \footnotesize
+        \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{hover.html}
+        \lstinputlisting[style=HTML,linerange={11-11},numbers=left,firstnumber=11]{hover.html}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{hover1.png}
+      \vfill
+      \includegraphics[width=\textwidth]{hover2.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Azon elemek kiválasztása, melyek a szülőjük első gyermekei
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      \begin{exampleblock}{\textattachfile{firstchild.html}{firstchild.html}}
+        \scriptsize
+        \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{firstchild.html}
+        \lstinputlisting[style=HTML,linerange={10-14},numbers=left,firstnumber=10]{firstchild.html}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{firstchild.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Nyelvfüggő beállítások alkalmazása
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      \begin{exampleblock}{\textattachfile{lang.html}{lang.html}}
+        \includegraphics[width=0.7\textwidth]{langhtml.png}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{lang.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Adott típus n-edik előfordulása (részleteket ld. később \texttt{nth-child()}-nál)
+  \begin{columns}[c]
+    \column{0.7\textwidth}
+      \begin{exampleblock}{\textattachfile{nthoftype.html}{nthoftype.html}}
+        \scriptsize
+        \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{nthoftype.html}
+        \lstinputlisting[style=HTML,linerange={11-16},numbers=left,firstnumber=11]{nthoftype.html}
+      \end{exampleblock}
+    \column{0.25\textwidth}
+      \includegraphics[width=\textwidth]{nthoftype.png}
+  \end{columns}
 \end{frame}
