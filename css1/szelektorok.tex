@@ -173,3 +173,74 @@
       \includegraphics[width=\textwidth]{nthoftype.png}
   \end{columns}
 \end{frame}
+
+%_
+\begin{frame}
+  Látszólagos elemek (pseudo-elements): elemek bizonyos részeinek kiválasztása
+  \vfill
+  Első sor kiválasztása: \texttt{::first-line}
+  \begin{itemize}
+    \item Csak blokkszintű elemekkel használható
+    \item Csak bizonyos tulajdonságokkal használható: \\ \tiny \texttt{font}, \texttt{word-spacing}, \texttt{letter-spacing}, \texttt{line-height}, \texttt{text-decoration}, \texttt{text-transform}, \texttt{vertical-align}, \texttt{color}, \texttt{background}, \texttt{clear}.
+  \end{itemize}
+  \vfill
+  CSS3 előtt \kiemel{:} állt ott, ahol most \kiemel{::}.
+\end{frame}
+
+%_
+\begin{frame}
+  Szöveg első betűjének kiválasztása: \texttt{::first-letter}
+  \begin{itemize}
+    \item Csak blokkszintű elemekkel használható
+    \item Csak bizonyos tulajdonságokkal használható: \\ \tiny \texttt{font}, \texttt{line-height}, \texttt{text-decoration}, \texttt{text-transform}, \texttt{color}, \texttt{background}, \texttt{margin}, \texttt{border}, \texttt{padding}, \texttt{vertical-align} (ha nincs lebegtetés), \texttt{float}, \texttt{clear}.
+  \end{itemize}
+  \vfill
+  Kijelölt szöveg: \texttt{::selection}
+    \begin{itemize}
+    \item Csak bizonyos tulajdonságokkal használható: \\ \tiny \texttt{color}, \texttt{background}, \texttt{cursor}, \texttt{outline}.
+  \end{itemize}
+\end{frame}
+
+%_
+\begin{frame}
+  Tartalom valami előtt: \texttt{::before}, mögött: \texttt{::after}\\
+  \vfill
+  Tartalom megadása: \texttt{content} tulajdonsággal, értéke:
+  \begin{itemize}
+    \item idézőjelek/aposztrófok közötti szöveg
+    \item karakterek unicode kódja, pl. \texttt{'\textbackslash 02190'} $\equiv ~ \to$
+    \item \texttt{url()} függvénnyel adott kép
+  \end{itemize}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{columns}[T]
+    \column{0.4\textwidth}
+      \begin{exampleblock}{\textattachfile{pseudoelements.html}{pseudoelements.html}}
+        \fontsize{7}{8} \selectfont
+        \lstinputlisting[style=HTML,linerange={7-14},numbers=left,firstnumber=7]{pseudoelements.html}
+      \end{exampleblock}
+    \column{0.52\textwidth}
+      \begin{exampleblock}{}
+        \fontsize{7}{8} \selectfont
+        \lstinputlisting[style=HTML,linerange={15-26},numbers=right,firstnumber=15]{pseudoelements.html}
+      \end{exampleblock}
+  \end{columns}
+  \begin{exampleblock}{}
+    \fontsize{7}{8} \selectfont
+    \vspace{-0.1cm}
+    \lstinputlisting[style=HTML,linerange={30-34},numbers=left,firstnumber=30]{pseudoelements.html}
+    \vspace{-0.1cm}
+  \end{exampleblock}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{center}
+    \includegraphics[width=\textwidth]{pseudoelements.png}\\
+    \textattachfile{pseudoelements.html}{pseudoelements.html}
+  \end{center}
+\end{frame}
+
+%attribútum szelektorok jönnek még ide
