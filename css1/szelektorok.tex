@@ -208,7 +208,7 @@
   Tartalom megadása: \texttt{content} tulajdonsággal, értéke:
   \begin{itemize}
     \item idézőjelek/aposztrófok közötti szöveg
-    \item karakterek unicode kódja, pl. \texttt{'\textbackslash 02190'} $\equiv ~ \to$
+    \item karakterek unicode kódja, pl. \texttt{'\textbackslash 02192'} $\equiv ~ \to$
     \item \texttt{url()} függvénnyel adott kép
   \end{itemize}
 \end{frame}
@@ -243,4 +243,105 @@
   \end{center}
 \end{frame}
 
-%attribútum szelektorok jönnek még ide
+%_
+\begin{frame}
+  Kiválasztás attribútumok alapján
+  \vfill
+  Adott attribútummal rendelkező elemek kiválasztása
+  \begin{exampleblock}{\textattachfile{attributum1.html}{attributum1.html}}
+    \fontsize{7}{8} \selectfont
+    \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{attributum1.html}
+    \lstinputlisting[style=HTML,linerange={12-13},numbers=left,firstnumber=12]{attributum1.html}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{attributum1.png}
+  \end{center}
+\end{frame}
+
+%_
+\begin{frame}
+  Pontosan az adott értékű attribútummal rendelkező elemek kiválasztása
+  \begin{exampleblock}{\textattachfile{attributum2.html}{attributum2.html}}
+    \fontsize{7}{8} \selectfont
+    \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{attributum2.html}
+    \lstinputlisting[style=HTML,linerange={12-13},numbers=left,firstnumber=12]{attributum2.html}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{attributum2.png}
+  \end{center}
+\end{frame}
+
+%_
+\begin{frame}
+  Adott teljes szót (is) tartalmazó értékű attribútummal rendelkező elemek kiválasztása
+  \begin{columns}[c]
+    \column{0.7\textwidth}
+      \begin{exampleblock}{\textattachfile{attributum3.html}{attributum3.html}}
+      \scriptsize
+      \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{attributum3.html}
+      \lstinputlisting[style=HTML,linerange={12-14},numbers=left,firstnumber=12]{attributum3.html}
+  \end{exampleblock}
+    \column{0.27\textwidth}
+      \includegraphics[width=\textwidth]{attributum3.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Kiválasztja az elemet, ha az adott attribútumnak a megadott szó az egyetlen értéke, esetleg ezzel kezdődik és kötőjellel folytatódik
+  \begin{columns}[c]
+    \column{0.7\textwidth}
+      \begin{exampleblock}{\textattachfile{attributum4.html}{attributum4.html}}
+      \fontsize{7}{8} \selectfont
+      \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{attributum4.html}
+      \lstinputlisting[style=HTML,linerange={12-16},numbers=left,firstnumber=12]{attributum4.html}
+  \end{exampleblock}
+    \column{0.27\textwidth}
+      \includegraphics[width=\textwidth]{attributum4.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Kiválasztja az elemet, ha attribútumának értéke az adott karaktersorozattal kezdődik
+  \begin{columns}[c]
+    \column{0.7\textwidth}
+      \begin{exampleblock}{\textattachfile{attributum5.html}{attributum5.html}}
+      \fontsize{7}{8} \selectfont
+      \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{attributum5.html}
+      \lstinputlisting[style=HTML,linerange={12-16},numbers=left,firstnumber=12]{attributum5.html}
+  \end{exampleblock}
+    \column{0.27\textwidth}
+      \includegraphics[width=\textwidth]{attributum5.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Kiválasztja az elemet, ha attribútumának értéke az adott karaktersorozattal fejeződik be
+  \begin{columns}[c]
+    \column{0.7\textwidth}
+      \begin{exampleblock}{\textattachfile{attributum6.html}{attributum6.html}}
+      \fontsize{7}{8} \selectfont
+      \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{attributum6.html}
+      \lstinputlisting[style=HTML,linerange={12-16},numbers=left,firstnumber=12]{attributum6.html}
+  \end{exampleblock}
+    \column{0.27\textwidth}
+      \includegraphics[width=\textwidth]{attributum6.png}
+  \end{columns}
+\end{frame}
+
+%_
+\begin{frame}
+  Kiválasztja az elemet, ha attribútumának értéke tartalmazza az adott karaktersorozatot
+  \begin{columns}[c]
+    \column{0.7\textwidth}
+      \begin{exampleblock}{\textattachfile{attributum7.html}{attributum7.html}}
+      \fontsize{7}{8} \selectfont
+      \lstinputlisting[style=HTML,linerange={7-7},numbers=left,firstnumber=7]{attributum7.html}
+      \lstinputlisting[style=HTML,linerange={12-16},numbers=left,firstnumber=12]{attributum7.html}
+  \end{exampleblock}
+    \column{0.27\textwidth}
+      \includegraphics[width=\textwidth]{attributum7.png}
+  \end{columns}
+\end{frame}

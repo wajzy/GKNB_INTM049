@@ -1,0 +1,52 @@
+\subsection{Egyszerű szelektorok}
+
+%7
+\begin{frame}
+  \begin{description}[m]
+    \item[HTML elem neve] \hfill \\ \texttt{p \{ font-style: italic; \}}
+    \item[Egyedi azonosító (\texttt{id} attribútum) alapján] \hfill \\ 
+      \texttt{\#lablec \{ font-size: 10pt; \}}\\
+      Az \texttt{id} nem kezdődhet számjegy karakterrel!
+    \item[Univerzális szelektor, mindenre illeszkedik] \hfill \\ \texttt{* \{ font-size: smaller; \}}
+  \end{description}
+\end{frame}
+
+%8
+\begin{frame}
+  \begin{description}[m]
+    \item[Osztály (\texttt{class} attribútum alapján)] \hfill \\ 
+      \texttt{*.kisbetus \{ font-size: small; \} /* bármilyen HTML elemhez */} \\
+      \texttt{.kisbetus \{ font-size: small; \} /* bármilyen HTML elemhez, rövid alak */}\\
+      \texttt{p.voros \{ color: red; \} /* csak adott (pl. <p>) HTML elemhez */}\\
+      A \texttt{class} értéke nem kezdődhet számjeggyel, de lehet egyszerre több, szóközzel elválasztott értéke: \\
+      \texttt{<p class="kisbetus voros">Apróbetűs piros bekezdés</p>}
+    \item[Elemek csoportosítása] \hfill \\ \texttt{h1, h2, h3 \{ font-family: Arial; \}}
+  \end{description}
+\end{frame}
+
+%9
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{egyszeruSzelektor1.html}{egyszeruSzelektor1.html}}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={3-13},numbers=left,firstnumber=3]{egyszeruSzelektor1.html}
+  \end{exampleblock}
+\end{frame}
+
+%10
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{egyszeruSzelektor1.html}{egyszeruSzelektor1.html}}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={14-15},numbers=left,firstnumber=14]{egyszeruSzelektor1.html}
+  \end{exampleblock}
+\end{frame}
+
+%11
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{egyszeruSzelektor1.css}{egyszeruSzelektor1.css}}
+    \scriptsize
+    \lstinputlisting[style=HTML,numbers=left]{egyszeruSzelektor1.css}
+  \end{exampleblock}
+  \begin{center}
+    \includegraphics[width=.9\textwidth]{egyszeruSzelektor1.png}
+  \end{center}
+\end{frame}
