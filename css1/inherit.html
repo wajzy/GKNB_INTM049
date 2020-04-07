@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>inherit, initial</title>
+    <meta charset="utf-8" />
+    <style>
+      span { color: red; }
+      .kek { color: blue; }
+      .zold { color: green; }
+      .kek span { color: inherit; }
+      .zold span { color: initial; }
+    </style>
+  </head>
+  <body>
+    <p>Fekete bekezdésben <span>piros</span> szó.</p>
+    <p class="kek">Kék bekezdésben <span>kék</span> szó.</p>
+    <p class="zold">Zöld bekezdésben <span>fekete</span> szó.</p>
+  </body>
+</html>

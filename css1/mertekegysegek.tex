@@ -1,0 +1,64 @@
+\subsection{Mennyiségek és mértékegységek}
+
+\begin{frame}
+  Az érték részei:
+  \begin{enumerate}
+    \item elhagyható előjel ($+$, $-$)
+    \item kulcsszó (pl. \texttt{red}, \texttt{thin}), szám, függvény (pl. \texttt{url()}, \texttt{rgb()}, stb.) vagy karakterlánc
+    \item mértékegység (\texttt{\%, cm, pt, px, em}, stb.)
+  \end{enumerate}
+  Használat:
+  \begin{itemize}
+    \item fenti három elem között nem lehet fehér karakter
+    \item 0 érték esetén a mértékegység elhagyható
+    \item rövidítések esetén (pl. \texttt{border} a \texttt{border-width}, \texttt{border-style} és \texttt{border-color} helyett) az értékeket fehér karakterek szeparálják
+  \end{itemize}
+\end{frame}
+
+%_
+\begin{frame}
+  Abszolút mennyiségek
+  \begin{itemize}
+    \item \texttt{cm}, centiméter
+    \item \texttt{mm}, milliméter
+    \item \texttt{in}, inch (1in = 2,54cm)
+    \item \texttt{px}, képpont (1px = 1 fizikai képpont a legfeljebb 96dpi-nél felbontású eszközökön, nagyfelbontású kijelzőkön több)
+    \item \texttt{pt}, nyomdai pont (1pt = 1/72in)
+    \item \texttt{pc}, pica (1pc = 12pt)
+  \end{itemize}
+\end{frame}
+
+%_
+\begin{frame}
+  Relatív mennyiségek
+  \begin{itemize}
+    \item \texttt{em}, a karakterkészlet betűmérete
+    \item \texttt{rem}, a \texttt{<html>} elem betűmérete
+    \item \texttt{ex}, az x betű magassága
+    \item \texttt{ch}, a 0 karakter szélessége
+    \item \texttt{vw}, a viewport szélességének \%-a
+    \item \texttt{vh}, a viewport magasságának \%-a
+    \item \texttt{vmin}, a viewport kisebbik méretének 1\%-a
+    \item \texttt{vmax}, a viewport nagyobbik méretének 1\%-a
+    \item \texttt{\%}, a szülő elem méretének \%-a
+  \end{itemize}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.7\textwidth}
+      Általános érték kulcsszavak
+      \begin{itemize}
+        \item \texttt{inherit}: az értéket meg kell örökölni a szülő elemtől.
+        \item \texttt{initial}: a tulajdonság eredeti értéke.
+      \end{itemize}      
+    \column{0.25\textwidth}
+      \includegraphics[width=\textwidth]{inherit.png}
+  \end{columns}
+  \begin{exampleblock}{\textattachfile{inherit.html}{inherit.html}}
+    \scriptsize
+    \lstinputlisting[style=HTML,linerange={7-11},numbers=left,firstnumber=7]{inherit.html}
+    \lstinputlisting[style=HTML,linerange={15-17},numbers=left,firstnumber=15]{inherit.html}
+  \end{exampleblock}
+\end{frame}
