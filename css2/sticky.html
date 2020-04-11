@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>sticky</title>
+    <meta charset="utf-8" />
+    <style>
+      p, h1, h2 {
+        border: 1px solid black;
+        padding: 10px;
+      }
+      p {
+        background-color: yellow;
+        padding-bottom: 500px;
+      }
+      h1 {
+        background-color: blue;
+      }
+      h2 {
+        background-color: navy;
+        color: white;
+        padding-top: 15px;
+        padding-bottom: 5px;
+      }
+      h1, h2 {
+        position: sticky;
+        top: 0px;
+        height: 40px;
+        margin: 20px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>1. fejezet</h1>
+    <h2>1.1. fejezet</h2>
+    <p>Bekezdés...</p>
+    <h2>1.2. fejezet</h2>
+    <p>Bekezdés...</p>
+    <h1>2. fejezet</h1>
+    <p>Bekezdés...</p>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>absolute</title>
+    <meta charset="utf-8" />
+    <style>
+      p {
+        border: 1px solid black;
+        padding: 10px;
+        background-color: yellow;
+      }
+      p.jobbFenn {
+        margin: 0px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+      }
+      div {
+        position: relative;
+        padding: 5px;
+        background-color: orange;
+      }
+      p.jobbLenn {
+        margin: 0px;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>Első bekezdés.</p>
+      <p class="jobbLenn">A <code>div
+        </code> jobb alsó sarkához 
+        igazított, második bekezdés.</p>
+      <p>Harmadik bekezdés.</p>
+    </div>
+    <p class="jobbFenn">A dokumentum jobb
+      felső sarkához igazított, utolsó 
+      bekezdés.</p>
+  </body>
+</html>

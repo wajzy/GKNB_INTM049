@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>fixed</title>
+    <meta charset="utf-8" />
+    <style>
+      p {
+        border: 1px solid black;
+        padding: 10px;
+        background-color: yellow;
+        margin-bottom: 1000px;
+      }
+      p.jobbLenn {
+        margin: 0px;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Első bekezdés.</p>
+    <p class="jobbLenn">A nézetablak jobb 
+      alsó sarkához rögzített második 
+      bekezdés.</p>
+    <p>Harmadik bekezdés.</p>
+  </body>
+</html>
