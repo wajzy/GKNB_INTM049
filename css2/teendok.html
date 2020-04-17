@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Teendők</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        counter-reset: belso;
+      }
+      ol {
+        counter-reset: kulso;
+        list-style-type: none;
+      }
+      li::before {
+        color: blue;
+        background-color: yellow;
+        line-height: 3em;
+        padding: 1em;
+        border-radius: 50%;
+        font-weight: bold;
+        counter-increment: kulso;
+        content: counter(kulso, upper-roman);
+      }
+      li ol li {
+        counter-increment: belso;
+      }
+      li ol li::before {
+        content: counter(belso, decimal);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Teendők</h1>
+    <ol>
+      <li>Takarítás
+      <ol>
+        <li>Mosogatás</li>
+        <li>Porszívózás</li>
+      </ol></li>
+      <li>Tanulás
+      <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+      </ol></li>
+      <li>Bevásárlás
+      <ol>
+        <li>Tej</li>
+        <li>Kenyér</li>
+      </ol></li>
+    </ol>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Számozott fejezetek</title>
+    <meta charset="utf-8" />
+    <style>
+      body { counter-reset: cimsor1; }
+      h1   { counter-reset: cimsor2; }
+      h1::before {
+        counter-increment: cimsor1;
+        content: counter(cimsor1) " ";
+      }
+      h2::before {
+        counter-increment: cimsor2;
+        content: counter(cimsor1) "." counter(cimsor2, upper-alpha) " ";
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Első fejezet</h1>
+    <h2>Első fejezet első alfejezete</h2>
+    <p>Bekezdés...</p>
+    <h2>Első fejezet második alfejezete</h2>
+    <p>Bekezdés...</p>
+    <h1>Második fejezet</h1>
+    <h2>Második fejezet első alfejezete</h2>
+    <p>Bekezdés...</p>
+  </body>
+</html>

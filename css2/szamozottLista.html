@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Számozott lista</title>
+    <meta charset="utf-8" />
+    <style>
+      ol {
+        counter-reset: szint;
+        list-style-type: none;
+      }
+      li::before {
+        color: blue;
+        font-weight: bold;
+        counter-increment: szint;
+        content: counters(szint, ".") " ";
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tartalomjegyzék</h1>
+    <ol>
+      <li>Első fejezet
+      <ol>
+        <li>Első fejezet első alfejezet</li>
+        <li>Első fejezet második alfejezet</li>
+      </ol></li>
+      <li>Második fejezet
+      <ol>
+        <li>Második fejezet első alfejezet</li>
+      </ol></li>
+    </ol>
+  </body>
+</html>
