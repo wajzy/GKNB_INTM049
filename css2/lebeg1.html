@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Elemek lebegtetése</title>
+    <meta charset="utf-8" />
+    <style>
+      div {
+        max-width: 600px;
+        margin: auto;
+      }
+      img { 
+        width: 10%; 
+        border-style: solid;
+        border-width: 0 5px 0 5px;
+      }
+      img.bal { 
+        float: left;
+        border-width: 0 0 0 5px;
+      }
+      img.jobb { 
+        float: right; 
+        border-width: 0 5px 0 0;
+      }
+      p {
+        text-align: justify;
+        hyphens: auto;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p><img class="bal" src="css3.svg" alt="CSS3 logo" 
+      title="Balra lebegtetett" />A CSS-t a weblapok szerkesztői és 
+      olvasói egyaránt használhatják, hogy átállítsák vele a lapok 
+      színét, betűtípusait, elrendezését, és más megjelenéshez 
+      kapcsolódó elemeit. A tervezése során a legfontosabb szempont az 
+      volt, hogy elkülönítsék a dokumentumok struktúráját (melyet HTML 
+      vagy egy hasonló leíró nyelvben lehet megadni) a dokumentum 
+      megjelenésétől (melyet CSS-sel lehet megadni). Az ilyen 
+      elkülönítésnek több haszna is van, egyrészt növeli a weblapok 
+      használhatóságát, rugalmasságát és a megjelenés kezelhetőségét, 
+      másrészt csökkenti a dokumentum tartalmi struktúrájának 
+      komplexitását. A CSS ugyancsak alkalmas arra, hogy a dokumentum 
+      stílusát a megjelenítési módszer függvényében adja meg, így 
+      elkülöníthető a dokumentum formája a képernyőn, nyomtatási lapon, 
+      hangos böngészőben (mely beszédszintetizátor segítségével olvassa 
+      fel a weblapok szövegét), vagy Braille-készüléken 
+      megjelenítve.<img class="jobb" src="css3.svg" alt="CSS3 logo" 
+      title="Jobbra lebegtetett" /></p>
+      <p>A CSS <img src="css3.svg" alt="CSS3 logo" title="Soron belül" 
+      /> használható XML fájlok megjelenítésére is, így a strukturált 
+      dokumentumokhoz teljes körű stílust lehet megadni, befolyásolva 
+      az elrendezését, színét, betűtípusait az erre alkalmas 
+      kliensekben vagy webböngészőkben.</p>
+    </div>
+  </body>
+</html>
