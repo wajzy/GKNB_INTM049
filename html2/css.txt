@@ -1,0 +1,48 @@
+Cascading Style Sheets
+A Wikipédiából, a szabad enciklopédiából
+
+A CSS a számítástechnikában egy stílusleíró nyelv, mely a HTML vagy XHTML típusú strukturált dokumentumok megjelenését írja le. Ezenkívül használható bármilyen XML alapú dokumentum stílusának leírására is, mint például az SVG, XUL stb.
+Tartalomjegyzék
+
+Áttekintés
+A CSS használata
+  Példa XHTML dokumentumra beágyazott CSS stílussal
+  Példa a felhasználói stílusra
+
+Áttekintés
+
+Az elemek stílusát különböző CSS szelektorokkal lehet kiválasztani:
+
+Minden elemre - a * szelektor használatával
+Az elem neve alapján - például minden 'p' vagy 'h2' HTML-elemhez
+Leszármazottak alapján - például az olyan 'a' elemekre, melyek egy 'li' elem részei, a szelektor "li a"
+class vagy id attribútumok alapján - például .class és/vagy #id a class="osztály" vagy id="azonosító" elemekhez
+
+A CSS egyszerű szintaxissal rendelkezik, csak néhány angol nyelvű kulcsszót használ a stílusok tulajdonságaihoz. A stíluslap maga a stílust leíró szabályok sora. Minden szabályhoz tartozik egy szelektor és egy deklarációs szakasz. Ez utóbbi kapcsos zárójelek között pontosvesszővel elválasztott deklarációkat tartalmaz. A deklarációk formája a következő: a tulajdonság neve, egy kettőspont, majd az adott tulajdonság értéke.
+
+Például:
+
+p {
+  font-family: "Garamond", serif;
+}
+p#bevezetes {
+  border: 3px dashed black;
+}
+
+A CSS használata
+
+A CSS használatával a h2 elem csak strukturális információt hordozhat, míg a stíluslap megadja a prezentációs tulajdonságokat. A fenti kód itt így nézne ki:
+
+<h2>A CSS használata</h2>
+
+Példa XHTML dokumentumra beágyazott CSS stílussal
+
+Minta...
+Példa a felhasználói stílusra
+
+A cimsorkiemeles.css fájl tartalma:
+
+h1 {color: white; background: orange !important; }
+h2 {color: white; background: green !important; }
+
+Egy ilyen fájl helyileg tárolódik, és a böngésző beállításaiban lehet aktiválni. Az "!important" azt jelenti, hogy a stílus a szerző specifikációja fölött is érvényesül.
