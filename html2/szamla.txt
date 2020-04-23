@@ -1,0 +1,21 @@
+Számla
+Szállító 	Vevő
+Vicik&Vacak Bt.
+1234 Kukutyin, Fő u. 3.
+Banszámla: 12345678-12345678
+Adóig. szám: 12345678-1-12 	John Connor
+5678 Salakszentmotoros, Mellék u. 72.
+Megrendelés
+száma, kelte 	Teljesítés
+kelte 	Számla
+kelte 	esedékessége 	sorszáma
+  	2013.09.27 	2013.09.27 	2013.09.27 	12345/2013
+Fizetés módja: készpénz
+Késedelmi kamatunk a mindenkori jegybanki alapkamat kétszerese.
+Megnevezés, VTSZ, SZJ 	Me.	Mennyiség 	Egys. ár. 	Érték 	% 	ÁFA 	Bruttó
+Tricorder 	db 	2 	25.000 	50.000 	27 	13.500 	63.500
+Fluxuskondenzátor 	db 	1 	1.000.000 	1.000.000 	27 	270.000 	1.270.000
+HAL 9000 	db 	1 	10.000.000 	10.000.000 	27 	2.700.000 	12.700.000
+ÁFA alapja: 11.050.000 	értéke: 2.983.500 	Fizetendő: 14.033.500
+azaz tizennégymillió-harmincháromezer-ötszáz
+  	Átadó 	Átvevő

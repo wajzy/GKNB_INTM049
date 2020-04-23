@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Űrlap</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <form method="post" enctype="multipart/form-data" action="http://xenia.sze.hu/~wajzy/feldolgozo.php">
+      <div>
+        <label for="nev"><b>N</b>év:</label>
+        <input type="text" id="nev" name="n_nev" size="20" maxlength="64" accesskey="n" placeholder="pl. Dr. habil. Kiss Piroska">
+      </div>
+      <div>
+        <label for="eletkor"><b>É</b>letkor:</label>
+        <input type="number" id="eletkor" name="n_eletkor" min="0" max="120" accesskey="é" required="required">
+      </div>
+      <div>
+        <label for="nyelv">Nyelvvizsgái:</label>
+        <select id="nyelv" name="n_nyelv[]" multiple="multiple">
+          <optgroup label="Angol">
+            <option value="aa">Alap</option>
+            <option value="ak" selected="selected">Közép</option>
+            <option value="af">Felső</option>
+          </optgroup>
+          <optgroup label="Német">
+            <option value="na">Alap</option>
+            <option value="nk">Közép</option>
+            <option value="nf">Felső</option>
+          </optgroup>
+        </select>
+      </div>
+      <fieldset>
+        <legend>Legmagasabb iskolai végzettsége</legend>
+        <div><label><input type="radio" name="n_iskola" value="altalanos">Általános iskola</label></div>
+        <div><label><input type="radio" name="n_iskola" value="kozepfok" checked>Gimnázium/Középiskola</label></div>
+        <div><label><input type="radio" name="n_iskola" value="felsofok">Főiskola/Egyetem</label></div>
+        <div><label><input type="radio" name="n_iskola" value="tudomany">Tudományos fokozat</label></div>
+      </fieldset>
+      <fieldset>
+        <legend>Jelölje meg hobbyját!</legend>
+        <div><label><input type="checkbox" id="fozes" name="n_fozes">Főzés</label></div>
+        <div><label><input type="checkbox" id="bicikli" name="n_bicikli">Kerékpár</label></div>
+        <div><label><input type="checkbox" id="konyv" name="n_konyv">Olvasás</label></div>
+      </fieldset>
+      <fieldset>
+        <legend>Rövid bemutatkozás</legend>
+        <textarea id="bemutatkozas" name="n_bemutatkozas" cols="40" rows="10">Mutatkozzon be röviden.</textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Önéletrajz feltöltése</legend>
+        <div><label>Fájl: <input type="file" id="cv" name="n_cv" size="64" multiple="multiple"></label></div>
+      </fieldset>
+      <div>
+        <input type="submit" id="kuldes" value="Küldés"><br />
+        <input type="reset" id="alaphelyzet" value="Alaphelyzet">
+      </div>
+    </form>
+  </body>
+</html>

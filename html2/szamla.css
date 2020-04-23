@@ -1,0 +1,20 @@
+table {
+  border-collapse: collapse;
+}
+
+table table {
+  width: 100%;
+  margin-bottom: -2px;
+}
+
+table table tr * {
+  border: 1px solid black;
+}
+
+table table tr:last-child * {
+  border-bottom: none;
+}
+
+tfoot td {
+  border-bottom: 1px solid black;
+}
