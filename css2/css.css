@@ -1,0 +1,66 @@
+h1, h2, h3 {
+  font-family: "Linux Libertine", "Georgia", "Times", serif;
+}
+h1 {
+  font-size: 1.8em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+p {
+  font-size: 14pt;
+  line-height: 1.5em;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.tartalom {
+  border: 1px solid gray;
+  padding-right: 20px;
+  display: inline-block;
+  background-color: rgb(240, 240, 240);
+}
+.tartalom h2 {
+  text-align: center;
+}
+.tartalom ol {
+  padding-left: 20px;
+  list-style-type: none;
+  counter-reset: szint;
+}
+.tartalom li::before {
+  counter-increment: szint;
+  content: counters(szint, ".") " "
+}
+code, pre {
+  background-color: #f8f9fa;
+  border: 1px solid #eaecf0;
+  font-size: 14px;
+  font-weight: bold;
+}
+code {
+  border-radius: 2px;
+  padding: 1px 4px;
+}
+pre {
+  padding: 1em;
+}
+.element, .property, .keyword {
+  color: green;
+}
+.id {
+  color: blue;
+}
+.unit, .string {
+  color: red;
+}
+.quantity {
+  color: gray;
+}
