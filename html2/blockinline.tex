@@ -1,0 +1,27 @@
+\subsection{Blokkszintű és soron belüli elemek}
+
+%_
+\begin{frame}
+  Blokkszintű és soron belüli elemek
+  \begin{itemize}
+    \item A blokkszintű (\emph{block-level}) elemek mindig új sorban kezdődnek, és vízszintesen kitöltik a rendelkezésre álló helyet. Sokkal találkoztunk már:\\
+    \tiny \texttt{<p>}, \texttt{<h1>}-\texttt{<h6>}, \texttt{<nav>}, \texttt{<main>}, \texttt{<article>}, \texttt{<section>}, \texttt{<header>}, \texttt{<footer>}, \texttt{<aside>}, \texttt{<address>}, \texttt{<blockquote>}, \texttt{<figure>}, \texttt{<figcaption>}, \texttt{<form>}, \texttt{<fieldset>}, \texttt{<ul>}, \texttt{<ol>}, \texttt{<li>}, \texttt{<dl>}, \texttt{<dt>}, \texttt{<dd>}, \texttt{<hr>}, \texttt{<pre>}, \texttt{<table>}, \texttt{<video>}. \normalsize 
+    \item Néhánnyal ez az oktatóanyag nem foglalkozik, pl.\\ \tiny \texttt{<canvas>}, \texttt{<noscript>}. \normalsize 
+    \item Egy, a későbbiekben fontos, más elemek csoportosítására (konténer) és formázására ($\to$ CSS) használt, szemantikai töltettel nem rendelkező elem: \texttt{<div>}.
+  \end{itemize}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{itemize}
+    \item A soron belüli (\emph{inline}) elemek nem kezdődnek új sorban, és csak annyi helyet foglalnak el, amennyit a tartalom mérete indokol. Sokkal találkoztunk már:\\ 
+    \tiny \texttt{<a>}, \texttt{<abbr>}, \texttt{<em>}, \texttt{<strong>}, \texttt{<b>}, \texttt{<i>}, \texttt{<big>}, \texttt{<small>}, \texttt{<sup>}, \texttt{<sub>}, \texttt{<br>}, \texttt{<label>}, \texttt{<input>}, \texttt{<output>}, \texttt{<button>}, \texttt{<select>}, \texttt{<textarea>}, \texttt{<bdo>}, \texttt{<cite>}, \texttt{<q>}, \texttt{<code>}, \texttt{<var>}, \texttt{<samp>}, \texttt{<kbd>}, \texttt{<img>}, \texttt{<map>}, \texttt{<time>}. \normalsize
+    \item Néhány, főleg elavult vagy más területekre átvezető elemmel ez az oktatóanyag nem foglalkozik, pl.\\ \tiny \texttt{<acronym>}, \texttt{<object>}, \texttt{<tt>}, \texttt{<script>}. \normalsize
+    \item Egy, a későbbiekben fontos, soron belüli részek (adatok, pl. szöveg és más soron belüli elemek) megjelölésére és formázására ($\to$ CSS) használt, szemantikai töltettel nem rendelkező elem: \texttt{<span>}.
+  \end{itemize}
+\end{frame}
+
+%_
+\begin{frame}
+  A blokkszintű és soron belüli elemek megkülönböztetése a HTML 4.x szabványok sajátossága volt. Ezeket leváltották a HTML5 \hiv{\href{https://html.spec.whatwg.org/multipage/dom.html\#content-models}{tartalmi kategóriái}}, de bizonyos párhuzamosságok továbbra is megfigyelhetőek (pl. \emph{inline} $\to$ \emph{phrasing content}), és a régi fogalmak a korszerű oldalak készítésénél is többnyire egyértelműen és kifejező módon használhatóak. 
+\end{frame}
