@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+  <head>
+    <title>Egérkurzor</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <p>Próbálja ki az egérkurzorokat!</p>
+    <ul>
+      <li><code>alias</code></li>
+      <li><code>all-scroll</code></li>
+      <li><code>auto</code></li>
+      <li><code>cell</code></li>
+      <li><code>context-menu</code></li>
+      <li><code>col-resize</code></li>
+      <li><code>copy</code></li>
+      <li><code>crosshair</code></li>
+      <li><code>default</code></li>
+      <li><code>e-resize</code></li>
+      <li><code>ew-resize</code></li>
+      <li><code>grab</code></li>
+      <li><code>grabbing</code></li>
+      <li><code>help</code></li>
+      <li><code>move</code></li>
+      <li><code>n-resize</code></li>
+      <li><code>ne-resize</code></li>
+      <li><code>nesw-resize</code></li>
+      <li><code>ns-resize</code></li>
+      <li><code>nw-resize</code></li>
+      <li><code>nwse-resize</code></li>
+      <li><code>no-drop</code></li>
+      <li><code>none</code></li>
+      <li><code>not-allowed</code></li>
+      <li><code>pointer</code></li>
+      <li><code>progress</code></li>
+      <li><code>row-resize</code></li>
+      <li><code>s-resize</code></li>
+      <li><code>se-resize</code></li>
+      <li><code>sw-resize</code></li>
+      <li><code>text</code></li>
+      <li><code>url(cursor.cur),auto</code></li>
+      <li><code>vertical-text</code></li>
+      <li><code>w-resize</code></li>
+      <li><code>wait</code></li>
+      <li><code>zoom-in</code></li>
+      <li><code>zoom-out</code></li>
+      <li><code>initial</code></li>
+    </ul>
+    <script>
+      window.addEventListener("load", function() {
+        document.querySelectorAll("li code").
+          forEach(item => item.style.cursor=item.textContent);
+      });
+    </script>
+  </body>
+</html>
