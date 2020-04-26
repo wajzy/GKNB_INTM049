@@ -1,0 +1,42 @@
+\subsection{Globális attribútumok}
+
+%_
+\begin{frame}
+  Globális attribútumok: minden HTML elemben használhatóak. Például:
+  \begin{description}[m]
+    \item[\texttt{lang}] \hfill \\ Az elem nyelve, pl. \texttt{lang="en"} vagy \texttt{lang="en-US"}
+    \item[\texttt{dir}] \hfill \\ Írásirány, balról jobbra (\texttt{dir="ltr"}) vagy jobbról balra (\texttt{dir="rtl"}).
+    \item[\texttt{title}] \hfill \\ Extra információ az elemről, jellemzően felbukkanó ,,buborékban'' (tooltip).
+  \end{description}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{description}[m]
+    \small
+    \item[\texttt{id}] \hfill \\ Az elem egyedi azonosítója. Főleg oldalon belüli hivatkozásoknál (\texttt{<a> elem}), formázásoknál ($\to$ CSS) és JavaScript programok készítésekor használják. Értéke nem kezdődhet számjegy karakterrel. Pl. \texttt{id="elsoBekezdes"}.
+    \item[\texttt{class}] \hfill \\ Egy elem valamely csoporthoz tartozását jelöli. Hasonlít a szövegszerkesztők stílusaihoz, mert minden, azonos attribútum értékű elem azonos módon formázható CSS-sel. pl. \texttt{class="btn-primary"}.
+    \item[\texttt{style}] \hfill \\ Egy elem egyedi formázását teszi lehetővé CSS-sel. Használata általában kerülendő, de JavaScript programokban, webalkalmazásoknál szokás használni. Pl. \texttt{style="color: red;"} pirosra állítja az írásszínt.
+    \item[\texttt{hidden}] \hfill \\ Elrejti az elemet (\texttt{hidden="hidden"}).
+  \end{description}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{description}[m]
+    \item[\texttt{accesskey}] \hfill \\ Gyorsbillentyűt definiál egy elem aktiválásához/beviteli fókuszba kerüléséhez. Jellemzően hivatkozásoknál (\texttt{<a>}) és űrlapok vezérlőinél (\texttt{<input>}) használják, pl. \texttt{accesskey="b"}. Valamilyen váltó billentyű(k) együttes megnyomását igényli, pl. \texttt{Alt} vagy \texttt{Alt+Shift}.
+    \item[\texttt{tabindex}] \hfill \\ Főleg beviteli mezők vagy hivatkozások \texttt{Tab} billentyűvel történő bejárási sorrendjének magadásához/módosításához használják, az 1 érték jelöli az első vezérlőt. Pl. \texttt{tabindex="3"}.
+    \item[\texttt{data-*}] \hfill \\ Alkalmazásspecifikus adatokat rögzít az elemhez, pl. \texttt{data-toggle="modal"}.
+  \end{description}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{description}[m]
+    \small
+    \item[\texttt{contenteditable}] \hfill \\ Egy elem szerkeszthetőségét állítja. Értékét alapvetően a szülőtől örökli. Pl.\\ \texttt{<p contenteditable="true">Szerkeszthető bekezdés!</p>} esetén egy felhasználó által szerkeszthető bekezdést kapunk.
+    \item[\texttt{spellcheck}] \hfill \\ Helyesírás-ellenőrzés bekapcsolása űrlapok szövegbeviteli mezőin és szerkeszthető elemek tartalmára. Pl. \texttt{<p contenteditable="true" spellcheck="true">Ez egy szerkeszthető, helyesírás-ellenőrzött bekezdés!</p>}
+    \item[\texttt{draggable, dropzone}] \hfill \\ Húzd és ejtsd támogatás megvalósításához, de JavaScript kód is szükséges a megvalósításhoz.
+    \item[\texttt{translate}] \hfill \\ Szövegek lefordítását lehetne vele tiltani (\texttt{translate="no"}), de a böngészők gyengén támogatják.
+  \end{description}
+\end{frame}
