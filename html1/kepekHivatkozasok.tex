@@ -47,6 +47,26 @@
   \end{columns}  
 \end{frame}
 
+%_
+\begin{frame}
+  Néha a képfájlokat nem tudjuk/akarjuk feltölteni egy szerverre $\to$ beágyazzuk őket a weboldalba \hiv{\href{https://tools.ietf.org/html/rfc2397}{Data URL}}-ek segítségével:
+  \vfill
+  \begin{exampleblock}{Általános felépítés}
+    \texttt{data:[<mediatype>][;base64],<data>}
+  \end{exampleblock}
+  \begin{exampleblock}{\textattachfile{dataurl.html}{dataurl.html}}
+    \scriptsize
+    \texttt{<img src="data:image/svg+xml;base64,PD94bWwgdmV...ZnPg0K" alt="IT logo" width="25\%" />}
+  \end{exampleblock}
+  \vfill
+  \small
+  \begin{itemize}
+    \item Nem csak képek forrása adható meg ilyen módon, de ez a leginkább jellemző.
+    \item Sok böngészőnél az URL hossza nem haladhatja meg a 64kB-ot.
+    \item Base64 kódolást lehet végezni Linuxon/Max OS-en a \hiv{\href{https://linux.die.net/man/1/base64}{base64}} programmal, de vannak \hiv{\href{https://www.base64-image.de/}{online}} \hiv{\href{https://www.base64encode.org/}{eszközök}} is.
+  \end{itemize}
+\end{frame}
+
 %32
 \begin{frame}
   Kis kijelzőre nincs értelme túl nagy képet letölteni, majd összezsugorítani $\to$ eszközfüggő képek letöltése \emph{CSS3 media query} segítségével
