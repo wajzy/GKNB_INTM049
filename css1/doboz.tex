@@ -74,9 +74,22 @@
     \item \texttt{auto}: alapértelmezett
     \item valós világbeli, relatív vagy megjelenítőtől függő mértékegység (pl. \texttt{cm}, \texttt{ex}, \texttt{px})
     \item a tartalmazó blokk \%-ában megadva
-    \item \texttt{initial}: az alapértelmezett értéket használja az örökölt helyett
-    \item \texttt{inherit}: a szülőtől örökölt értéket használja
+    \item Érdekes lehetőség az abszolút és relatív méretek vegyítésére: \texttt{calc()} függvény. Négy alapműveletes kifejezések kiértékelhetők vele.
   \end{itemize}
+\end{frame}
+
+%_
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.66\textwidth}
+      \begin{exampleblock}{\textattachfile{calc.html}{calc.html}}
+        \scriptsize
+        \lstinputlisting[style=HTML,linerange={7-11},numbers=left,firstnumber=7]{calc.html}
+        \lstinputlisting[style=HTML,linerange={14-16},numbers=left,firstnumber=14]{calc.html}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \includegraphics[width=\textwidth]{calc.png}
+  \end{columns}
 \end{frame}
 
 %34
