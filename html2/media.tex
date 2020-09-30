@@ -21,24 +21,24 @@
   Ha a \texttt{<video>} elem nem támogatott egy böngészőben, a 
   címkék közötti szöveg jelenik meg. Opcionális attribútumok:
   \begin{description}[m]
-    \item[\texttt{<autoplay>}] \hfill \\ A lejátszás azonnal indul; 
+    \item[\texttt{autoplay}] \hfill \\ A lejátszás azonnal indul; 
     \kiemel{nem ajánlott}, zavarhatja a felhasználót
-    \item[\texttt{<controls>}] \hfill \\ Vezérlő gombokat jelenít meg
-    \item[\texttt{<width>}, \texttt{<height>}] \hfill \\ A lejátszó 
+    \item[\texttt{controls}] \hfill \\ Vezérlő gombokat jelenít meg
+    \item[\texttt{width}, \texttt{height}] \hfill \\ A lejátszó 
     ablak szélessége, magassága képpontokban; \kiemel{ajánlott} megadni
-    \item[\texttt{<loop>}] \hfill \\ Végtelenített lejátszás
+    \item[\texttt{loop}] \hfill \\ Végtelenített lejátszás
   \end{description}
 \end{frame}
 
 %126
 \begin{frame}
   \begin{description}[m]
-    \item[\texttt{<muted>}] \hfill \\ Némítás
-    \item[\texttt{<poster>}] \hfill \\ Egy kép, amit a betöltés 
+    \item[\texttt{muted}] \hfill \\ Némítás
+    \item[\texttt{poster}] \hfill \\ Egy kép, amit a betöltés 
     alatt / lejátszás megkezdéséig lát a felhasználó. Érték: URL
-    \item[\texttt{<preload>}] \hfill \\ Adatfolyam betöltési módja. 
+    \item[\texttt{preload}] \hfill \\ Adatfolyam betöltési módja. 
     Érték: \texttt{auto | metadata | none}.
-    \item[\texttt{<src>}] \hfill \\ Videó forrása. \kiemel{Nem 
+    \item[\texttt{src}] \hfill \\ Videó forrása. \kiemel{Nem 
     ajánlott} a használata, mert csak egyetlen forrás nevezhető meg, 
     amit valószínűleg nem támogat minden böngésző. Érték: URL.
   \end{description}
@@ -61,8 +61,8 @@
   közül a böngésző az első támogatott formátumhoz tartozót 
   fogja választani. Attribútumok:
   \begin{description}[m]
-    \item[\texttt{<src>}] \hfill \\ Adatforrás. Érték: URL
-    \item[\texttt{<type>}] \hfill \\ A forrás MIME típusa.
+    \item[\texttt{src}] \hfill \\ Adatforrás. Érték: URL
+    \item[\texttt{type}] \hfill \\ A forrás MIME típusa.
   \end{description}
   A \texttt{<video>} elemmel történő kísérletezéshez egy 
   \hiv{\href{http://v4e.thewikies.com/}{érdekes eszköz}}.
@@ -85,16 +85,16 @@
   \hiv{\href{https://subtitletools.com/convert-to-vtt-online}{átalakító}}. 
   Attribútumok:
   \begin{description}[m]
-    \item[\texttt{<default>}] \hfill \\ Kijelölhető több feliratsáv 
+    \item[\texttt{default}] \hfill \\ Kijelölhető több feliratsáv 
     közül az alapértelmezett.
-    \item[\texttt{<kind>}] \hfill \\ Feliratsáv típusa: 
+    \item[\texttt{kind}] \hfill \\ Feliratsáv típusa: 
     \texttt{captions | chapters | descriptions | metadata | 
     subtitles} (ez az alapértelmezés).
-    \item[\texttt{<label>}] \hfill \\ Feliratsáv címkéje, pl. a 
+    \item[\texttt{label}] \hfill \\ Feliratsáv címkéje, pl. a 
     felirat nyelve.
-    \item[\texttt{<src>}] \hfill \\ A felirat forrása, kötelező. 
+    \item[\texttt{src}] \hfill \\ A felirat forrása, kötelező. 
     Érték: URL
-    \item[\texttt{<srclang>}] \hfill \\ Felirat nyelvének ISO 639-1 
+    \item[\texttt{srclang}] \hfill \\ Felirat nyelvének ISO 639-1 
     kódja, pl. hu.
   \end{description}
 \end{frame}
