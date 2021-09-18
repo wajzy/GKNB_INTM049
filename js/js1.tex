@@ -32,6 +32,7 @@
         \item[$\times$] \texttt{5*3} $\to$ 15
         \item[$/$] \texttt{5/3} $\to$ 1.6666666666666667
         \item[$\%$] \texttt{5\%3} $\to$ 2, \texttt{-5\%3} $\to$ -2, \texttt{5\%-3} $\to$ 2 
+        \item[$**$] \texttt{5**3} $\to$ \texttt{125} 
     \end{itemize}
     \hiv{\href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence\#table}{Precedencia táblázat}}
 \end{frame}
@@ -118,6 +119,197 @@
     \end{itemize}
     \vfill
     Típusok egyezését megkövetelő operátorok: \texttt{===}, \texttt{!==}
+\end{frame}
+
+\section{Változók, konstansok, vezérlési szerkezetek}
+
+\subsection{Változók és konstansok}
+
+\begin{frame}
+    Változók (\emph{variable}, \emph{binding})
+    \begin{itemize}
+        \item Deklaráció: \texttt{let} (blokk hatáskör), \texttt{var} (függvény hatáskör)
+        \item Inkább tekinthető értékre mutató referenciának, mint valódi tárolónak
+    \end{itemize}
+    \begin{exampleblock}{Példa}
+        a $\to$ ReferenceError: a is not defined\\
+        let a\\
+        a $\to$ undefined\\
+        a = 5\\
+        a $\to$ 5\\
+        let b = 3, c\\
+        a * b $\to$ 15\\
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    Konstansok
+    \begin{itemize}
+        \item \texttt{const}
+    \end{itemize}
+    \begin{exampleblock}{Példa}
+        const c = 3.14\\
+        c = 2 $\to$ TypeError: invalid assignment to const 'c'
+    \end{exampleblock}
+    \vfill
+    Névadási szabályok
+    \begin{itemize}
+        \item betűket, számokat, \$ és \_ karaktereket tartalmazhat
+        \item számjeggyel nem kezdődhet
+        \item nem lehet foglalt szó (pl. \texttt{let})
+        \item kis- és nagybetűket megkülönbözteti
+        \item javasolt stílus: \emph{camel case} (\texttt{hosszuValtozoNeve})
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    Változókkal használható (összetett és unáris) operátorok
+    \begin{itemize}
+        \item \texttt{+=}, \texttt{-=}, \texttt{*=}, \texttt{/=}, \texttt{\%=}, \texttt{\&\&=}, \texttt{||=}, \texttt{**=}, \dots 
+        \item \texttt{++}, \texttt{--}
+    \end{itemize}
+    \vfill
+    Környezet (\emph{environment})
+    \begin{itemize}
+        \item adott pillanatban létező változók és értékeik
+        \item gyakorlatilag soha nincs üres környezet
+    \end{itemize}
+    \vfill
+    Megjegyzések
+    \begin{itemize}
+        \item // egysoros
+        \item /* több \\ \quad soros */
+    \end{itemize}
+\end{frame}
+
+\subsection{Vezérlési szerkezetek}
+
+\begin{frame}
+    Szelekció
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        \begin{itemize}
+          \item \texttt{if}(\emph{feltétel}) \emph{utasítás};
+          \item \texttt{if}(\emph{feltétel}) \{\\
+          \qquad // utasítások \\
+          \}
+          \item \texttt{if}(\emph{feltétel}) \{ \\
+            \qquad // igaz ág utasításai \\
+            \} \texttt{else} \{ \\
+            \qquad // hamis ág utasításai \\
+            \}
+        \end{itemize}
+        \column{0.5\textwidth}
+        \begin{itemize}
+          \item Mikor \kiemel{nem} teljesül a \emph{feltétel}?
+          \begin{itemize}
+            \item false
+            \item 0
+            \item ""
+            \item NaN
+            \item null
+            \item undefined
+          \end{itemize}
+        \end{itemize}
+      \end{columns}
+\end{frame}
+
+\begin{frame}
+    Több irányú elágazás
+    \begin{columns}[T]
+        \column{0.4\textwidth}
+        \texttt{switch}(\emph{kifejezés}) \{ \\
+        \qquad \texttt{case} \emph{érték1}: \\
+        \qquad \qquad // utasítások \\
+        \qquad \qquad \texttt{break}; \\
+        \qquad \texttt{case} \emph{érték2}: \\
+        \qquad \texttt{case} \emph{érték3}: \\
+        \qquad \qquad // utasítások \\
+        \qquad \qquad \texttt{break}; \\
+        \qquad \texttt{default}: \\
+        \qquad \qquad // utasítások \\
+        \qquad \qquad \texttt{break}; \\
+        \}
+      \column{0.5\textwidth}
+        Az értéknek \emph{és} a típusnak is egyeznie kell! \\
+        A \emph{default} ág elhagyható.
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    Ciklusok
+    \vfill
+    \texttt{for}(\emph{előkészítés}; \emph{ismétlési\_feltétel}; \emph{frissítés}) \{ \\
+    \qquad // Ciklusmag utasításai \\
+    \}
+    \vfill
+    \texttt{while}(\emph{ismétlési\_feltétel}) \{ \\
+    \qquad // Ciklusmag utasításai \\
+    \}
+    \vfill
+    \texttt{do} \{ \\
+    \qquad // Ciklusmag utasításai \\
+    \} \texttt{while} (\emph{ismétlési\_feltétel});
+    \vfill
+    \texttt{break}, \texttt{continue}
+\end{frame}
+
+\begin{frame}[fragile]
+    Feladatok
+    \begin{exampleblock}{Háromszög rajzolás (\textattachfile{haromszog.js}{megoldás})}
+        A böngésző JavaScript konzolján egy sornyi szöveget a \texttt{console.log()} hívással tud megjeleníteni. Használja ezt a következő háromszög megrajzolására:\\
+        \begin{verbatim}
+*
+**
+***
+****
+*****                
+\end{verbatim}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{exampleblock}{X rajzolás (\textattachfile{x.js}{megoldás})}
+        Most rajzoljon 5x5-ös méretű X-et csillagokból:\\
+        \begin{verbatim}
+*   *
+ * *
+  *
+ * *
+*   *            
+\end{verbatim}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{exampleblock}{Sakktábla (\textattachfile{sakk.js}{megoldás})}
+        Rajzoljon meg egy 8x8-as méretű sakktáblát, szintén csillagokból!\\
+        \begin{verbatim}
+ * * * *
+* * * *
+ * * * *
+* * * *
+ * * * *
+* * * *
+ * * * *
+* * * *
+\end{verbatim}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{exampleblock}{FizzBuzz (\textattachfile{fizzbuzz.js}{megoldás})}
+        Vizsgálja meg az egész számokat 1-től 100-ig, majd a vizsgálat eredményét jelenítse meg egymás alatti sorokban! Ha a szám osztható 3-mal, írja ki, hogy \emph{Fizz}, ha 5-tel osztható, akkor azt, hogy \emph{Buzz}, ha pedig 3-mal és 5-tel is osztható, akkor azt, hogy \emph{FizzBuzz}! Ha egyik számmal sem osztható, akkor írja ki a vizsgált számot!\\
+        \begin{verbatim}
+1
+2
+Fizz
+4
+Buzz
+Fizz
+...
+\end{verbatim}
+    \end{exampleblock}
 \end{frame}
 
 \end{document}
