@@ -4,6 +4,15 @@
 \title[Web technológiák - JavaScript]{Web-technológia}
 \subtitle{JavaScript}
 
+% JavaScript
+\lstdefinelanguage{JavaScript}{
+  morekeywords={typeof, new, true, false, catch, function, return, null, undefined, try, catch, finally, throw, var, let, const, in, while, do, for, if, else, switch, case, default, break, continue, class, interface, instanceof, debugger, delete, enum, export, extends, implements, import, package, private, protected, public, this, super, static, void, with, yield},
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morestring=[b]",
+  morestring=[b]'
+}
+
 \begin{document}
 
 %1
@@ -310,6 +319,167 @@ Buzz
 Fizz
 ...
 \end{verbatim}
+    \end{exampleblock}
+\end{frame}
+
+\section{Függvények}
+
+\subsection{Függvények létrehozása}
+
+\begin{frame}
+    \begin{exampleblock}{Definíció: a függvény, mint \emph{érték} jelenik meg (\textattachfile{hatvanyDef.js}{hatvanyDef.js})}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left]{hatvanyDef.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{Deklaráció: helye a hatókörön belül bárhol lehet (\textattachfile{hatvanyDek.js}{hatvanyDek.js})}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left]{hatvanyDek.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{Nyíl (\emph{arrow}) függvény: tömörebb megadás (\textattachfile{hatvanyNyil.js}{hatvanyNyil.js})}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left]{hatvanyNyil.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    Nyíl függvények
+    \begin{itemize}
+        \item Ha pontosan egy paramétert fogad, a paraméterlista körüli zárójelek elhagyhatóak
+        \item Ha egyetlen paramétert sem fogad, üres zárójelpár jelzi a paraméterlistát
+        \item Ha a függvény teste egyetlen kifejezés értékét szolgáltatja, a \texttt{return} és a blokk elhagyható
+    \end{itemize}
+    \begin{exampleblock}{\textattachfile{nyilValtozatok.js}{nyilValtozatok.js}}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left]{nyilValtozatok.js}
+    \end{exampleblock}
+\end{frame}
+
+\subsection{Hatókör, \emph{lexical scope}}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{hatokor.js}{hatokor.js}}
+        \scriptsize
+        \lstinputlisting[language=JavaScript,numbers=left]{hatokor.js}
+    \end{exampleblock}
+\end{frame}
+
+\subsection{Függvények paraméterezése}
+
+\begin{frame}
+    Paraméterezés
+    \begin{itemize}
+        \item Nem ellenőrzi híváskor sem a paraméterek számát, sem azok típusát! $\to$ felesleges paramétereket figyelmen kívül hagyja, a hiányzók értéke \texttt{undefined}
+        \item A \texttt{return} nélküli, vagy a \texttt{return} után kifejezést nem tartalmazó függvények visszatérési értéke \texttt{undefined}
+        \item Tetszőleges számú paramétert fogadó fv. is készíthető (ld. később)
+    \end{itemize}
+    \begin{exampleblock}{\textattachfile{parameter1.js}{parameter1.js}}
+        \small
+        \vspace{-0.3cm}
+        \lstinputlisting[language=JavaScript,numbers=left]{parameter1.js}
+        \vspace{-0.3cm}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{parameter2.js}{parameter2.js}}
+        \lstinputlisting[language=JavaScript,numbers=left]{parameter2.js}
+    \end{exampleblock}
+\end{frame}
+
+\subsection{Függvények, mint értékek}
+
+\begin{frame}
+    A függvények \emph{értékek}:
+    \begin{itemize}
+        \item függvények átadhatók más függvénynek paraméterként,
+        \item függvény visszatérési értéke lehet függvény,
+        \item függvény beágyazható másik függvénybe.
+    \end{itemize}
+    \begin{exampleblock}{\textattachfile{paramFv1.js}{paramFv1.js}}
+        \lstinputlisting[language=JavaScript,numbers=left]{paramFv1.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{Névtelen (\emph{anonymous}) függvények (\textattachfile{paramFv2.js}{paramFv2.js})}
+        \lstinputlisting[language=JavaScript,numbers=left]{paramFv2.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{Függvények definiálása és azonnali hívása (\textattachfile{paramFv3.js}{paramFv3.js})}
+        \lstinputlisting[language=JavaScript,numbers=left]{paramFv3.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    Zárványok (\emph{closure})
+    \begin{itemize}
+        \item<1-> Mi történik, ha egy \emph{külső} függvény \emph{lokális} változóit eléri egy \emph{belső} függvény, amit \emph{meghívunk azután, hogy} az őt létrehozó \emph{külső függvényből kiléptünk}?
+        \item<2-> A függvény megőrzi futtatási környezetét
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{Függvény, mint visszatérési érték (\textattachfile{zarvany.js}{zarvany.js})}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left]{zarvany.js}
+    \end{exampleblock}
+\end{frame}
+
+\subsection{Rekurzió}
+
+\begin{frame}
+    \begin{exampleblock}{Rekurzív hatványozás (\textattachfile{rekurzio.js}{rekurzio.js})}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left]{rekurzio.js}
+    \end{exampleblock}
+\end{frame}
+
+\subsection{Feladatok}
+
+\begin{frame}
+    \begin{exampleblock}{Fibonacci-számok (\textattachfile{fibonacci.js}{fibonacci.js})}
+        Fibonacci-sorozat: másodrendben rekurzív sorozat. Képzeletbeli nyúlcsalád növekedése: hány pár nyúl lesz $n$ hónap múlva, ha
+        \begin{itemize}
+            \item az első hónapban csak egyetlen újszülött nyúl-pár van,
+            \item az újszülött nyúl-párok két hónap alatt válnak termékennyé,
+            \item minden termékeny nyúl-pár minden hónapban egy újabb párt szül,
+            \item és a nyulak örökké élnek.
+        \end{itemize}
+        \vfill
+        $F_n = \left\{ \begin{array}{ll}
+            0, & \textrm{ha $n=0$}\\
+            1, & \textrm{ha $n=1$}\\
+            F_{n-1} + F_{n-2} & \textrm{ha $n>1$}
+        \end{array} \right.$ \\
+        Készítse el azt a \texttt{fibonacci} függvényt, melynek paramétere a sorozat valamely elemének indexe (\emph{n}), visszatérési értéke a sorozat megfelelő eleme!
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{Négyzetgyökvonás (\textattachfile{gyok.js}{gyok.js})}
+        \small
+        Készítse el a \texttt{gyok} függvényt, mely Newton módszerrel meghatározza és visszatérési értékként szolgáltatja paraméterének négyzetgyökét! \\
+        A módszer iteratív: egy sorozat egymást követő tagjait kell kiszámolni, melyek általában nagyon gyorsan konvergálnak a keresett eredményhez. A sorozat első elemét célszerű lenne a megoldás közeléből választani, de az egyszerűség kedvéért legyen ez nálunk mindig 10. Ha az utolsóként meghatározott tag értéke \( 10^{-6} \)-nál nem nagyobb mértékben tér el az utolsó előttiként kiszámolttól, akkor ezt az utolsóként kiszámolt értéket tekintjük a megoldásnak. A Newton módszer szerint a sorozat tagjait általánosan a következőképpen határozzuk meg: \( x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \) \\
+        Konkrétan a négyzetgyökvonás esetén, ha pl. az \( x^2 = 612 \) (itt 612 a \texttt{gyok} függvény aktuális paraméterének feleltethető meg) zérushelyét keressük, azaz \( f(x) = x^2 - 612 \) akkor \( f'(x) = 2x \). \\
+        Ebből adódik, hogy \( x_1 = x_0 - \frac{f(x_0)}{f'(x_0)} = 10 - \frac{10^2 - 612}{2 \cdot 10} = 35.6 \) majd \( x_2 = x_1 - \frac{f(x_1)}{f'(x_1)} = 35.6 - \frac{35.6^2 - 612}{2 \cdot 35.6} = 26.3955056 \), stb.
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{Szinusz függvény (\textattachfile{sin.js}{sin.js})}
+        Írja meg azt a \texttt{sin} függvényt, amely visszaadja a paraméterként kapott, radiánban mért szög szinuszát!\\
+        \smallskip
+        A keresett érték meghatározható a szinusz függvény sorba fejtésével: \( sin(x) = \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!} x^{2n+1} \) azaz \( sin(x) = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\dots \).\\
+        \smallskip
+        A függvénynek természetesen nem kell végtelen sok tagot, illetve azok összegét meghatároznia. Elegendő, ha a függvény \( \epsilon = 10^{-6} \) pontossággal kiszámítja az eredményt.
     \end{exampleblock}
 \end{frame}
 
