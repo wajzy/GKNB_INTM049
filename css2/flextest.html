@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8">
+    <title>Flexbox teszt</title>
+    <script>
+      window.addEventListener("load", function() {
+        const properties = [
+          ["display", "display"],
+          ["flex-direction", "flexDirection"],
+          ["justify-content", "justifyContent"],
+          ["align-items", "alignItems"],
+          ["flex-wrap", "flexWrap"],
+          ["align-content", "alignContent"]
+        ];
+        
+        for(const property of properties) {
+          for(const radio of document.querySelectorAll("input[name='" + property[0] + "']")) {
+            radio.addEventListener("click", function(e) {
+              document.querySelector("div.container").style[property[1]] = e.target.value;
+            });
+          }
+        }
+      });
+    </script>
+    <style>
+      fieldset {
+        margin-top: 5px;
+      }
+      div.container, p {
+        border: 1px solid black;
+      }
+      div.container {
+        margin-top: 10px;
+        padding: 0px;
+        min-height: 500px;
+        overflow: hidden;
+      }
+      p {
+        margin: 10px;
+        padding: 5px;
+        background-color: antiquewhite;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>
+        A tároló viselkedése (<code>display</code> értékei)
+      </legend>
+      <div>
+        <input type="radio" name="display" value="block" id="d-block" checked="checked" />
+        <label for="d-block">Blokkszintű elem (<code>block</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="display" value="flex" id="d-flex" />
+        <label for="d-flex">Flex (<code>flex</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="display" value="inline-flex" id="d-inline-flex" />
+        <label for="d-inline-flex">Soron belüli Flex (<code>inline-flexflex</code>)</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>
+        A tengely és bejárásának iránya (<code>flex-direction</code> értékei)
+      </legend>
+      <div>
+        <input type="radio" name="flex-direction" value="row" id="fd-row" checked="checked" />
+        <label for="fd-row">Vízszintes, balról jobbra (<code>row</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="flex-direction" value="row-reverse" id="fd-row-reverse" />
+        <label for="fd-row-reverse">Vízszintes, jobbról balra (<code>row-reverse</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="flex-direction" value="column" id="fd-column" />
+        <label for="fd-column">Függőleges, fentről le (<code>column</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="flex-direction" value="column-reverse" id="fd-column-reverse" />
+        <label for="fd-column-reverse">Függőleges, lentről fel (<code>column-reverse</code>)</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Elemek igazítása a tengely mentén, ha nem töltik ki a tárolót (<code>justify-content</code> értékei)
+      </legend>
+      <div>
+        <input type="radio" name="justify-content" value="flex-start" id="jc-flex-start" checked="checked" />
+        <label for="jc-flex-start">A tengely elejére (<code>flex-start</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="justify-content" value="flex-end" id="jc-flex-end" />
+        <label for="jc-flex-end">A tengely végére (<code>flex-end</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="justify-content" value="center" id="jc-center" />
+        <label for="jc-center">A tengely közepére (<code>center</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="justify-content" value="space-between" id="jc-space-between" />
+        <label for="jc-space-between">A tárolt elemek között egyenletesen osztja el a helyet (<code>space-between</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="justify-content" value="space-around" id="jc-space-around" />
+        <label for="jc-space-around">Minden tárolt elem mindkét oldalán azonos méretű helyet hagy, a szomszédos üres részeket nem vonja össze (<code>space-around</code>)</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Tárolt elemek tördelése (<code>flex-wrap</code> értékei)
+      </legend>
+      <div>
+        <input type="radio" name="flex-wrap" value="nowrap" id="fw-nowrap" checked="checked" />
+        <label for="fw-nowrap">Az elemek kilógnak / nem jelennek meg (<code>nowrap</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="flex-wrap" value="wrap" id="fw-wrap" />
+        <label for="fw-wrap">További párhuzamos tengelyeket hoz létre (<code>wrap</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="flex-wrap" value="wrap-reverse" id="fw-wrap-reverse" />
+        <label for="fw-wrap-reverse">További párhuzamos tengelyeket hoz létre, de fordított sorrendben (<code>wrap-reverse</code>)</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Tengelyre merőleges irányú hely flehasználási módja (<code>align-items</code> értékei)
+      </legend>
+      <div>
+        <input type="radio" name="align-items" value="stretch" id="ai-stretch" checked="checked" />
+        <label for="ai-stretch">Kinyújtás a tároló méretére (<code>stretch</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="align-items" value="center" id="ai-center" />
+        <label for="ai-center">Az elemeket a tároló közepére igazítja (<code>center</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="align-items" value="flex-start" id="ai-flex-start" />
+        <label for="ai-flex-start">Az elemeket a tároló elejére igazítja (<code>flex-start</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="align-items" value="flex-end" id="ai-flex-end" />
+        <label for="ai-flex-end">Az elemeket a tároló végére igazítja (<code>flex-end</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="align-items" value="baseline" id="ai-baseline" />
+        <label for="ai-baseline">Az elemeket a tároló alapvonalához igazítja (<code>baseline</code>)</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Tengelyek igazítása (<code>align-content</code> értékei)
+      </legend>
+      <div>
+        <input type="radio" name="align-content" value="stretch" id="ac-stretch" checked="checked" />
+        <label for="ac-stretch">Kinyújtás a tároló méretére (<code>stretch</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="align-content" value="center" id="ac-center" />
+        <label for="ac-center">Az elemeket a tároló közepére igazítja (<code>center</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="align-content" value="flex-start" id="ac-flex-start" />
+        <label for="ac-flex-start">Az elemeket a tároló elejére igazítja (<code>flex-start</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="align-content" value="flex-end" id="ac-flex-end" />
+        <label for="ac-flex-end">Az elemeket a tároló végére igazítja (<code>flex-end</code>)</label>
+      </div>
+      <div>
+        <input type="radio" name="align-content" value="baseline" id="ac-baseline" />
+        <label for="ac-baseline">Az elemeket a tároló alapvonalához igazítja (<code>baseline</code>)</label>
+      </div>
+    </fieldset>
+    <div class="container">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+      <p>Dinnye</p>
+      <p>Eper</p>
+      <p>Fokhagyma</p>
+      <p>Görögdinnye</p>
+      <p>Hónapos retek</p>
+    </div>
+  </body>
+</html>
