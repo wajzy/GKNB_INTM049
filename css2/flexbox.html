@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8">
+    <title>Flexbox</title>
+    <style>
+      div { /* Tároló */
+        display: flex;
+        border: 1px solid black;
+        margin-top: 10px;
+        padding: 0px;
+      }
+      div > p { /* Tárolt elemek */
+        border: 1px solid black;
+        margin: 10px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Balról jobbra</p>
+    <div style="flex-direction: row">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Jobbról balra</p>
+    <div style="flex-direction: row-reverse">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Fentről le</p>
+    <div style="flex-direction: column">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Lentről fel</p>
+    <div style="flex-direction: column-reverse">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Jobbra igazítva</p>
+    <div style="justify-content: flex-end">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Középre igazítva</p>
+    <div style="justify-content: center">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Egyenletesen elosztva, kitöltés csak az elemek között</p>
+    <div style="justify-content: space-between">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Egyenletesen elosztva, kitöltés az elemek előtt és után is</p>
+    <div style="justify-content: space-around">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Függőlegesen kinyújtva</p>
+    <div style="height: 100px; /* align-items: stretch; */">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Felülre igazítva</p>
+    <div style="height: 100px; align-items: flex-start;">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Alulra igazítva</p>
+    <div style="height: 100px; align-items: flex-end;">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Középre igazítva</p>
+    <div style="height: 100px; align-items: center;">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Alapvonalra igazítva</p>
+    <div style="height: 100px; align-items: baseline;">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p><code>align-items</code> felülírása egy-egy tárolt elemre vonatkozóan</p>
+    <div style="min-height: 200px">
+      <p>Alma</p>
+      <p style="align-self: flex-start">Banán</p>
+      <p style="align-self: center">Citrom</p>
+      <p style="align-self: flex-end">Dinnye</p>
+      <p style="align-self: baseline">Eper</p>
+    </div>
+    <p>Új tengelyt kezd, ha szükséges</p>
+    <div style="flex-wrap: wrap;">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+      <p>Dinnye</p>
+      <p>Eper</p>
+      <p>Fokhagyma</p>
+      <p>Görögdinnye</p>
+      <p>Hónapos retek</p>
+    </div>
+    <p>Új tengelyt kezd, ha szükséges; a tengelyek sorrendje fordított</p>
+    <div style="flex-wrap: wrap-reverse;">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+      <p>Dinnye</p>
+      <p>Eper</p>
+      <p>Fokhagyma</p>
+      <p>Görögdinnye</p>
+      <p>Hónapos retek</p>
+    </div>
+    <p>Flex tengelyek igazítása</p>
+    <div style="min-height: 200px; flex-wrap: wrap;">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+      <p>Dinnye</p>
+      <p>Eper</p>
+      <p>Fokhagyma</p>
+      <p>Görögdinnye</p>
+      <p>Hónapos retek</p>
+    </div>
+    <p>Flex tengelyek igazítása: felülre</p>
+    <div style="min-height: 200px; flex-wrap: wrap; align-content: flex-start;">
+      <p>Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+      <p>Dinnye</p>
+      <p>Eper</p>
+      <p>Fokhagyma</p>
+      <p>Görögdinnye</p>
+      <p>Hónapos retek</p>
+    </div>
+    <p>Tárolt elemek sorrendjének módosítása</p>
+    <div>
+      <p style="order: 1">Alma</p>
+      <p>Banán</p>
+      <p style="order: -2">Citrom</p>
+    </div>
+    <p>Automatikus szélességű margó</p>
+    <div>
+      <p style="margin-right: auto">Alma</p>
+      <p>Banán</p>
+      <p>Citrom</p>
+    </div>
+    <p>Tárolt elemek arányos méretezése</p>
+    <div>
+      <p style="flex: 1">Alma</p>
+      <p style="flex: 2">Banán</p>
+      <p style="flex: 3">Citrom</p>
+    </div>
+  </body>
+</html>
