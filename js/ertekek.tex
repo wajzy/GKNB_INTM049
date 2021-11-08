@@ -1,0 +1,107 @@
+\section{Értékek (literálok), típusok, műveletek}
+
+\subsection{Számok}
+
+\begin{frame}
+    Jellemzők:
+    \begin{itemize}
+        \item Egyetlen típus létezik csak: 64 bites lebegőpontos ábrázolás
+        \item Pl. \texttt{42}, \texttt{12.34}, \texttt{-34.56}, \texttt{1e3}, \texttt{-1e3}, \texttt{1e-3}, \texttt{-1e-3}, \texttt{-1.23e-4}, \texttt{-1.23E+4}, \dots
+        \item Különleges értékek: \texttt{Infinity}, \texttt{-Infinity}, \texttt{NaN}
+        \item Pl. \texttt{0/0} \kiemelZ{$\to$ NaN}, \texttt{1/0} \kiemelZ{$\to$ Infinity}
+    \end{itemize}
+    \vfill
+    Operátorok (\hiv{\href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence\#table}{Precedencia táblázat}})
+    \begin{itemize}
+        \item[$+$] \texttt{5+3} \kiemelZ{$\to$ 8}
+        \item[$-$] \texttt{5-3} \kiemelZ{$\to$ 2} 
+        \item[$\times$] \texttt{5*3} \kiemelZ{$\to$ 15}
+        \item[$/$] \texttt{5/3} \kiemelZ{$\to$ 1.6666666666666667}
+        \item[$\%$] \texttt{5\%3} \kiemelZ{$\to$ 2}, \texttt{-5\%3} \kiemelZ{$\to$ -2}, \texttt{5\%-3} \kiemelZ{$\to$ 2} 
+        \item[$**$] \texttt{5**3} \kiemelZ{$\to$ \texttt{125}} 
+    \end{itemize}
+\end{frame}
+
+\subsection{Karakterláncok}
+
+\begin{frame}
+    Jellemzők
+    \begin{itemize}
+        \item Unicode, 16 bit karakterenként
+        \item Nincs specifikus típus egyetlen karakter tárolására
+        \item Jelölés: \texttt{'}-ok vagy \texttt{"}-ek között
+        \item Pl. \texttt{'JavaScript'}, \texttt{"JavaScript"}, \texttt{"Guns 'n' Roses"}, \texttt{"Egy\textbackslash nKettő\textbackslash nHárom"}, \texttt{'Guns \textbackslash 'n\textbackslash' Roses'}, \texttt{"Új sor \textbackslash\textbackslash n megadásával kérhető."}
+        \item \emph{Template literal:} \texttt{`}-ek között, kifejezések kiértékelése
+        \item Pl. \texttt{`5 * 3 = \$\{5*3\}`} \kiemelZ{$\to$ \texttt{"5 * 3 = 15"}}
+    \end{itemize}
+    \vfill
+    Operátor
+    \begin{itemize}
+        \item[$+$] \texttt{"Java" + 'Script'} \kiemelZ{$\to$ \texttt{"JavaScript"}}
+    \end{itemize}
+\end{frame}
+
+\subsection{Logikai értékek}
+
+\begin{frame}
+    Jellemzők
+    \begin{itemize}
+        \item Értékek: \texttt{true}, \texttt{false}
+        \item Pl. \texttt{5 < 3} \kiemelZ{$\to$ \texttt{false}}
+    \end{itemize}
+    \vfill
+    Logikai operátorok
+    \begin{itemize}
+        \item[és] \texttt{true \&\& false} \kiemelZ{$\to$ \texttt{false}}
+        \item[vagy] \texttt{true || false} \kiemelZ{$\to$ \texttt{true}}
+        \item[nem] \texttt{!true} \kiemelZ{$\to$ \texttt{false}}
+    \end{itemize}
+    \vfill
+    \emph{Short circuit evaluation} (pl. alapérték megadására):\\ \qquad \texttt{undefined || "Gizi"} \kiemelZ{$\to$ \texttt{"Gizi"}}, \texttt{null || "Gizi"} \kiemelZ{$\to$ \texttt{"Gizi"}}, \\ \qquad \texttt{"" || "Gizi"} \kiemelZ{$\to$ \texttt{"Gizi"}}, \texttt{"Gizi" || "Mari"} \kiemelZ{$\to$ \texttt{"Gizi"}}
+\end{frame}
+
+\begin{frame}
+    Relációs operátorok
+    \begin{itemize}
+        \item \texttt{==}, \texttt{!=}, \texttt{<}, \texttt{<=}, \texttt{>}, \texttt{>=} 
+        \item Pl. \texttt{"Bill" != "Gates"} \kiemelZ{$\to$ \texttt{true}}, \texttt{Infinity == Infinity} \kiemelZ{$\to$ \texttt{true}}, \\ \kiemel{de} \texttt{NaN == NaN} \kiemelZ{$\to$ \texttt{false}}
+        \item Karakterláncok összehasonlítása: karakterkódok alapján
+    \end{itemize}
+\end{frame}
+
+\subsection{Egyebek}
+
+\begin{frame}
+    Üres értékek: valaminek a hiányát jelzik
+    \begin{itemize}
+        \item \texttt{undefined}
+        \item \texttt{null}
+    \end{itemize}
+    \vfill
+    Egyoperandusú operátorok
+    \begin{itemize}
+        \item[típus] \texttt{typeof(5)} \kiemelZ{$\to$ \texttt{"number"}}, \texttt{typeof("Gizi")} \kiemelZ{$\to$ \texttt{"string"}}
+        \item[$-$] \texttt{-(5)} \kiemelZ{$\to$ \texttt{-5}}
+    \end{itemize}
+    \vfill
+    Háromoperandusú operátor
+    \begin{itemize}
+        \item[?:] \texttt{1<2?"kisebb":"nagyobb"} \kiemelZ{$\to$ \texttt{"kisebb"}}
+    \end{itemize}
+\end{frame}
+
+\subsection{Automatikus típuskonverzió (\emph{Type coercion})}
+
+\begin{frame}
+    Néhány példa:
+    \begin{itemize}
+        \item \texttt{5 * null} \kiemelZ{$\to$ \texttt{0}}
+        \item \texttt{"5" - 3} \kiemelZ{$\to$ \texttt{2}}
+        \item \texttt{"5" + 3} \kiemelZ{$\to$ \texttt{"53"}}
+        \item \texttt{"öt" * 3} \kiemelZ{$\to$ \texttt{NaN}}, \texttt{5 * undefined} \kiemelZ{$\to$ \texttt{NaN}}
+        \item \texttt{false == 0} \kiemelZ{$\to$ \texttt{true}}, \texttt{true == 1} \kiemelZ{$\to$ \texttt{true}}, \texttt{true == 2} \kiemelZ{$\to$ \texttt{false}}, \\ \texttt{"" == false} \kiemelZ{$\to$ \texttt{true}}
+        \item Definiált az érték? \texttt{null == undefined} \kiemelZ{$\to$ \texttt{true}}, \texttt{null == 0} \kiemelZ{$\to$ \texttt{false}}
+    \end{itemize}
+    \vfill
+    Típusok egyezését megkövetelő operátorok: \texttt{===}, \texttt{!==}
+\end{frame}

@@ -1,0 +1,370 @@
+\section{Objektumok és tömbök}
+
+\subsection{Objektum literálok létrehozása, módosítása, használata}
+
+\begin{frame}
+  \small
+  Objektumok
+  \begin{itemize}
+    \item tulajdonság (kulcs) -- érték párok (csak a \texttt{null}-nak és az \texttt{undefined}-nak nincsenek tulajdonságai a nyelvben)
+    \item minden tulajdonság egyedi az objektumban
+    \item a tulajdonság lehet adat vagy függvény (metódus)
+    \item a tulajdonságot az értéktől \kiemel{:} választja el, a párokat egymástól \kiemel{,}
+  \end{itemize}
+  \begin{exampleblock}{\textattachfile{objektumok.js}{Objektum definiálása literálként}}
+    \vspace{-0.3cm}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=1-5]{objektumok.js}
+    \vspace{-0.3cm}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \texttt{hg} kötése konstans, de ettől még a tulajdonságok értéke megváltoztatható.\\
+  Tulajdonságok elérése: \texttt{objektum\kiemel{.}tulajdonság} formában
+  \footnotesize
+  \begin{exampleblock}{\textattachfile{objektumok.js}{Objektum módosítása}}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=6-16,firstnumber=6]{objektumok.js}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \small
+  \begin{exampleblock}{\textattachfile{objektumok.js}{Két kötés (referencia) ugyanarra az objektumra}}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=18-21,firstnumber=18]{objektumok.js}
+  \end{exampleblock}
+  \normalsize
+  Tulajdonságok feltérképezése
+  \begin{itemize}
+    \item \texttt{in} (tartalmazás) operátor (vs. \texttt{if(objektum.tulajdonság) \dots})
+    \item \texttt{for/in} ciklus, a tulajdonságokon történő iterálásra
+  \end{itemize}
+  Ha a tulajdonság neve kötéssel adott, a \kiemel{.} operátor nem használható $\to$ objektum\kiemel{[}"tulajdonság"\kiemel{]}
+\end{frame}
+
+\begin{frame}
+  \small
+  \begin{exampleblock}{\textattachfile{objektumok.js}{Tulajdonságok elérése}}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=23-32,firstnumber=23]{objektumok.js}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  Objektumok tartalmának másolása: \\
+  \qquad \texttt{Object.assign(cél, forrás1, forrás2, ..., forrásN)}\\
+  Visszatérési érték: \texttt{cél}
+  \footnotesize
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Tulajdonságok másolása}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=34-43,firstnumber=34]{objektumok.js}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \begin{block}{Kimenet}
+        \begin{verbatim}
+nev :  Kovács Emőke
+neptun :  a1b2c3
+zh :  15
+zh2 :  19
+
+nev :  Kovács István
+zh2 :  19
+neptun :  a1b2c3
+zh :  15
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  Tulajdonságok értékadással bármikor felvehetők az objektumba, és \texttt{delete} operátorral törölhetőek
+  \vfill
+  \footnotesize
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Tulajdonságok hozzáadása, törlése}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=45-49,firstnumber=45]{objektumok.js}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \begin{block}{Kimenet}
+        \begin{verbatim}
+nev :  Kovács István
+neptun :  a1b2c3
+zh1 :  15
+zh2 :  20
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  Rövidített objektum definíciós szintakszis: a kötés neve lesz a tulajdonság neve is
+  \scriptsize
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Metódus hozzáadása}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=51-63,firstnumber=51]{objektumok.js}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \begin{block}{Kimenet}
+        \begin{verbatim}
+nev :  Fekete Péter
+neptun :  abcdef
+zh1 :  12
+zh2 :  8
+
+nev :  Fekete Péter
+neptun :  abcdef
+zh1 :  12
+zh2 :  8
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  Metódus: a tulajdonság értéke függvény. Az objektum többi tulajdonsága a \texttt{this}-en keresztül érhető el
+  \vfill
+  \small
+  \begin{exampleblock}{\textattachfile{objektumok.js}{Metódus hozzáadása}}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=65-70,firstnumber=65]{objektumok.js}
+  \end{exampleblock}
+\end{frame}
+
+\subsection{Tömb literálok létrehozása, módosítása, használata}
+
+\begin{frame}
+  Tömbök
+  \begin{itemize}
+    \item Speciális objektumok, amelyekben a tulajdonságok nevei (kulcsok) nem negatív egész számok, de az értékek vegyesen bármilyen típusúak lehetnek
+    \item Tömb literál létrehozása: \texttt{[elem1, elem2, ..., elemN]}
+    \item Tömb elemszáma: \texttt{tömb.length} tulajdonság
+    \item Elemek elérése: \texttt{[]} operátorral
+  \end{itemize}
+  \footnotesize
+  \begin{exampleblock}{\textattachfile{tombok.js}{Tömb létrehozása, indexelés, elemszám megállapítás}}
+    \vspace{-0.2cm}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=1-7]{tombok.js}
+    \vspace{-0.2cm}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  A tömb bejárására használhatóak a \texttt{for/in} (tulajdonságok/indexek) és \texttt{for/of} (értékek) ciklusok
+  \footnotesize
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Tömbök bejárása}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=9-21,firstnumber=9]{tombok.js}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \begin{block}{Kimenet}
+        \begin{verbatim}
+Alma
+Burgonya
+Citrom
+
+0 :  Alma
+1 :  Burgonya
+2 :  Citrom
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  Tömböt állít elő az \texttt{Object.keys()} egy objektum tulajdonságaiból
+  \small
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Objektum tulajdonságainak visszaadása tömbként}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=23-28,firstnumber=23]{tombok.js}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \begin{block}{Kimenet}
+        \begin{verbatim}
+0 :  egy
+1 :  ketto
+2 :  harom
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  További elemek hozzáadása egy kiválasztott indexű elemhez történő hozzárendeléssel lehetséges. A tömb elemszáma a legnagyobb index alapján kerül meghatározásra, \kiemel{nem a tárolt elemek száma} alapján!
+  \footnotesize
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Tömbök elemei}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=30-35,firstnumber=30]{tombok.js}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \begin{block}{Kimenet}
+        \begin{verbatim}
+0 :  Alma
+1 :  Burgonya
+2 :  Citrom
+3 :  Dió
+6
+undefined
+0 :  Alma
+1 :  Burgonya
+2 :  Citrom
+3 :  Dió
+5 :  Füge
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  A literál megadásakor is jelezhetjük, hogy bizonyos indexű elemeket nem kívánunk létrehozni.
+  \small
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Hiányos tömbök}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=36-41,firstnumber=36]{tombok.js}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \begin{block}{Kimenet}
+        \begin{verbatim}
+3
+0 :  Alma
+2 :  Citrom
+4
+0 :  Alma
+2 :  Citrom
+3 :  undefined
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  Tömbelem törlése: \texttt{delete} operátorral
+  \vfill
+  \small
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Tömbelem törlése}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=43-44,firstnumber=43]{tombok.js}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \begin{block}{Kimenet}
+        \begin{verbatim}
+0 :  Alma
+3 :  undefined
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  \small
+  Verem műveletek
+  \begin{itemize}
+    \item Tömb végén: \texttt{push()}/\texttt{pop()}
+    \item Tömb elején: \texttt{unshift()}/\texttt{shift()} (vagyis egy \emph{igazi} sort pl. a \texttt{push()}/\texttt{shift()} párossal lehetne létrehozni)
+  \end{itemize}
+  \scriptsize
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Veremműveletek}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=46-54,firstnumber=46]{tombok.js}
+      \end{exampleblock}
+    \column{0.15\textwidth}
+      \begin{block}{Kimenet 1/2}
+        \begin{verbatim}
+0 :  1
+1 :  2
+2 :  3
+3 :  4
+4
+0 :  1
+1 :  2
+2 :  3
+\end{verbatim}
+      \end{block}
+      \column{0.15\textwidth}
+      \begin{block}{Kimenet 2/2}
+        \begin{verbatim}
+0 :  0
+1 :  1
+2 :  2
+3 :  3
+0
+0 :  1
+1 :  2
+2 :  3
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  Tömbök egyesítése: \texttt{concat()}
+  \vfill
+  \small
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Tömbök egyesítése}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=56-59,firstnumber=56]{tombok.js}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \begin{block}{Kimenet}
+        \begin{verbatim}
+0 :  Alma
+1 :  Banán
+2 :  1
+3 :  2
+4 :  3
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  Többdimenziós tömb egydimenziós tömbök egymásba ágyazásával hozható létre
+  \vfill
+  \scriptsize
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Többdimenziós tömbök}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=61-71,firstnumber=61]{tombok.js}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \begin{block}{Kimenet}
+        \begin{verbatim}
+0  0 :  Alma
+0  1 :  Banán
+1  0 :  1
+1  1 :  2
+1  2 :  3
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  A \texttt{concat()} azonban a paraméter tömb elemeit mindig külön-külön szúrja be az eredmény tömbbe! (De pl. a \texttt{push()} megfelelő lenne tömb beszúrására.)
+  \vfill
+  \footnotesize
+  \begin{columns}[T]
+    \column{0.65\textwidth}
+      \begin{exampleblock}{\textattachfile{objektumok.js}{Többdimenziós tömbök és concat()}}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=71-73,firstnumber=71]{tombok.js}
+      \end{exampleblock}
+    \column{0.3\textwidth}
+      \begin{block}{Kimenet}
+        \begin{verbatim}
+0  0 :  Alma
+0  1 :  Banán
+1  0 :  1
+1  1 :  2
+1  2 :  3
+<empty string> 2 :  alfa
+<empty string> 3 :  beta
+\end{verbatim}
+      \end{block}
+  \end{columns}
+\end{frame}
