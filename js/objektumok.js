@@ -27,7 +27,7 @@ console.log("evfolyam" in hg); // false
 // Milyen tulajdonságok vannak az objektumban, milyen értékkel?
 function nyomtat(obj) {
   for(let tul in obj) {
-    console.log(tul, ": ", obj[tul]);
+    console.log(tul, ":", obj[tul]);
   }  
 }
 

@@ -15,7 +15,7 @@ nyomtat1(t2);
 
 function nyomtat2(tomb) {
   for(let idx in tomb) {
-    console.log(idx, ": ", tomb[idx]);
+    console.log(idx, ":", tomb[idx]);
   }
 }
 nyomtat2(t2);
@@ -58,16 +58,36 @@ let t7 = [1, 2, 3];
 let t8 = t6.concat(t7);
 nyomtat2(t8);
 
-let t9 = [t6, t7];
-function rekNyomtat(tomb, prefix="") {
-  for(let idx in tomb) {
-    if(typeof tomb[idx] == "object") {
-      rekNyomtat(tomb[idx], prefix + idx + " ");
-    } else {
-    	console.log(prefix, idx, ": ", tomb[idx]); 
+let t9 = ["Alma", "Banán", "Citrom", "Dió"];
+console.log(t9.splice(1, 2)); // ["Banán", "Citrom"]
+console.log(t9); // ["Alma", "Dió"]
+console.log(t9.splice(2, 0, "Eper", "Füge")); // []
+console.log(t9); // ["Alma", "Dió", "Eper", "Füge"]
+console.log(t9.splice(-1, 1)); // ["Füge"]
+
+let t10 = ["Alma", "Banán", "Citrom", "Dió"];
+//          0       1        2         3
+//         -4      -3       -2        -1
+console.log(t10.slice(1, 2)); // ["Banán"]
+console.log(t10); // ["Alma", "Banán", "Citrom", "Dió"]
+console.log(t10.slice(-3, -1)); // ["Banán", "Citrom"]
+
+let t11 = ["Alma", "Banán", "Citrom", "Alma"];
+//          0       1        2         3
+//         -4      -3       -2        -1
+console.log(t11.indexOf("Banán")); // 1
+console.log(t11.indexOf("Dió")); // -1
+console.log(t11.lastIndexOf("Alma")); // 3
+console.log(t11.indexOf("Alma", 1)); // 3
+console.log(t11.indexOf("Alma", -3)); // 3
+
+let t12 = [["Alma", "Banán"],
+           [1, 2, 3]];
+function mtxNyomtat(mtx) {
+  for(let sor in mtx) {
+    for(let cella in mtx[sor]) {
+      console.log(sor, cella, ":", mtx[sor][cella]);
     }
   }
 }
-rekNyomtat(t9);
-let t10 = t9.concat(["alfa", "beta"]);
-rekNyomtat(t10);
+mtxNyomtat(t12);
