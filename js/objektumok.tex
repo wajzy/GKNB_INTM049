@@ -402,4 +402,45 @@ undefined
   \end{columns}
 \end{frame}
 
+\subsection{Dekompozíció (destructuring)}
 
+\begin{frame}
+  Egy tömb elemeinek elérése nehézkes lehet, főleg ha többdimenziós, nagy elemszámú tömbről van szó. Példa: 2x2-es mátrix \hiv{\href{https://math.bme.hu/algebra/a2/2009/4_Matrixok_jellemzese.002.pdf}{determinánsának}} meghatározása.\\
+  $\left[ \begin{array}{cc} a & b \\ c & d \\ \end{array} \right] = a\times d - b\times c$ \\
+  Egyszerűbb, kifejezőbb, ha indexelés nélkül, közvetlenül elérhetők a mátrix elemei.
+  \footnotesize
+  \begin{exampleblock}{\textattachfile{destructuring.js}{Dekompozíció}}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=1-7]{destructuring.js}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  Hasonló dekompozíció objektumokkal is megvalósítható.
+  \footnotesize
+  \begin{exampleblock}{\textattachfile{destructuring.js}{Dekompozíció}}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=9-12,firstnumber=9]{destructuring.js}
+  \end{exampleblock}
+\end{frame}
+
+\subsection{Változó számú paramétert fogadó függvények}
+
+\begin{frame}
+  Egy függvény fogadhat előre meg nem határozott számú paramétert, melyeket az \texttt{arguments} tömb-szerű változón keresztül érhet el.
+  \begin{exampleblock}{\textattachfile{restparams.js}{Változó számú paraméter}}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=1-8]{restparams.js}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  Fejlettebb megoldás a maradék paraméterek (rest parameters) használata, mely a külön átadott aktuális paramétereket egy adott nevű tömbbe gyűjti.
+  \begin{exampleblock}{\textattachfile{restparams.js}{Változó számú paraméter}}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=10-17,firstnumber=10]{restparams.js}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  Ez a megoldás független értékeknek tömbbe foglalására, és tömb elemeinek különálló változókba helyezésére is lehetőséget ad.
+  \begin{exampleblock}{\textattachfile{restparams.js}{Független változók $\leftrightarrow$ tömb}}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=19-22,firstnumber=19]{restparams.js}
+  \end{exampleblock}
+\end{frame}
