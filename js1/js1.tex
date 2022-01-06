@@ -1,0 +1,28 @@
+\documentclass[usenames,dvipsnames,aspectratio=169]{beamer}
+\usepackage{../common/web}
+\title[Web technológiák - JavaScript]{Web technológia}
+\subtitle{JavaScript, 1. rész}
+
+% JavaScript
+\lstdefinelanguage{JavaScript}{
+  morekeywords={typeof, new, true, false, catch, function, return, null, undefined, try, catch, finally, throw, var, let, const, in, of, while, do, for, if, else, switch, case, default, break, continue, class, interface, instanceof, debugger, delete, enum, export, extends, implements, import, package, private, protected, public, this, super, static, void, with, yield},
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morestring=[b]",
+  morestring=[b]'
+}
+
+\begin{document}
+
+%1
+\begin{frame}[plain]
+  \titlepage
+  \logoalul
+\end{frame}
+
+\input{ertekek.tex}
+\input{valtozok.tex}
+\input{fuggvenyek.tex}
+\input{objektumok.tex}
+
+\end{document}
