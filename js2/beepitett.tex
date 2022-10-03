@@ -123,3 +123,89 @@
     \lstinputlisting[language=JavaScript,numbers=left]{deg2rad.js}
   \end{exampleblock}
 \end{frame}
+
+\subsection{A \texttt{Date} objektum}
+
+\begin{frame}
+  Példány létrehozása:
+  \begin{description}[m]
+    \item[\texttt{new Date()}] \hfill \\ A kliens óraállását veszi fel
+    \item[\texttt{new Date(\emph{időbélyeg})}] \hfill \\ A Unix-időszámítás kezdete óta eltelt ennyi ezredmp.-es állást veszi fel
+    \item[\texttt{new Date(\emph{dátumStr})}] \hfill \\ \hiv{\href{https://www.rfc-editor.org/rfc/rfc2822\#page-14}{Karakterláncként}} adott időpontot veszi fel
+    \item[\texttt{new Date(\emph{év}, \emph{hó}, \emph{nap}, [\emph{óra}, \emph{perc}, \emph{mp}, \emph{ezredmp}])}] \hfill \\ Adott óraállást veszi fel; hónapok számozása 0-tól kezdődik, az időformátum 24 órás 
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  Érdekesebb metódusok:
+  \begin{description}[m]
+    \item[\texttt{getTime()}, \texttt{setTime()}, \texttt{Date.now()}] Időbélyeg
+    \item[\texttt{getFullYear()}, \texttt{setFullYear()}] Évszám
+    \item[\texttt{getMonth()}, \texttt{setMonth()}] hónap, január = 0
+    \item[\texttt{getDate()}, \texttt{setDate()}] hónap napja
+    \item[\texttt{getDay()}] hét napja, vasárnap = 0
+    \item[\texttt{getHours()}, \texttt{setHours()}] óra 24 órás formátumban
+    \item[\texttt{getMinutes()}, \texttt{setMinutes()}] perc
+    \item[\texttt{getSeconds()}, \texttt{setSeconds()}] másodperc
+    \item[\texttt{getMilliseconds()}, \texttt{setMilliseconds()}] ezredmásodperc
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  Néhány exportálási lehetőség karakterláncokba
+  \begin{description}[]
+    \item[\texttt{toDateString()}] Pl. \texttt{Mon Oct 03 2022}
+    \item[\texttt{toTimeString()}] Pl. \texttt{12:40:51 GMT+0200 (közép-európai nyári idő)}
+    \item[\texttt{toString()}] \hfill \\ Pl. \texttt{Mon Oct 03 2022 12:40:51 GMT+0200 (közép-európai nyári idő)}
+    \item[\texttt{toUTCString()}] Pl. \texttt{Mon, 03 Oct 2022 10:40:51 GMT}
+    \item[\texttt{toISOString()}] Pl. \texttt{2022-10-03T10:40:51.039Z}
+    \item[\texttt{toJSON()}] Pl. \texttt{2022-10-03T10:40:51.039Z}
+    \item[\texttt{toLocaleDateString()}] Pl. \texttt{2022. 10. 03.}
+    \item[\texttt{toLocaleTimeString()}] Pl. \texttt{12:40:51}
+    \item[\texttt{toLocaleString()}] Pl. \texttt{2022. 10. 03. 12:40:51}
+  \end{description}
+  Ld. még: \hiv{\href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Date/getTimezoneOffset}{getTimezoneOffset()}}
+\end{frame}
+
+\subsection{A \texttt{JSON} objektum}
+
+\begin{frame}
+  JSON: \hiv{\href{https://www.json.org/json-hu.html}{JavaScript Object Notation}}
+  \begin{itemize}
+    \item Adatcsere formátum: pl. XML elemzéshez külön parser kell, a JS értelmező viszont eleve adott
+    \item Eltérések a JS objektumoktól, pl.
+    \begin{itemize}
+      \item tulajdonságnevek idézőjelek között
+      \item csak egyszerű adat kifejezések szerepelhetnek (pl. függvényhívás, kötések nem)
+    \end{itemize}
+    \item Annotálás, validálás $\to$ \hiv{\href{https://json-schema.org/}{JSON Schema}}
+  \end{itemize}
+  Legfontosabb metódusok:
+  \begin{description}[m]
+    \item[\texttt{stringify()}] JS objektum $\to$ JSON string 
+    \item[\texttt{parse()}] JSON string $\to$ JS objektum
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{JSON.js}{JSON.js}}
+    \footnotesize
+    \vspace{-.3cm}
+    \lstinputlisting[language=JavaScript,numbers=left]{JSON.js}
+    \vspace{-.3cm}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{block}{Kimenet}
+    \begin{verbatim}
+{"nev":{"titulus":"ifj.","vezetekNev":"Nagy","keresztNev":"Istvan"},
+ "neptun":"a1b2c3","szuletett":"2000-06-22T22:00:00.000Z",
+ "aktiv":true,"lezartFelevek":["2021/22/1","2021/22/2"]}
+
+Object { nev: {…}, neptun: "a1b2c3", 
+szuletett: "2000-06-22T22:00:00.000Z", 
+aktiv: true, lezartFelevek: (2) […] }
+\end{verbatim}
+  \end{block}
+\end{frame}

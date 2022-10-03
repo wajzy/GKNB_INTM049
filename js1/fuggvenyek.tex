@@ -68,6 +68,49 @@
     \end{exampleblock}
 \end{frame}
 
+\begin{frame}
+    \begin{exampleblock}{Régi módszer hiányzó paraméterek kezelésére (\textattachfile{hatvanyAlapertelmezettRegi.js}{hatvanyAlapertelmezettRegi.js})}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left]{hatvanyAlapertelmezettRegi.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{Alapértelmezett paraméter érték (\textattachfile{hatvanyAlapertelmezett.js}{hatvanyAlapertelmezett.js})}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left]{hatvanyAlapertelmezett.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    Tulajdonságok:
+    \begin{itemize}
+        \item Paraméterek átadása balról jobbra, akár az alapértelmezett értékek felülírásával is
+        \item Alapértelmezett érték kiszámítható kifejezéssel, akár fv. hívással is
+        \item Ezek minden egyes híváskor kiértékelődnek
+        \item Minden, a paramétertől balra lévő további paraméter használható inicializálásra
+        \item \hiv{\href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default\_parameters?retiredLocale=hu}{További részletek}}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    Paraméter átadás módja
+    \begin{itemize}
+        \item Alapvetően érték szerinti (\emph{pass by value})
+        \item Az objektumoknak a referenciáját adja át, de azt érték szerint (\emph{pass by sharing}) $\to$ az objektum csak a fv.-en belül cserélhető le, de az eredeti objektum meglévő tulajdonságainak módosítása látszik a hívás után is
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \footnotesize
+    \begin{exampleblock}{\textattachfile{atadas.js}{atadas.js}}
+        \footnotesize
+        \vspace{-0.3cm}
+        \lstinputlisting[language=JavaScript,numbers=left]{atadas.js}
+        \vspace{-0.3cm}
+    \end{exampleblock}
+\end{frame}
+
 \subsection{Függvények, mint értékek}
 
 \begin{frame}
