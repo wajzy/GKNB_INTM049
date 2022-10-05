@@ -21,7 +21,8 @@
 
 \begin{frame}
   \begin{exampleblock}{\textattachfile{string.js}{Adott indexű karakter lekérése, rész-karakterlánc keresése}}
-    \lstinputlisting[language=JavaScript,numbers=left,linerange=1-8,firstnumber=1]{string.js}
+    \small
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=1-9,firstnumber=1]{string.js}
   \end{exampleblock}
 \end{frame}
 
@@ -29,7 +30,7 @@
   \begin{description}[m]
     \item[\texttt{slice(\emph{tol}[, \emph{ig}])}] \hfill \\ A [\texttt{\emph{tol}}, \texttt{\emph{ig}}) index intervallumba eső karaktersorozat visszaadása. Negatív indexek támogatottak.
     \begin{exampleblock}{\textattachfile{string.js}{Rész-karakterlánc visszaadása}}
-    \lstinputlisting[language=JavaScript,numbers=left,linerange=10-13,firstnumber=10]{string.js}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=11-14,firstnumber=11]{string.js}
   \end{exampleblock}
   \end{description}
 \end{frame}
@@ -41,7 +42,7 @@
     \item[\texttt{toUpperCase()}] \hfill \\ Nagybetűs alak előállítása.
     \footnotesize
     \begin{exampleblock}{\textattachfile{string.js}{Összefűzés, kis- és nagybetűs alakra alakítás}}
-    \lstinputlisting[language=JavaScript,numbers=left,linerange=15-20,firstnumber=15]{string.js}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=16-21,firstnumber=16]{string.js}
   \end{exampleblock}
   \end{description}
 \end{frame}
@@ -56,7 +57,7 @@
     \scriptsize
     \begin{exampleblock}{\textattachfile{string.js}{Fehér karakterek levágása, darabolás és összefűzés}}
     \vspace{-.3cm}
-    \lstinputlisting[language=JavaScript,numbers=left,linerange=22-30,firstnumber=22]{string.js}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=23-31,firstnumber=23]{string.js}
     \vspace{-.3cm}
   \end{exampleblock}
   \end{description}
@@ -69,7 +70,7 @@
     \item[\texttt{repeat(\emph{db})}] \hfill \\ Egymás után fűzés \texttt{\emph{db}} alkalommal.
     \footnotesize
     \begin{exampleblock}{\textattachfile{string.js}{Kitöltés, ismétlés}}
-    \lstinputlisting[language=JavaScript,numbers=left,linerange=32-35,firstnumber=32]{string.js}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=33-36,firstnumber=33]{string.js}
   \end{exampleblock}
   \end{description}
 \end{frame}
@@ -124,6 +125,58 @@
   \end{exampleblock}
 \end{frame}
 
+\subsection{Konverzió számok és karakterláncok között}
+
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{konverzio.js}{Számok és karakterláncok közötti átalakítások}}
+    \lstinputlisting[language=JavaScript,numbers=left]{konverzio.js}
+  \end{exampleblock}
+\end{frame}
+
+\subsection{A \texttt{JSON} objektum}
+
+\begin{frame}
+  JSON: \hiv{\href{https://www.json.org/json-hu.html}{JavaScript Object Notation}}
+  \begin{itemize}
+    \item Adatcsere formátum: pl. XML elemzéshez külön parser kell, a JS értelmező viszont eleve adott
+    \item Leggyakoribb alkalmazásai: \hiv{\href{https://en.wikipedia.org/wiki/Ajax\_(programming)}{Asynchronous JavaScript and XML}} (AJAX), \hiv{\href{https://en.wikipedia.org/wiki/JSON\_Web\_Token}{JSON Web Token}} (JWT)
+    \item Eltérések a JS objektumoktól, pl.
+    \begin{itemize}
+      \item tulajdonságnevek idézőjelek között
+      \item csak egyszerű adat kifejezések szerepelhetnek (pl. függvényhívás, kötések nem)
+    \end{itemize}
+    \item Annotálás, validálás $\to$ \hiv{\href{https://json-schema.org/}{JSON Schema}}
+  \end{itemize}
+  Legfontosabb metódusok:
+  \begin{description}[m]
+    \item[\texttt{stringify()}] JS objektum $\to$ JSON string 
+    \item[\texttt{parse()}] JSON string $\to$ JS objektum
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{JSON.js}{JSON.js}}
+    \footnotesize
+    \vspace{-.3cm}
+    \lstinputlisting[language=JavaScript,numbers=left]{JSON.js}
+    \vspace{-.3cm}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{block}{Kimenet}
+    \begin{verbatim}
+{"nev":{"titulus":"ifj.","vezetekNev":"Nagy","keresztNev":"Istvan"},
+ "neptun":"a1b2c3","szuletett":"2000-06-22T22:00:00.000Z",
+ "aktiv":true,"lezartFelevek":["2021/22/1","2021/22/2"]}
+
+Object { nev: {…}, neptun: "a1b2c3", 
+szuletett: "2000-06-22T22:00:00.000Z", 
+aktiv: true, lezartFelevek: (2) […] }
+\end{verbatim}
+  \end{block}
+\end{frame}
+
 \subsection{A \texttt{Date} objektum}
 
 \begin{frame}
@@ -165,47 +218,4 @@
     \item[\texttt{toLocaleString()}] Pl. \texttt{2022. 10. 03. 12:40:51}
   \end{description}
   Ld. még: \hiv{\href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Date/getTimezoneOffset}{getTimezoneOffset()}}
-\end{frame}
-
-\subsection{A \texttt{JSON} objektum}
-
-\begin{frame}
-  JSON: \hiv{\href{https://www.json.org/json-hu.html}{JavaScript Object Notation}}
-  \begin{itemize}
-    \item Adatcsere formátum: pl. XML elemzéshez külön parser kell, a JS értelmező viszont eleve adott
-    \item Eltérések a JS objektumoktól, pl.
-    \begin{itemize}
-      \item tulajdonságnevek idézőjelek között
-      \item csak egyszerű adat kifejezések szerepelhetnek (pl. függvényhívás, kötések nem)
-    \end{itemize}
-    \item Annotálás, validálás $\to$ \hiv{\href{https://json-schema.org/}{JSON Schema}}
-  \end{itemize}
-  Legfontosabb metódusok:
-  \begin{description}[m]
-    \item[\texttt{stringify()}] JS objektum $\to$ JSON string 
-    \item[\texttt{parse()}] JSON string $\to$ JS objektum
-  \end{description}
-\end{frame}
-
-\begin{frame}
-  \begin{exampleblock}{\textattachfile{JSON.js}{JSON.js}}
-    \footnotesize
-    \vspace{-.3cm}
-    \lstinputlisting[language=JavaScript,numbers=left]{JSON.js}
-    \vspace{-.3cm}
-  \end{exampleblock}
-\end{frame}
-
-\begin{frame}[fragile]
-  \begin{block}{Kimenet}
-    \begin{verbatim}
-{"nev":{"titulus":"ifj.","vezetekNev":"Nagy","keresztNev":"Istvan"},
- "neptun":"a1b2c3","szuletett":"2000-06-22T22:00:00.000Z",
- "aktiv":true,"lezartFelevek":["2021/22/1","2021/22/2"]}
-
-Object { nev: {…}, neptun: "a1b2c3", 
-szuletett: "2000-06-22T22:00:00.000Z", 
-aktiv: true, lezartFelevek: (2) […] }
-\end{verbatim}
-  \end{block}
 \end{frame}

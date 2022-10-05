@@ -91,3 +91,23 @@ function mtxNyomtat(mtx) {
   }
 }
 mtxNyomtat(t12);
+
+let tomb = [10, 2, 100, 20, 1, 200]
+console.log(tomb.sort()) // 1, 10, 100, 2, 20, 200
+console.log(tomb.sort((a, b) => {
+  if(a < b) {
+    return 1;
+  } else if(a == b) {
+    return 0;
+  } else {
+    return -1;
+  }
+})) // 200, 100, 20, 10, 2, 1
+
+let szamok = [10, 20, 30];
+szamok.forEach(elem => console.log(elem / 10)); // 1 2 3
+console.log(szamok.every(elem => elem > 15)); // false
+console.log(szamok.some(elem => elem > 15)); // true
+console.log(szamok.filter(elem => elem > 15)); // [20, 30]
+console.log(szamok.map(elem => elem*elem)); // [100, 400, 900]
+console.log(szamok.reduce((osszeg, szam) => osszeg + szam)); // 60

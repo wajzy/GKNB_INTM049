@@ -1,5 +1,6 @@
 console.log("JavaScript".charAt(0)); // J
 console.log("JavaScript"[1]); // a
+let js = "ABC"; js[0]="X"; console.log(js); // ABC -> immutable
 console.log("JavaScript".indexOf("a")); // 1
 console.log("JavaScript".indexOf("Script")); // 4
 console.log("JavaScript".indexOf("a", 2)); // 3

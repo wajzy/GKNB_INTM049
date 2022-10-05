@@ -263,6 +263,8 @@ undefined
   \end{columns}
 \end{frame}
 
+\subsection{A tömbök metódusai}
+
 \begin{frame}[fragile]
   \small
   Verem műveletek
@@ -380,13 +382,50 @@ undefined
   \end{exampleblock}
 \end{frame}
 
+\begin{frame}
+  \small
+  Rendezés:
+  \begin{itemize}
+    \item \texttt{sort()}: karakterláncként kezelt adatokat rendez
+    \item \texttt{sort(\emph{hasonlítóFv})}: adott fv. által adott relációt figyelembe véve rendez
+  \end{itemize}
+  \footnotesize
+  \begin{exampleblock}{\textattachfile{tombok.js}{Rendezés különféle sorrendekbe}}
+    \vspace{-0.3cm}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=95-105,firstnumber=95]{tombok.js}
+    \vspace{-0.3cm}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  Függvény paramétert váró függvények $\to$ funkcionális programozás felé
+  \begin{itemize}
+    \item \texttt{forEach()} minden egyes elemmel külön meghívja a paraméter fv.-t
+    \item \texttt{every()} Igazat ad, ha a tesztelő fv. minden egyes elemre igazat ad $\to$ logikai és
+    \item \texttt{some()} Igazat ad, ha a tesztelő fv. legalább egy elemre igazat ad $\to$ logikai vagy
+    \item \texttt{filter()} Új tömböt készít és ad vissza, amely azokból az elemekből áll, melyekre a paraméter fv. igazat adott
+    \item \texttt{map()} Minden elemet egyesével leképez egy újra, melyekből új tömböt állít elő
+    \item \texttt{reduce()} Balról jobbra összevonja az elemeket egyetlen változóba
+    \item \texttt{reduceRight()} Mint \texttt{reduce()}, csak jobbról balra haladva
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \footnotesize
+  \begin{exampleblock}{\textattachfile{tombok.js}{Tömb fv. paramétert váró függvényei}}
+    \vspace{-0.3cm}
+    \lstinputlisting[language=JavaScript,numbers=left,linerange=107-113,firstnumber=107]{tombok.js}
+    \vspace{-0.3cm}
+  \end{exampleblock}
+\end{frame}
+
 \begin{frame}[fragile]
   Többdimenziós tömb egydimenziós tömbök egymásba ágyazásával hozható létre
   \vfill
   \footnotesize
   \begin{columns}[T]
     \column{0.75\textwidth}
-      \begin{exampleblock}{\textattachfile{objektumok.js}{Többdimenziós tömbök}}
+      \begin{exampleblock}{\textattachfile{tombok.js}{Többdimenziós tömbök}}
         \lstinputlisting[language=JavaScript,numbers=left,linerange=84-93,firstnumber=84]{tombok.js}
       \end{exampleblock}
     \column{0.2\textwidth}
@@ -442,5 +481,60 @@ undefined
   Ez a megoldás független értékeknek tömbbe foglalására, és tömb elemeinek különálló változókba helyezésére is lehetőséget ad.
   \begin{exampleblock}{\textattachfile{restparams.js}{Független változók $\leftrightarrow$ tömb}}
     \lstinputlisting[language=JavaScript,numbers=left,linerange=19-22,firstnumber=19]{restparams.js}
+  \end{exampleblock}
+\end{frame}
+
+\subsection{Néhány apróság}
+
+\begin{frame}
+  A függvények paraméter átadásának módja
+  \begin{itemize}
+      \item alapvetően érték szerinti (\emph{pass by value}), de
+      \item az objektumoknak a referenciáját adja át, de azt érték szerint (\emph{pass by sharing}) $\to$ az objektum csak a fv.-en belül cserélhető le, de az eredeti objektum meglévő tulajdonságainak módosítása látszik a hívás után is
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \footnotesize
+  \begin{exampleblock}{\textattachfile{atadas.js}{atadas.js}}
+      \footnotesize
+      \vspace{-0.3cm}
+      \lstinputlisting[language=JavaScript,numbers=left]{atadas.js}
+      \vspace{-0.3cm}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \footnotesize
+  \begin{exampleblock}{\textattachfile{ujradeklaralas.js}{Újradeklarálás:} \texttt{let}/\texttt{const} esetén hiba, \texttt{var}/\texttt{function} esetén nem!}
+      \scriptsize
+      \vspace{-0.3cm}
+      \lstinputlisting[language=JavaScript,numbers=left]{ujradeklaralas.js}
+      \vspace{-0.3cm}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{kompozicio.js}{Kompozíció:} függvények összefűzése, az egyik visszatérési értéke lesz a másik aktuális paramétere}
+      \footnotesize
+      \lstinputlisting[language=JavaScript,numbers=left]{kompozicio.js}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \begin{exampleblock}{\textattachfile{typeof.js}{Typeof} működése különböző típusú adatokkal $\to$ pl. fv. létezésének ellenőrzésére}
+      \lstinputlisting[language=JavaScript,numbers=left]{typeof.js}
+  \end{exampleblock}
+\end{frame}
+
+\subsection{Feladatok}
+
+\begin{frame}
+  \begin{exampleblock}{Tömbelemek összekeverése (\textattachfile{kever.js}{kever.js})}
+    Írjon olyan függvényt, ami összekeveri egy tömb elemeit! Ötlet: \hiv{\href{https://en.wikipedia.org/wiki/Fisher\%E2\%80\%93Yates\_shuffle}{Fisher-Yates shuffle}}
+  \end{exampleblock}
+  \vfill
+  \begin{exampleblock}{Tömb kilapítása (\textattachfile{kilapitas.js}{kilapitas.js})}
+    Írjon olyan függvényt, ami egy mátrix összes elemét belerakja egy újonnan létrehozott egydimenziós tömbbe (vektorba)! Ötlet: \texttt{reduce()}, \texttt{concat()} metódusok használata.
   \end{exampleblock}
 \end{frame}

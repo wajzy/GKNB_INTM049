@@ -93,24 +93,6 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-    Paraméter átadás módja
-    \begin{itemize}
-        \item Alapvetően érték szerinti (\emph{pass by value})
-        \item Az objektumoknak a referenciáját adja át, de azt érték szerint (\emph{pass by sharing}) $\to$ az objektum csak a fv.-en belül cserélhető le, de az eredeti objektum meglévő tulajdonságainak módosítása látszik a hívás után is
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \footnotesize
-    \begin{exampleblock}{\textattachfile{atadas.js}{atadas.js}}
-        \footnotesize
-        \vspace{-0.3cm}
-        \lstinputlisting[language=JavaScript,numbers=left]{atadas.js}
-        \vspace{-0.3cm}
-    \end{exampleblock}
-\end{frame}
-
 \subsection{Függvények, mint értékek}
 
 \begin{frame}
@@ -120,7 +102,9 @@
         \item függvény visszatérési értéke lehet függvény,
         \item függvény beágyazható másik függvénybe.
     \end{itemize}
+    \emph{Magasabbrendű függvények} (Higher-Order Functions, HOF): olyan függvények, melyek fv. paramétert fogadnak, vagy fv.-t adnak vissza
     \begin{exampleblock}{\textattachfile{paramFv1.js}{paramFv1.js}}
+        \small
         \lstinputlisting[language=JavaScript,numbers=left]{paramFv1.js}
     \end{exampleblock}
 \end{frame}
@@ -146,9 +130,11 @@
 \end{frame}
 
 \begin{frame}
-    \begin{exampleblock}{Függvény, mint visszatérési érték (\textattachfile{zarvany.js}{zarvany.js})}
+    \begin{exampleblock}{\textattachfile{zarvany.js}{Currying:} egy több paramétert fogadó függvény megvalósítása kevesebb paramétert fogadó magasabb rendű függvényekkel}
         \small
+        \vspace{-.3cm}
         \lstinputlisting[language=JavaScript,numbers=left]{zarvany.js}
+        \vspace{-.3cm}
     \end{exampleblock}
 \end{frame}
 
