@@ -1,0 +1,135 @@
+\section{Objektumokról részletesebben}
+
+\subsection{\texttt{this}}
+
+\begin{frame}
+    Objektumok: 
+    \begin{itemize}
+        \item egységbe zárt (encapsulation) adattagok és metódusok (függvények)
+        \item a rejtett \texttt{this} kötés kapcsolja össze az objektum tulajdonságait
+        \item minden tulajdonság nyilvános
+    \end{itemize}
+    \begin{exampleblock}{\textattachfile{teglalap.js}{Objektum literál}}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=1-7]{teglalap.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{teglalap.js}{Metódusok}}
+        \scriptsize
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=8,linerange=8-19]{teglalap.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{teglalap.js}{A \texttt{call} metódus}}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=21,linerange=21-27]{teglalap.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{teglalap.js}{Nyíl függvények és \texttt{function} közti különbségek}}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=29,linerange=29-40]{teglalap.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    JavaScriptben nincsenek osztályok: az objektumok más objektumok (prototípusok) alapján jönnek létre, azt kiegészítve.\\
+    A prototípusnak is lehet prototípusa: származtatási hierarchia, fa struktúra, csúcsán: \texttt{Object.prototype}; ez a közös ős.
+    \begin{exampleblock}{\textattachfile{prototipus.js}{Prototípusok felderítése}}
+        \scriptsize
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=2, linerange=2-5]{prototipus.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{prototipus.js}{Objektum létrehozása adott prototípussal}}
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=7,linerange=7-16]{prototipus.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \scriptsize
+    \begin{exampleblock}{\textattachfile{prototipus.js}{Objektum létrehozása adott prototípussal}}
+        \scriptsize
+        \vspace{-.3cm}
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=18,linerange=18-35]{prototipus.js}
+        \vspace{-.3cm}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \footnotesize
+    Prototípusnak szánt objektumba jellemzően csak olyan tulajdonságot tesznek, amit minden ebből 
+    származó objektumnak tartalmaznia kell. \\
+    Konstruktor: új objektum létrehozása adott prototípusból,
+    az egyedre jellemző értékek hozzáadásával.
+    \begin{exampleblock}{\textattachfile{konstruktor1.js}{Objektum létrehozása konstruktorral}}
+        \scriptsize
+        \vspace{-.2cm}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=1-14]{konstruktor1.js}
+        \vspace{-.2cm}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{konstruktor1.js}{Objektum létrehozása konstruktorral}}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=16,linerange=16-21]{konstruktor1.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \emph{Majdnem} ugyanez történik, ha a \texttt{new} kulcsszót írjuk egy függvény elé, azaz konstruktorként fog viselkedni.
+    \begin{exampleblock}{\textattachfile{konstruktor2.js}{Objektum létrehozása \texttt{new} kulcsszóval}}
+        \footnotesize
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=1-11]{konstruktor2.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{konstruktor2.js}{Objektum létrehozása \texttt{new} kulcsszóval}}
+        \footnotesize
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=12,linerange=12-19]{konstruktor2.js}
+    \end{exampleblock}
+    Minden függvénynek van \texttt{prototype} tulajdonsága, a konstruktornak is. Ez egy lecserélhető üres objektum, 
+    de a meglévőhöz is hozzáadhatók új tulajdonságok, mint a példában. 
+\end{frame}
+
+\begin{frame}
+    2015-től lehet használni a \texttt{class} és \texttt{constructor} kulcsszavakat. A háttérben ettől még 
+    ugyanaz történik (syntactic sugar), továbbra sem léteznek valódi osztályok a nyelvben. Konstans adatokat nem lehet 
+    az objektumhoz adni.
+    \begin{exampleblock}{\textattachfile{class.js}{\texttt{class}, \texttt{constructor}}}
+        \footnotesize
+        \vspace{-.2cm}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=1-11]{class.js}
+        \vspace{-.2cm}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{class.js}{\texttt{class}, \texttt{constructor}}}
+        \footnotesize
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=13,linerange=13-22]{class.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    A \texttt{class} kifejezésben is szerepelhet, nem csak utasításban.
+    \begin{exampleblock}{\textattachfile{class.js}{\texttt{class}, \texttt{constructor}}}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=24,linerange=24-33]{class.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    Az \texttt{Object}-től örökölt metódusok egyedileg felüldefiniálhatók.
+    \begin{exampleblock}{\textattachfile{class.js}{\texttt{class}, \texttt{constructor}}}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=35,linerange=35-41]{class.js}
+    \end{exampleblock}
+\end{frame}
