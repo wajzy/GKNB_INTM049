@@ -36,6 +36,8 @@
     \end{exampleblock}
 \end{frame}
 
+\subsection{Prototípusok}
+
 \begin{frame}
     JavaScriptben nincsenek osztályok: az objektumok más objektumok (prototípusok) alapján jönnek létre, azt kiegészítve.\\
     A prototípusnak is lehet prototípusa: származtatási hierarchia, fa struktúra, csúcsán: \texttt{Object.prototype}; ez a közös ős.
@@ -46,7 +48,7 @@
 \end{frame}
 
 \begin{frame}
-    \begin{exampleblock}{\textattachfile{prototipus.js}{Objektum létrehozása adott prototípussal}}
+    \begin{exampleblock}{\textattachfile{prototipus.js}{Objektum létrehozása alapértelmezett prototípussal}}
         \lstinputlisting[language=JavaScript,numbers=left,firstnumber=7,linerange=7-16]{prototipus.js}
     \end{exampleblock}
 \end{frame}
@@ -61,9 +63,11 @@
     \end{exampleblock}
 \end{frame}
 
+\subsection{Konstruktorok}
+
 \begin{frame}
     \footnotesize
-    Prototípusnak szánt objektumba jellemzően csak olyan tulajdonságot tesznek, amit minden ebből 
+    Prototípusnak szánt objektumba jellemzően csak olyan tulajdonságot tesznek, melynek értékét minden ebből 
     származó objektumnak tartalmaznia kell. \\
     Konstruktor: új objektum létrehozása adott prototípusból,
     az egyedre jellemző értékek hozzáadásával.
@@ -99,6 +103,8 @@
     de a meglévőhöz is hozzáadhatók új tulajdonságok, mint a példában. 
 \end{frame}
 
+\subsection{\texttt{class} és \texttt{constructor}}
+
 \begin{frame}
     2015-től lehet használni a \texttt{class} és \texttt{constructor} kulcsszavakat. A háttérben ettől még 
     ugyanaz történik (syntactic sugar), továbbra sem léteznek valódi osztályok a nyelvben. Konstans adatokat nem lehet 
@@ -120,7 +126,7 @@
 
 \begin{frame}
     A \texttt{class} kifejezésben is szerepelhet, nem csak utasításban.
-    \begin{exampleblock}{\textattachfile{class.js}{\texttt{class}, \texttt{constructor}}}
+    \begin{exampleblock}{\textattachfile{class.js}{\texttt{class} kifejezés}}
         \small
         \lstinputlisting[language=JavaScript,numbers=left,firstnumber=24,linerange=24-33]{class.js}
     \end{exampleblock}
@@ -128,8 +134,179 @@
 
 \begin{frame}
     Az \texttt{Object}-től örökölt metódusok egyedileg felüldefiniálhatók.
-    \begin{exampleblock}{\textattachfile{class.js}{\texttt{class}, \texttt{constructor}}}
+    \begin{exampleblock}{\textattachfile{class.js}{Felüldefiniálás}}
         \small
-        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=35,linerange=35-41]{class.js}
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=35,linerange=35-42]{class.js}
+    \end{exampleblock}
+\end{frame}
+
+\subsection{Objektumok használata asszociatív tömbként}
+
+\begin{frame}
+    \footnotesize
+    Objektumokat használni asszociatív tömbként nem biztonságos:
+    \begin{enumerate}
+        \item öröklött tulajdonságok is megjelennek kulcsként
+        \item implicit típuskonverzió miatt kulcsnak látszódhat egy érték, ami nem az
+    \end{enumerate}
+    \begin{exampleblock}{\textattachfile{asszociativ.js}{Asszociatív tömb objektummal}}
+        \vspace{-.2cm}
+        \scriptsize
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=1-13]{asszociativ.js}
+        \vspace{-.2cm}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    Az első problémát megoldja, ha nincs prototípusa az objektumnak.
+    \begin{exampleblock}{\textattachfile{asszociativ.js}{Asszociatív tömb objektummal}}
+        \scriptsize
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=15,linerange=15-21]{asszociativ.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    A másodikon viszont nem segít, sőt mellékhatása is lehet (pl. nyomkövetésnél)
+    Megoldás: \texttt{Map} (és \texttt{Set}), ld. később
+    \begin{exampleblock}{\textattachfile{asszociativ.js}{Asszociatív tömb objektummal}}
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=23,linerange=23-27]{asszociativ.js}
+    \end{exampleblock}
+\end{frame}
+
+\subsection{Szimbólumok}
+
+\begin{frame}
+    Az objektumok kulcsaiként eddig mindig \texttt{String}-ek álltak. Ez azonban akkor is lehetővé 
+    teszi pl. egy metódus felüldefiniálását vagy lecserélését, ha nem szándékoztuk.
+    \begin{exampleblock}{\textattachfile{szimbolumok.js}{Tulajdonságok karakterlánccal megadva}}
+        \small
+        \vspace{-.2cm}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=1-11]{szimbolumok.js}
+        \vspace{-.2cm}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    Ezzel szemben a létrehozott szimbólumok mindig egyediek.
+    \begin{exampleblock}{\textattachfile{szimbolumok.js}{Tulajdonságok szimbólummal megadva}}
+        \scriptsize
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=13,linerange=13-26]{szimbolumok.js}
+    \end{exampleblock}
+\end{frame}
+
+\subsection{Iterátorok}
+
+\begin{frame}
+    \footnotesize
+    A \texttt{for/of} ciklusokkal azok a gyűjtemények járhatók be, melyek megvalósítják az \texttt{iterator} interfészt,
+    azaz rendelkeznek egy \texttt{Symbol.iterator} nevű metódussal, ami visszadja a tényleges bejárást biztosító
+    iterátor objektumot.
+    
+    Ennek \texttt{next()} metódusával lehet elkérni a \texttt{value} és \texttt{done} kulcsokkal rendelkező objektumokat. 
+    Az első adattag a tényleges, soron következő értéket adja meg, a másodikból kiderül, hogy elérhető-e még egyáltalán további adat.
+
+    Legismertebb megvalósítások a nyelvben: \texttt{Array}, \texttt{String}.
+    \begin{exampleblock}{\textattachfile{iterator.js}{Beépített objektumok iterátorral}}
+        \scriptsize
+        \vspace{-.2cm}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=1-10]{iterator.js}
+        \vspace{-.2cm}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    Készítsünk a \hiv{\href{https://docs.python.org/3/library/functions.html\#func-range}{Python}} és 
+    a \hiv{\href{https://www.php.net/manual/en/function.range.php}{PHP}} mintájára olyan \texttt{Intervallum}
+    objektumot, ami a [\texttt{tol}, \texttt{ig}) intervallumból ad vissza egymástól \texttt{lepes}-nyire lévő értékeket!
+    \begin{exampleblock}{\textattachfile{iterator.js}{Saját objektum iterátorral}}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=12,linerange=12-21]{iterator.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \footnotesize
+    \begin{exampleblock}{\textattachfile{iterator.js}{Saját objektum iterátorral}}
+        \scriptsize
+        \vspace{-.2cm}
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=23,linerange=23-38]{iterator.js}
+        \vspace{-.2cm}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{iterator.js}{Saját objektum iterátorral}}
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=40,linerange=40-45]{iterator.js}
+    \end{exampleblock}
+\end{frame}
+
+\subsection{getter, setter, static}
+
+\begin{frame}
+    JS-ben valamennyi adattag nyilvánosan elérhető. Néha viszont nem szeretnénk (redundáns) adattagokat létrehozni, abban folyamatosan
+    adatokat tárolni és azt frissíteni, amikor az objektum változik. Ilyenkor létrehozhatunk olyan metódusokat, melyek adattagnak
+    tűnnek a külvilág számára, és a számított adatokat szolgáltatják, amikor szükség van rájuk.
+    \vfill
+    Hasonlóképpen létrehozhatunk adattagnak tűnő metódusokat tárolt értékek beállítására, input ellenőrzésére is.
+    \vfill
+    Időnként egy adat nem példányhoz kötődik, hanem az ,,osztályhoz'' (ld. \texttt{Math.PI}). Ezeket célszerű csak egyszer tárolni
+    $\to$ statikus adattag. Hasonlóan, ha egy metódus nem dolgozik a példány adataival, megjelölhetjük statikusként (pl. \texttt{Math.sin()}).
+    Hívásakor a prototípus/osztály nevével minősítjük. Jellemzően objektumok létrehozására, másolására használják őket.
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{gallon.js}{getter, setter, static}}
+        \scriptsize
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=1-15]{gallon.js}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{gallon.js}{getter, setter, static}}
+        \footnotesize
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=17,linerange=17-24]{gallon.js}
+    \end{exampleblock}
+\end{frame}
+
+\subsection{Származtatás}
+
+\begin{frame}
+    Származtatás megvalósításához, az ős megnevezésére megjelent az \texttt{extends} kulcsszó. Az ősre \texttt{super} segítségével lehet
+    hivatkozni.
+    \begin{exampleblock}{\textattachfile{szarmaztatas.js}{Származtatás}}
+        \scriptsize
+        \vspace{-.2cm}
+        \lstinputlisting[language=JavaScript,numbers=left,linerange=1-14]{szarmaztatas.js}
+        \vspace{-.2cm}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{szarmaztatas.js}{Származtatás}}
+        \scriptsize
+        \vspace{-.2cm}
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=16,linerange=16-31]{szarmaztatas.js}
+        \vspace{-.2cm}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+    \begin{exampleblock}{\textattachfile{szarmaztatas.js}{Származtatás}}
+        \small
+        \lstinputlisting[language=JavaScript,numbers=left,firstnumber=33,linerange=33-39]{szarmaztatas.js}
+    \end{exampleblock}
+    Az \texttt{instanceof} operátorral ellenőrizhető egy objektum (akár közvetett) prototípusa.
+\end{frame}
+
+\subsection{Feladatok}
+
+\begin{frame}
+    \begin{exampleblock}{Lekerekített téglalap (\textattachfile{lekerekitett.js}{lekerekitett.js})}
+        Készítsen \texttt{Teglalap} ,,osztályt'', melynek konstruktora megkapja paraméterként a síkidom szélességét, magasságát,
+        és egy logikai értéket, melyből kiderül, hogy rajzolásnál csak a körvonalat kell megrajzolni, vagy a téglalap belsejét is
+        ki kell tölteni * karakterekkel! A \texttt{rajz()} metódus adja vissza a rajzot egy \texttt{String} formájában!
+
+        Származtasson ebből egy \texttt{Lekerekitett} nevű osztályt, amelynek konstruktora egy további paramétert fogad, a sarkok
+        lekerekítési sugarát!
     \end{exampleblock}
 \end{frame}

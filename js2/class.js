@@ -37,5 +37,6 @@ kocka.toString = function() {
   return `Ez egy ${this.oldalak} oldalszámú "kocka".`;
 }
 console.log(kocka.toString()); // Ez egy 6 oldalszámú "kocka".
+console.log(String(kocka)); // Ez egy 6 oldalszámú "kocka".
 delete kocka.toString;
 console.log(kocka.toString()); // [object Object]

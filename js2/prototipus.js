@@ -21,7 +21,7 @@ teglalap.b = 3;
 // felüldefiniált metódus
 teglalap.kerulet = function() {
   // a-t megörökli, b saját adattag
-  return 2 * (this.a+this.b)
+  return 2 * (this.a+this.b);
 };
 teglalap.terulet = function() {
   return this.a * this.b;
