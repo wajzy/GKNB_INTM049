@@ -22,21 +22,24 @@ console.log(Object.getPrototypeOf(Function.prototype) ==
             Object.prototype); // true
 
 // osztály kifejezés
-const kocka = new class {
-  constructor(oldalak) {
-    this.oldalak = oldalak;
+const negyzet = new class {
+  constructor(oldalHossz) {
+    this.a = oldalHossz;
   }
-  dobas() {
-    return Math.floor(Math.random()*this.oldalak) + 1;
+  kerulet() {
+    return 4 * this.a;
   }
 }(6);
-console.log(kocka.dobas()); // [1, 6]
+console.log(`K=${negyzet.kerulet()}`); // 24
 
-console.log(kocka.toString()); // [object Object]
-kocka.toString = function() {
-  return `Ez egy ${this.oldalak} oldalszámú "kocka".`;
+console.log(negyzet.toString()); // [object Object]
+negyzet.toString = function() {
+  return `Ez egy ${this.a} oldalhosszú négyzet.`;
 }
-console.log(kocka.toString()); // Ez egy 6 oldalszámú "kocka".
-console.log(String(kocka)); // Ez egy 6 oldalszámú "kocka".
-delete kocka.toString;
-console.log(kocka.toString()); // [object Object]
+console.log(negyzet.toString()); // Ez egy 6 oldalhosszú négyzet.
+// A konzol interaktívan jelenítené meg 'negyzet' adatait
+console.log(String(negyzet)); // Ez egy 6 oldalhosszú négyzet.
+// Az objektum nyomtatásakor implicit toString() hívás történik
+alert(negyzet); // Ez egy 6 oldalhosszú négyzet.
+delete negyzet.toString;
+console.log(negyzet.toString()); // [object Object]
