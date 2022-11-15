@@ -15,8 +15,9 @@ function konstruktor(oldalHossz) {
 
 const negyzet2 = konstruktor(2);
 const negyzet5 = konstruktor(5);
-console.log(`a=${negyzet2.a}, K=${negyzet2.kerulet()}`); // 2, 8
-console.log(`a=${negyzet2.a}, T=${negyzet2.terulet()}`); // 2, 4
-console.log(`a=${negyzet5.a}, K=${negyzet5.kerulet()}`); // 5, 20
-console.log(`a=${negyzet5.a}, T=${negyzet5.terulet()}`); // 5, 25
-
+console.log(`a=${negyzet2.a}`); // a=2
+console.log(`K=${negyzet2.kerulet()}, T=${negyzet2.terulet()}`);
+	// K=8, T=4
+console.log(`a=${negyzet5.a}`); // a=5
+console.log(`K=${negyzet5.kerulet()}, T=${negyzet5.terulet()}`);
+	// K=20, T=25
