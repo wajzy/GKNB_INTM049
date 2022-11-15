@@ -23,7 +23,8 @@ function atlo2() {
   return Math.sqrt(this.a*this.a + this.b*this.b); 
 }
 console.log(`Átlójának hossza: ${atlo2.call(teglalap)}`); // 5.83
-const teglalap2 = { a: 1, b: 1, atlo2 };
+console.log(`Átlójának hossza: ${teglalap.atlo.call(teglalap)}`); // NaN
+const teglalap2 = { a: 1, b: 1, atlo2 }; // atlo2: atlo2 rövidítése
 console.log(`Átlójának hossza: ${teglalap2.atlo2()}`); // 1.41
 
 // A nyíl fv. látja környezetének this kötését
