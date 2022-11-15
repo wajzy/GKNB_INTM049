@@ -71,16 +71,23 @@
             \}
         \end{itemize}
         \column{0.5\textwidth}
+        \footnotesize
+        Mikor \kiemel{nem} teljesül a \emph{feltétel}?
         \begin{itemize}
-          \item Mikor \kiemel{nem} teljesül a \emph{feltétel}?
-          \begin{itemize}
             \item false
             \item 0
             \item ""
             \item NaN
             \item null
             \item undefined
-          \end{itemize}
+        \end{itemize}
+        \emph{Short circuit evaluation} (pl. alapérték megadására):
+        \begin{itemize}
+            \vspace{-.4cm}
+            \item \texttt{undefined || "Gizi"} \kiemelZ{$\to$ \texttt{"Gizi"}}
+            \item \texttt{null || "Gizi"} \kiemelZ{$\to$ \texttt{"Gizi"}}
+            \item \texttt{"" || "Gizi"} \kiemelZ{$\to$ \texttt{"Gizi"}}
+            \item \texttt{"Gizi" || "Mari"} \kiemelZ{$\to$ \texttt{"Gizi"}}
         \end{itemize}
       \end{columns}
 \end{frame}
