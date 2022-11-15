@@ -1,7 +1,7 @@
-for(elem of ['A', 'B', 'C']) {
+for(let elem of ['A', 'B', 'C']) {
   console.log(elem); // A B C
 }
-for(betu of "JS") {
+for(let betu of "JS") {
   console.log(betu); // J S
 }
 const JSiterator = "JS"[Symbol.iterator]();
@@ -37,9 +37,9 @@ class IntervallumIterator {
   }
 }
 
-for(elem of new Intervallum(0, 10, 2)) {
+for(let elem of new Intervallum(0, 10, 2)) {
   console.log(elem); // 0 2 4 6 8
 }
-for(elem of new Intervallum(5, 0, -1)) {
+for(let elem of new Intervallum(5, 0, -1)) {
   console.log(elem); // 5 4 3 2 1
 }
