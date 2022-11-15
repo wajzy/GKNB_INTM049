@@ -68,3 +68,14 @@ hg.getAlairas = function() {
   return (this.zh1+this.zh2) >= 20;
 }
 console.log(hg.getAlairas()); // true
+
+const hg5 = {
+  nev: "Mezei Virág",
+  neptun: "1qay2w",
+  zh1: 14,
+  zh2: 19,
+  getAlairas: function() { // metódus literállal
+    return (this.zh1+this.zh2) >= 20;
+  }
+};
+console.log(hg5.getAlairas()); // true
