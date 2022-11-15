@@ -16,8 +16,7 @@ function frobenius1(m) {
 console.log(frobenius1(mtx)); // 30
 
 function frobenius2(m) {
-  const negyzet = (c1, c2) => c1*c1 + c2*c2;
-  return m.reduce((s1, s2) => s1.reduce(negyzet) + s2.reduce(negyzet));
+  return m.reduce((a, b) => a.concat(b)).map(a => a**2).reduce((a, b) => a + b)
 }
 
 console.log(frobenius2(mtx)); // 30

@@ -530,17 +530,38 @@ undefined
 \subsection{Feladatok}
 
 \begin{frame}
-  \begin{exampleblock}{Tömbelemek összekeverése (\textattachfile{kever.js}{kever.js})}
-    Írjon olyan függvényt, ami összekeveri egy tömb elemeit! Ötlet: \hiv{\href{https://en.wikipedia.org/wiki/Fisher\%E2\%80\%93Yates\_shuffle}{Fisher-Yates shuffle}}
-  \end{exampleblock}
-  \vfill
   \begin{exampleblock}{Tömb kilapítása (\textattachfile{kilapitas.js}{kilapitas.js})}
     Írjon olyan függvényt, ami egy mátrix összes elemét belerakja egy újonnan létrehozott egydimenziós tömbbe (vektorba)! Ötlet: \texttt{reduce()}, \texttt{concat()} metódusok használata.
+  \end{exampleblock}
+  \vfill
+  \begin{exampleblock}{Frobenius-norma (\textattachfile{frobenius.js}{frobenius.js})}
+    Írjon olyan függvényt, ami kiszámolja egy mátrix \hiv{\href{https://hu.wikipedia.org/wiki/Frobenius-norma}{Frobenius-normáját}}!
   \end{exampleblock}
 \end{frame}
 
 \begin{frame}
-  \begin{exampleblock}{Frobenius-norma (\textattachfile{frobenius.js}{frobenius.js})}
-    Írjon olyan függvényt, ami kiszámolja egy mátrix \hiv{\href{https://hu.wikipedia.org/wiki/Frobenius-norma}{Frobenius-normáját}}!
+  \footnotesize
+  \begin{exampleblock}{Mátrixok összevonása (\textattachfile{hvstack.js}{hvstack.js})}
+    Definiálja a \texttt{hstack()} függvényt, ami az azonos számú sorokból álló $A$ és $B$ mátrixok összevonásával elkészíti a $C$ mátrixot a következőképpen:
+    \tiny
+    \[ hstack(A_{i,j}, B_{i,k}) = C\begin{bmatrix} 
+      A_{1, 1} & A_{1, 2} & \cdots & A_{1, j} & B_{1, 1} & B_{1, 2} & \cdots & B_{1, k} \\
+      A_{2, 1} & A_{2, 2} & \cdots & A_{2, j} & B_{2, 1} & B_{2, 2} & \cdots & B_{2, k} \\
+      \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+      A_{i, 1} & A_{i, 2} & \cdots & A_{i, j} & B_{i, 1} & B_{i, 2} & \cdots & B_{i, k} \\
+    \end{bmatrix} \]
+    \footnotesize
+    Hasonlóan definiálja \texttt{vstack()}-et is, ami azonos számú oszlopot tartalmazó mátrixokkal végez műveletet:
+    \tiny
+    \[ vstack(A_{i,j}, B_{k,j}) = C\begin{bmatrix} 
+      A_{1, 1} & A_{1, 2} & \cdots & A_{1, j} \\
+      A_{2, 1} & A_{2, 2} & \cdots & A_{2, j} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      A_{i, 1} & A_{i, 2} & \cdots & A_{i, j} \\
+      B_{1, 1} & B_{1, 2} & \cdots & B_{1, j} \\
+      B_{2, 1} & B_{2, 2} & \cdots & B_{2, j} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      B_{k, 1} & B_{k, 2} & \cdots & B_{k, j} \\
+    \end{bmatrix} \]
   \end{exampleblock}
 \end{frame}
