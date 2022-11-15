@@ -125,8 +125,16 @@
     Zárványok (\emph{closure})
     \begin{itemize}
         \item<1-> Mi történik, ha egy \emph{külső} függvény \emph{lokális} változóit eléri egy \emph{belső} függvény, amit \emph{meghívunk azután, hogy} az őt létrehozó \emph{külső függvényből kiléptünk}?
-        \item<2-> A függvény megőrzi futtatási környezetét
+        \item<2-> A függvény megőrzi futtatási \emph{környezetét}
     \end{itemize}
+    \vfill
+    \only<2->{
+        Környezet (\emph{environment})
+        \begin{itemize}
+            \item adott pillanatban létező változók és értékeik
+            \item gyakorlatilag soha nincs üres környezet
+        \end{itemize}
+    }
 \end{frame}
 
 \begin{frame}
