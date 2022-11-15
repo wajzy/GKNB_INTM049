@@ -1,4 +1,4 @@
-console.log(typeof(Math.sin)); // function
+console.log(typeof(console.log)); // function
 console.log(typeof({kulcs: "ertek"})); // object
 console.log(typeof([1, 2, 3])); // object
 console.log(typeof(null)); // object
