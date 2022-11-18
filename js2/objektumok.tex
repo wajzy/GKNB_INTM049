@@ -87,7 +87,10 @@
 \end{frame}
 
 \begin{frame}
-    \emph{Majdnem} ugyanez történik, ha a \texttt{new} kulcsszót írjuk egy függvény elé, azaz konstruktorként fog viselkedni.
+    \small
+    Ha a \texttt{new} kulcsszót írjuk egy függvény elé, az konstruktorként fog viselkedni. 
+    A \texttt{prototype} tulajdonság értékét (alapértelmezetten üres objektum, melynek őse \texttt{Object.prototype}) 
+    fogja prototípusként használni az új objektum létrehozásakor, és létrehozza a \texttt{this} kötést.
     \begin{exampleblock}{\textattachfile{konstruktor2.js}{Objektum létrehozása \texttt{new} kulcsszóval}}
         \footnotesize
         \lstinputlisting[language=JavaScript,numbers=left,linerange=1-11]{konstruktor2.js}
