@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rácsos elrendezés</title>
+    <style>
+      .racs-tarolo {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        background-color: orange;
+        padding: 5px;
+        gap: 5px;
+      }
+      .racs-tarolo > * {
+        background-color: yellow;
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+        line-height: 20px;
+      }
+      .menu {
+        grid-row-start: 2;
+        grid-row-end: 4;
+      }
+      .fejlec {
+        grid-column: 1 / 5;
+      }
+      .tartalom {
+        grid-column: 2 / span 2;
+      }
+      .oldalsav {
+        grid-row: 2 / 3;
+        grid-column: 4 / 5;
+      }
+      .lablec {
+        grid-area: 3 / 2 / 4 / span 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="racs-tarolo">
+      <div class="menu">Menü</div>
+      <div class="fejlec">Fejléc</div>
+      <div class="tartalom">Tartalom</div>
+      <div class="oldalsav">Oldalsáv</div>
+      <div class="lablec">Lábléc</div>
+    </div>
+  </body>
+</html>

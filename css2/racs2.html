@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rácsos elrendezés</title>
+        <style>
+            .racs-tarolo {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                background-color: orange;
+                padding: 10px;
+                gap: 10px;
+                justify-content: center;
+                align-content: center;
+                height: 200px;
+            }
+            .racs-tarolo > * {
+                width: 40px;
+                background-color: yellow;
+                border: 1px solid black;
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+                line-height: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>Vízszintes igazítás (<code>justify-content</code>)</legend>
+                <div>
+                    <input type="radio" id="vbal" name="vizszintes" value="start">
+                    <label for="vbal">Balra (<code>start</code>)</label>
+                </div>
+                <div>
+                    <input type="radio" id="vkozep" name="vizszintes" value="center" checked>
+                    <label for="vkozep">Középre (<code>center</code>)</label>
+                </div>
+                <div>
+                    <input type="radio" id="vjobb" name="vizszintes" value="end">
+                    <label for="vjobb">Jobbra (<code>end</code>)</label>
+                </div>
+                <div>
+                    <input type="radio" id="vegyenletes" name="vizszintes" value="space-evenly">
+                    <label for="vegyenletes">Közöttük és mellettük egyenletes térköz (<code>space-evenly</code>)</label>
+                </div>
+                <div>
+                    <input type="radio" id="vmellette" name="vizszintes" value="space-around">
+                    <label for="vmellette">Mellettük egyenletes térköz (<code>space-around</code>)</label>
+                </div>
+                <div>
+                    <input type="radio" id="vkozotte" name="vizszintes" value="space-between">
+                    <label for="vkozotte">Közöttük egyenletes térköz (<code>space-between</code>)</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Függőleges igazítás (<code>align-content</code>)</legend>
+                <div>
+                    <input type="radio" id="ffent" name="fuggoleges" value="start">
+                    <label for="ffent">Fentre (<code>start</code>)</label>
+                </div>
+                <div>
+                    <input type="radio" id="fkozep" name="fuggoleges" value="center" checked>
+                    <label for="fkozep">Középre (<code>center</code>)</label>
+                </div>
+                <div>
+                    <input type="radio" id="flent" name="fuggoleges" value="end">
+                    <label for="flent">Lentre (<code>end</code>)</label>
+                </div>
+                <div>
+                    <input type="radio" id="fegyenletes" name="fuggoleges" value="space-evenly">
+                    <label for="fegyenletes">Közöttük és mellettük egyenletes térköz (<code>space-evenly</code>)</label>
+                </div>
+                <div>
+                    <input type="radio" id="fmellette" name="fuggoleges" value="space-around">
+                    <label for="fmellette">Mellettük egyenletes térköz (<code>space-around</code>)</label>
+                </div>
+                <div>
+                    <input type="radio" id="fkozotte" name="fuggoleges" value="space-between">
+                    <label for="fkozotte">Közöttük egyenletes térköz (<code>space-between</code>)</label>
+                </div>
+            </fieldset>
+        </form>
+        <div class="racs-tarolo">
+            <p>1A</p>
+            <p>1B</p>
+            <p>1C</p>
+            <p>2A</p>
+            <p>2B</p>
+            <p>2C</p>
+        </div>
+    </body>
+    <script>
+        let vizszintes = "center";
+        let fuggoleges = "center";
+        for(r of document.getElementsByName("vizszintes")) {
+            r.addEventListener("change", function(e) {
+                vizszintes = e.target.value;
+                frissit();
+            });
+        }
+        for(r of document.getElementsByName("fuggoleges")) {
+            r.addEventListener("change", function(e) {
+                fuggoleges = e.target.value;
+                frissit();
+            });
+        }
+        function frissit() {
+            document.getElementsByClassName("racs-tarolo")[0].style 
+                = "justify-content: " + vizszintes + "; align-content: " + fuggoleges;
+        }
+    </script>
+</html>
