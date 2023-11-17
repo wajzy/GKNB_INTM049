@@ -94,15 +94,7 @@ mtxNyomtat(t12);
 
 let tomb = [10, 2, 100, 20, 1, 200]
 console.log(tomb.sort()) // 1, 10, 100, 2, 20, 200
-console.log(tomb.sort((a, b) => {
-  if(a < b) {
-    return 1;
-  } else if(a == b) {
-    return 0;
-  } else {
-    return -1;
-  }
-})) // 200, 100, 20, 10, 2, 1
+console.log(tomb.sort((a, b) => b-a)) // 200, 100, 20, 10, 2, 1
 
 let szamok = [10, 20, 30];
 szamok.forEach(elem => console.log(elem / 10)); // 1 2 3

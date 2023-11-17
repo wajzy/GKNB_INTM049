@@ -5,11 +5,7 @@ class Teglalap {
     this.kitoltott = kitoltott;
   }
   karakter(sor, oszlop) {
-    if(this.kitoltott) {
-      return (sor>=0 && sor<this.mag && oszlop>=0 && oszlop<this.szel) ? '*' : ' ';
-    } else {
-      return (sor==0 || sor==this.mag-1 || oszlop==0 || oszlop==this.szel-1) ? '*' : ' ';
-    }
+    return (this.kitoltott || sor==0 || sor==this.mag-1 || oszlop==0 || oszlop==this.szel-1) ? '*' : ' ';
   }
   rajz() {
     let abra='';
