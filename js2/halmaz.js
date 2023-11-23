@@ -20,3 +20,12 @@ console.log(ures.has(2) ? "Van benne 2" : "Nincs benne 2");
   // Nincs benne 2
 ures.clear();
 console.log(ures); // Set []
+
+const a = new Set([1, 2, 3]);
+const b = new Set([2, 3, 4, 5]);
+console.log("Únió: ", new Set([...a, ...b]));
+// Set(5) [ 1, 2, 3, 4, 5 ]
+console.log("Metszet: ", new Set(Array.from(a).filter(x => b.has(x))));
+// Set [ 2, 3 ]
+console.log("Különbség: ", new Set(Array.from(a).filter(x => !b.has(x))));
+// Set [ 1 ]
